@@ -72,15 +72,4 @@ jobs:
           path: dist/
           retention-days: 7
 
-  deploy:
-    runs-on: ubuntu-latest
-    needs: build
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main' && secrets.VERCEL_TOKEN != '' && secrets.VERCEL_ORG_ID != '' && secrets.VERCEL_PROJECT_ID != ''
-    steps:
-      - uses: actions/checkout@v4
-      - name: Deploy to Vercel
-        uses: BenediktEst/vercel-deploy-action@main
-        with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+  # deploy job intentionally removed: deployments handled via Vercel GitHub integration
