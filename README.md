@@ -1,123 +1,100 @@
-# finnsight-site
+# Finnsight
 
-Public online presence for Finnsight (Phase 2, ROADMAP v5).
+Deterministic financial planning for Dutch employees.
 
-**Repository:** Dedicated, independent from `finnsight-core`
-**Domain:** `finnsight.app` (Phase 2), `finnsight.nl` (brand, redirect only)
-**Spec Reference:** [PHASE_2_ONLINE_PRESENCE.md](https://github.com/finnsight/finnsight-core/blob/main/docs/roadmap/PHASE_2_ONLINE_PRESENCE.md)
+## About
 
----
+Finnsight helps Dutch employees understand their financial future through transparent, private analysis. No advice. No guesses. Only facts.
+
+- **What you get:** Clear view of your income, housing, pensions, taxes, and available funds
+- **How it works:** Share your situation → deterministic calculation → understand your options
+- **Your privacy:** Your data stays with you. Employers never see individual information.
+
+## Demo
+
+Try the interactive demos at [finnsight.app](https://finnsight.app):
+- **Quick-scan:** 6 questions, 1 minute
+- **Goal-first:** Choose your goal, see what it takes
+
+## Technology
+
+Built with:
+- **Frontend:** Vite 4.5.14 + React 18.2
+- **Deployment:** Vercel
+- **Domains:** finnsight.app (primary), finnsight.nl (redirect)
 
 ## Structure
 
 ```
-finnsight-site/
-├── README.md
-├── package.json (if using Vite/React)
-├── .gitignore
-├── docs/
-│   └── PHASE_2_EXECUTION_GUIDE.md
-├── src/
-│   ├── index.html
-│   ├── styles/
-│   │   └── main.css
-│   ├── pages/
-│   │   ├── index.html (landing)
-│   │   ├── trust.html (trust & compliance)
-│   │   └── demos.html (both demos)
-│   └── assets/
-│       └── (images, logos)
-├── public/
-│   ├── sitemap.xml
-│   └── robots.txt
-└── .env.example
+src/
+├── pages/
+│   ├── LandingPage.jsx         # Hero, benefits, demos CTA
+│   ├── TrustPage.jsx           # Transparency & compliance
+│   └── DemosPage.jsx           # Interactive demos
+├── components/
+│   └── ErrorBoundary.jsx       # Error handling
+└── styles/
+    └── main.css                # Design system
+
+public/
+├── favicon.svg
+├── sitemap.xml
+└── robots.txt
+
+index.html                       # SPA entry point
 ```
 
----
-
-## Quick Start
-
-### Option 1: HTML + CSS (Recommended for Phase 2)
+## Development
 
 ```bash
-# No build step needed
-# Serve directly or via Vercel
-```
-
-### Option 2: Vite + React
-
-```bash
+# Install dependencies
 npm install
-npm run dev      # local development
-npm run build    # production build
-npm run preview  # preview build
+
+# Local development
+npm run dev         # Open http://localhost:5173
+
+# Production build
+npm run build       # Creates dist/
+
+# Preview build
+npm run preview
 ```
 
----
+## Important Notes
 
-## Phase 2 Deliverables
+### Non-canonical demos
+The demos on this site are **illustrative only**:
+- They do not store your data
+- They use simplified logic (not the full finnsight-core engines)
+- Results are ranges, not precise predictions
+- They are meant to show what's possible, not deliver final answers
 
-- [ ] Landing page (sections 1–7 per spec)
-- [ ] Trust & compliance page
-- [ ] Quick-scan demo (range-based, non-canonical)
-- [ ] Goal-first demo (illustrative only)
-- [ ] SEO baseline (meta, sitemap, robots.txt)
-- [ ] CTA mechanics (mailto: or ephemeral form)
-- [ ] Privacy-respecting analytics setup
-- [ ] No coupling with finnsight-core
-- [ ] Governance decisions logged in finnsight-core DECISION_LOG.md ✅
+### Privacy
+- Your data is never sent to servers
+- No cookies, no tracking
+- Employer-neutral (your employer never sees your data)
 
----
+### Accessibility
+The site supports:
+- Keyboard navigation
+- Screen readers (WCAG 2.1 AA)
+- Mobile & tablet devices
+- Zoom & high contrast modes
 
-## Governance Boundaries (Non-Negotiable)
+## Compliance
 
-**Forbidden:**
-- Calls to finnsight-core API
-- Canonical calculations
-- User accounts or authentication
-- PII storage
-- Personalised advice
-- Outputs marked as "final" or "accurate"
+Finnsight operates within Dutch financial regulations (AFM):
+- No personalized financial advice
+- No investment return predictions
+- Transparent assumptions
+- Privacy by design
 
-**Required:**
-- Explicit disclaimers ("indicative", "not engine-ready")
-- Clear statement: "Employers never see individual employee data"
-- Privacy-by-design analytics
-- Zero code reuse with Phase 5
+## Contact
 
----
-
-## Hosting & Domains
-
-- **Hosting:** Vercel (locked for Phases 5–9; Phase 2 can use alternatives)
-- **Primary domain:** `finnsight.app`
-- **Brand domain:** `finnsight.nl` (redirect to .app)
-- **DNS/SSL:** Cloudflare (~€30/year)
+Questions or interest in partnership?
+[hello@finnsight.nl](mailto:hello@finnsight.nl)
 
 ---
 
-## Timeline
-
-- **Week 1 (Days 1–5):** Copy, mockups, repo structure
-- **Week 2 (Days 6–10):** Landing page, demos, trust page live
-- **Week 2 (Days 8–10):** SEO baseline, analytics, final polish
-- **Week 3 (Hard deadline):** Phase reflection, sign-off
-
-**Slip rule:** >week 3 requires Founder re-plan (per ROADMAP_v5).
-
----
-
-## Links & References
-
-- Phase 2 Spec: [PHASE_2_ONLINE_PRESENCE.md (finnsight-core)](../../../finnsight-core/docs/roadmap/PHASE_2_ONLINE_PRESENCE.md)
-- Roadmap v5: [ROADMAP_v5_LINEAR.md (finnsight-core)](../../../finnsight-core/docs/roadmap/ROADMAP_v5_LINEAR.md)
-- Strategic Foundation: (reference)
-- AI Roles & Governance: (reference)
-
----
-
-## Owner & Contact
-
-**Owner:** Founder
-**CTO Support:** Infrastructure, contract tests (Phase 7+)
-**Questions:** Reference PHASE_2_ONLINE_PRESENCE.md Section 1–10
+**Phase 2 Status:** ✅ Live & production-ready  
+**Last Updated:** 2025-12-24
