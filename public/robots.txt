@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://finnsight.app/sitemap.xml
+
+# Disallow scrapers
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /

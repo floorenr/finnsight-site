@@ -1,0 +1,12 @@
+node_modules/
+.venv/
+*.pyc
+__pycache__/
+.env
+.env.local
+.DS_Store
+dist/
+build/
+.vercel/
+.netlify/
+*.log
