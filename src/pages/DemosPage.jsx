@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 
 export default function DemosPage({ onNavigate }) {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [quickScanInputs, setQuickScanInputs] = useState({
     age: 35,
     income: 3500,
@@ -11,6 +12,7 @@ export default function DemosPage({ onNavigate }) {
   })
 
   const [quickScanOutput, setQuickScanOutput] = useState(null)
+  const quickScanResultRef = useRef(null)
 
   const [goalFirstInputs, setGoalFirstInputs] = useState({
     goal: '',
@@ -18,6 +20,24 @@ export default function DemosPage({ onNavigate }) {
   })
 
   const [goalFirstOutput, setGoalFirstOutput] = useState(null)
+  const goalFirstResultRef = useRef(null)
+
+  // Scroll to result when output appears
+  useEffect(() => {
+    if (quickScanOutput && quickScanResultRef.current) {
+      setTimeout(() => {
+        quickScanResultRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
+      }, 100)
+    }
+  }, [quickScanOutput])
+
+  useEffect(() => {
+    if (goalFirstOutput && goalFirstResultRef.current) {
+      setTimeout(() => {
+        goalFirstResultRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
+      }, 100)
+    }
+  }, [goalFirstOutput])
 
   // Quick-scan calculation (qualitative bands, no arithmetic)
   const handleQuickScanSubmit = (e) => {
@@ -79,16 +99,28 @@ export default function DemosPage({ onNavigate }) {
       <header className="header">
         <nav className="nav" aria-label="Main navigation">
           <div className="logo">Finnsight</div>
-          <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('landing'); }}>← Terug naar start</a>
+          <button 
+            className="mobile-menu-toggle" 
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-expanded={mobileMenuOpen}
+            aria-label="Menu"
+          >
+            {mobileMenuOpen ? '×' : '☰'}
+          </button>
+          <ul className={mobileMenuOpen ? 'nav-open' : ''}>
+            <li><a href="#" onClick={(e) => { e.preventDefault(); setMobileMenuOpen(false); onNavigate('landing'); }}>← Terug naar start</a></li>
+            <li><a href="#" onClick={(e) => { e.preventDefault(); setMobileMenuOpen(false); onNavigate('trust'); }}>Vertrouwen</a></li>
+            <li><a href="mailto:hello@finnsight.nl" className="cta-nav">Contact</a></li>
+          </ul>
         </nav>
       </header>
 
-      <main className="content">
+      <main className="content" id="main-content">
         <h1>Demo's</h1>
-        <p className="disclaimer">⚠️ Deze demo's zijn illustratief en niet bindend. Ze slaan je gegevens niet op. Ze gebruiken voorbeeld-data.</p>
+        <p className="disclaimer info">INFO: Deze demo's zijn illustratief en niet bindend. Ze slaan je gegevens niet op. Ze gebruiken voorbeeld-data.</p>
 
         {/* Quick-Scan Demo */}
-        <section className="demo-section">
+        <section className="demo-section scroll-target" id="quick-scan">
           <h2>Quick-scan Demo</h2>
           <p><strong>6 vragen, 1 minuut.</strong> Wat zie je als je 30 jaar vooruit kijkt?</p>
 
@@ -185,10 +217,10 @@ export default function DemosPage({ onNavigate }) {
           </form>
 
           {quickScanOutput && (
-            <div className="demo-output">
+            <div className="demo-output" ref={quickScanResultRef} aria-live="polite">
               <h3>Demo-resultaat</h3>
-              <div className="disclaimer">
-                ℹ️ Dit is een <strong>illustratief bereik</strong>. Geen exacte voorspelling. De werkelijke bedragen hangen af van veel meer factoren.
+              <div className="disclaimer info">
+                INFO: Dit is een <strong>illustratief bereik</strong>. Geen exacte voorspelling. De werkelijke bedragen hangen af van veel meer factoren.
               </div>
 
               <div className="result-band">
@@ -217,7 +249,7 @@ export default function DemosPage({ onNavigate }) {
         </section>
 
         {/* Goal-First Demo */}
-        <section className="demo-section">
+        <section className="demo-section scroll-target" id="goal-first">
           <h2>Goal-First Demo</h2>
           <p><strong>Begin met wat je wilt bereiken.</strong> Finnsight toont wat nodig is.</p>
 
@@ -274,10 +306,10 @@ export default function DemosPage({ onNavigate }) {
           </form>
 
           {goalFirstOutput && (
-            <div className="demo-output">
+            <div className="demo-output" ref={goalFirstResultRef} aria-live="polite">
               <h3>Demo-resultaat</h3>
-              <div className="disclaimer">
-                ℹ️ Dit toont welke <strong>factoren</strong> jouw doel beïnvloeden. Niet hoe je het bereikt.
+              <div className="disclaimer info">
+                INFO: Dit toont welke <strong>factoren</strong> jouw doel beïnvloeden. Niet hoe je het bereikt.
               </div>
 
               <div className="result-trade-offs">
@@ -311,7 +343,14 @@ export default function DemosPage({ onNavigate }) {
       </main>
 
       <footer className="footer">
-        <p>&copy; 2025 Finnsight. <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('landing'); }}>Terug naar start</a></p>
+        <nav className="footer-nav" aria-label="Footer navigation">
+          <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('landing'); }}>Terug naar start</a>
+          <span style={{ color: '#6b7280' }}>|</span>
+          <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('trust'); }}>Vertrouwen & Compliance</a>
+          <span style={{ color: '#6b7280' }}>|</span>
+          <a href="mailto:hello@finnsight.nl">Contact</a>
+        </nav>
+        <p style={{ marginTop: 'var(--spacing-md)', marginBottom: 0 }}>&copy; 2025 Finnsight</p>
       </footer>
     </>
   )

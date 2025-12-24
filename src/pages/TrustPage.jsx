@@ -1,14 +1,30 @@
+import { useState } from 'react'
+
 export default function TrustPage({ onNavigate }) {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
   return (
     <>
       <header className="header">
         <nav className="nav" aria-label="Main navigation">
           <div className="logo">Finnsight</div>
-          <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('landing'); }}>← Terug naar start</a>
+          <button 
+            className="mobile-menu-toggle" 
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-expanded={mobileMenuOpen}
+            aria-label="Menu"
+          >
+            {mobileMenuOpen ? '×' : '☰'}
+          </button>
+          <ul className={mobileMenuOpen ? 'nav-open' : ''}>
+            <li><a href="#" onClick={(e) => { e.preventDefault(); setMobileMenuOpen(false); onNavigate('landing'); }}>← Terug naar start</a></li>
+            <li><a href="#" onClick={(e) => { e.preventDefault(); setMobileMenuOpen(false); onNavigate('demos'); }}>Demo's</a></li>
+            <li><a href="mailto:hello@finnsight.nl" className="cta-nav">Contact</a></li>
+          </ul>
         </nav>
       </header>
 
-      <main className="content">
+      <main className="content" id="main-content">
         <h1>Vertrouwen & Compliance</h1>
         <p className="lead">Hoe Finnsight werkt en waarop je kunt vertrouwen.</p>
 
@@ -97,7 +113,7 @@ export default function TrustPage({ onNavigate }) {
             Als analytics worden ingeschakeld, meten we:
           </p>
           <ul>
-            <li>✅ Hoe veel mensen de intakepagina bezoeken</li>
+            <li>✅ Hoeveel mensen de intakepagina bezoeken</li>
             <li>✅ Hoe veel stappen ze compleet maken</li>
             <li>✅ Of het dashboard nuttig is (bezoekfrequentie)</li>
             <li>❌ We meten NOOIT: jouw inkomens, je onderliggende financiën, je gedrag per persoon</li>
@@ -119,7 +135,14 @@ export default function TrustPage({ onNavigate }) {
       </main>
 
       <footer className="footer">
-        <p>&copy; 2025 Finnsight. <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('landing'); }}>Terug naar start</a></p>
+        <nav className="footer-nav" aria-label="Footer navigation">
+          <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('landing'); }}>Terug naar start</a>
+          <span style={{ color: '#6b7280' }}>|</span>
+          <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('demos'); }}>Demo's</a>
+          <span style={{ color: '#6b7280' }}>|</span>
+          <a href="mailto:hello@finnsight.nl">Contact</a>
+        </nav>
+        <p style={{ marginTop: 'var(--spacing-md)', marginBottom: 0 }}>&copy; 2025 Finnsight</p>
       </footer>
     </>
   )

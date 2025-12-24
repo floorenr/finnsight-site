@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import ErrorBoundary from './components/ErrorBoundary'
 import LandingPage from './pages/LandingPage'
 import TrustPage from './pages/TrustPage'
 import DemosPage from './pages/DemosPage'
@@ -12,10 +13,12 @@ export default function App() {
   }
 
   return (
-    <div className="app">
-      {currentPage === 'landing' && <LandingPage onNavigate={navigate} />}
-      {currentPage === 'trust' && <TrustPage onNavigate={navigate} />}
-      {currentPage === 'demos' && <DemosPage onNavigate={navigate} />}
-    </div>
+    <ErrorBoundary>
+      <div className="app">
+        {currentPage === 'landing' && <LandingPage onNavigate={navigate} />}
+        {currentPage === 'trust' && <TrustPage onNavigate={navigate} />}
+        {currentPage === 'demos' && <DemosPage onNavigate={navigate} />}
+      </div>
+    </ErrorBoundary>
   )
 }
