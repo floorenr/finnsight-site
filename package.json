@@ -13,10 +13,15 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "^4.2.0",
-    "vite": "^5.0.0"
+    "@vitejs/plugin-react": "^4.7.0",
+    "vite": "^4.5.14"
   },
-  "keywords": ["finnsight", "phase-2", "financial-planning", "employee-first"],
+  "keywords": [
+    "finnsight",
+    "phase-2",
+    "financial-planning",
+    "employee-first"
+  ],
   "author": "Finnsight Team",
   "license": "MIT",
   "repository": {
