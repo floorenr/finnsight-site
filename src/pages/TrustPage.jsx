@@ -2,7 +2,7 @@ export default function TrustPage({ onNavigate }) {
   return (
     <>
       <header className="header">
-        <nav className="nav">
+        <nav className="nav" aria-label="Main navigation">
           <div className="logo">Finnsight</div>
           <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('landing'); }}>← Terug naar start</a>
         </nav>
@@ -66,7 +66,7 @@ export default function TrustPage({ onNavigate }) {
         <section>
           <h2>5. Privacy by Design</h2>
           <p>
-            <strong>Jouw werkgever ziet jouw gegevens NOOIT</strong> — ook niet in geaggregeerde vorm ("gemiddelde uitgaven per leeftijdsgroep").
+            <strong>Jouw werkgever ziet nooit individuele gegevens</strong> — alleen geaggregeerde inzichten onder strikte drempels (bijvoorbeeld: gemiddelde behoeften per leeftijdsgroep, maar pas na 10+ deelnemers).
           </p>
           <ul>
             <li>Jij bent eigenaar van je gegevens</li>
@@ -94,13 +94,13 @@ export default function TrustPage({ onNavigate }) {
         <section>
           <h2>7. Wat we meten (en hoe we privacy beschermen)</h2>
           <p>
-            We meten:
+            Als analytics worden ingeschakeld, meten we:
           </p>
           <ul>
-            <li>✅ Hoe veel people de intakepagina bezoeken</li>
+            <li>✅ Hoe veel mensen de intakepagina bezoeken</li>
             <li>✅ Hoe veel stappen ze compleet maken</li>
             <li>✅ Of het dashboard nuttig is (bezoekfrequentie)</li>
-            <li>❌ We meten NIET: jouw inkomens, je onderliggende financiën, je gedrag per persoon</li>
+            <li>❌ We meten NOOIT: jouw inkomens, je onderliggende financiën, je gedrag per persoon</li>
           </ul>
           <p>
             <strong>Privacy-respectful analytics:</strong> We gebruiken tools als Plausible of Fathom (geen cookies, geen tracking).

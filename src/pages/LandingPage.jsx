@@ -2,7 +2,7 @@ export default function LandingPage({ onNavigate }) {
   return (
     <>
       <header className="header">
-        <nav className="nav">
+        <nav className="nav" aria-label="Main navigation">
           <div className="logo">Finnsight</div>
           <ul>
             <li><a href="#what" onClick={() => {}}>Wat is Finnsight</a></li>

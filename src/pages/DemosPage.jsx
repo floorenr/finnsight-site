@@ -19,21 +19,27 @@ export default function DemosPage({ onNavigate }) {
 
   const [goalFirstOutput, setGoalFirstOutput] = useState(null)
 
-  // Quick-scan calculation (illustrative, non-canonical)
+  // Quick-scan calculation (qualitative bands, no arithmetic)
   const handleQuickScanSubmit = (e) => {
     e.preventDefault()
     const { age, income, mortgage, spending, pensionYears } = quickScanInputs
 
-    // Simplified, illustrative calculation (NOT engine logic)
-    const monthlyAfterMortgage = income - mortgage - (spending * 0.5)
-    const pensionInput = Math.max(0, monthlyAfterMortgage * 0.12)
-    const lowEstimate = Math.round(pensionInput * 0.85)
-    const highEstimate = Math.round(pensionInput * 1.15)
+    // Qualitative assessment based on input profile (no calculations)
+    let band = 'low'
+    if (income > 3000 && mortgage < 1500 && spending < 2000 && pensionYears > 20) {
+      band = 'high'
+    } else if (income > 2500 && pensionYears > 15) {
+      band = 'medium'
+    }
 
-    setQuickScanOutput({
-      low: lowEstimate,
-      high: highEstimate
-    })
+    // Static illustrative ranges (not calculated from inputs)
+    const ranges = {
+      low: { low: 1200, high: 1800 },
+      medium: { low: 1800, high: 2500 },
+      high: { low: 2500, high: 3500 }
+    }
+
+    setQuickScanOutput(ranges[band])
   }
 
   // Goal-first calculation (illustrative)
@@ -71,7 +77,7 @@ export default function DemosPage({ onNavigate }) {
   return (
     <>
       <header className="header">
-        <nav className="nav">
+        <nav className="nav" aria-label="Main navigation">
           <div className="logo">Finnsight</div>
           <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('landing'); }}>← Terug naar start</a>
         </nav>
