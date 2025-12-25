@@ -220,10 +220,10 @@ export default function LandingPage({ onNavigate }) {
             >
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 'var(--spacing-sm)' }}>
                 <span style={{ fontWeight: 600, color: '#0f172a' }}>Scenariovergelijking</span>
-                <span style={{ display: 'inline-flex', gap: '4px', alignItems: 'center' }}>
+                <span style={{ display: 'inline-flex', gap: '8px', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'flex-end', rowGap: '4px', fontSize: '0.9rem' }}>
                   <span style={{ width: '10px', height: '10px', borderRadius: '999px', background: '#0ea5e9', display: 'inline-block' }} />
                   <small style={{ color: '#475569' }}>Basis</small>
-                  <span style={{ width: '10px', height: '10px', borderRadius: '999px', background: '#6366f1', display: 'inline-block', marginLeft: '8px' }} />
+                  <span style={{ width: '10px', height: '10px', borderRadius: '999px', background: '#6366f1', display: 'inline-block' }} />
                   <small style={{ color: '#475569' }}>Hypotheek versnellen</small>
                 </span>
               </div>
