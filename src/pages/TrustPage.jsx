@@ -91,24 +91,8 @@ export default function TrustPage({ onNavigate }) {
           </p>
         </section>
 
-        <section>
-          <h2>6. Wat we meten (en hoe we privacy beschermen)</h2>
-          <p>
-            Als analytics worden ingeschakeld, meten we:
-          </p>
-          <ul>
-            <li>✅ Hoeveel mensen de intakepagina bezoeken</li>
-            <li>✅ Hoe veel stappen ze compleet maken</li>
-            <li>✅ Of het dashboard nuttig is (bezoekfrequentie)</li>
-            <li>❌ We meten NOOIT: jouw inkomens, je onderliggende financiën, je gedrag per persoon</li>
-          </ul>
-          <p>
-            <strong>Privacy-respectful analytics:</strong> We gebruiken tools als Plausible of Fathom (geen cookies, geen tracking).
-          </p>
-        </section>
-
         <section className="highlight">
-          <h2>7. Samen vertrouwen opbouwen</h2>
+          <h2>6. Samen vertrouwen opbouwen</h2>
           <p>
             Finnsight bestaat omdat werknemers meer rust nodig hebben. Dat verdienen ze.
           </p>
