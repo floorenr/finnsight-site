@@ -34,7 +34,7 @@ export default function PrivacyTermsPage({ onNavigate }) {
           <h2>Gebruiksvoorwaarden</h2>
           <ul>
             <li>Illustratief: de site geeft uitleg over wat Finnsight doet, geen advies.</li>
-            <li>Geen garanties: resultaten of voorbeelden zijn geen voorspellingen.</li>
+            <li>Niet-bindend: prognoses zijn informatief en niet gegarandeerd om uit te komen.</li>
             <li>Jij beslist: jij blijft zelf verantwoordelijk voor je keuzes.</li>
           </ul>
         </section>

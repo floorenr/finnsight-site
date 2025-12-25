@@ -77,7 +77,7 @@ export default function LandingPage({ onNavigate }) {
             <li>❌ Biedt financieel advies (AFM-gerelateerd)</li>
             <li>❌ Gebruikt AI om conclusies te genereren</li>
             <li>❌ Geeft je werkgever inzicht in jouw financiën</li>
-            <li>❌ Maakt beloftes over toekomstprognoses</li>
+            <li>❌ Garandeert dat prognoses zullen uitkomen (ze zijn illustratief)</li>
           </ul>
         </section>
 
