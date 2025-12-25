@@ -8,8 +8,8 @@ export default function LandingPage({ onNavigate }) {
       <header className="header">
         <nav className="nav" aria-label="Main navigation">
           <div className="logo">Finnsight</div>
-          <button 
-            className="mobile-menu-toggle" 
+          <button
+            className="mobile-menu-toggle"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-expanded={mobileMenuOpen}
             aria-label="Menu"
@@ -32,7 +32,7 @@ export default function LandingPage({ onNavigate }) {
           <p className="lead">Finnsight geeft Nederlandse werknemers een helder beeld van hun financiële mogelijkheden — tot en met pensioen.</p>
           <p className="subtext">Geen adviezen. Geen giswerk. Alleen feiten over wat jij kunt doen.</p>
           <div style={{ marginTop: 'var(--spacing-xl)' }}>
-            <button className="btn btn-primary" onClick={() => { onNavigate('demos'); window.scrollTo(0, 0); }} style={{ marginRight: 'var(--spacing-md)', fontSize: '1.1rem', padding: 'var(--spacing-md) var(--spacing-xl)' }}>Bekijk demo (illustratief)</button>
+            <button className="btn btn-primary" onClick={() => { onNavigate('demos'); window.scrollTo(0, 0); }} style={{ marginRight: 'var(--spacing-md)', fontSize: '1.1rem', padding: 'var(--spacing-md) var(--spacing-xl)' }}>Bekijk demo</button>
             <a href="mailto:hello@finnsight.nl" className="btn" style={{ background: 'rgba(255,255,255,0.2)', border: '2px solid white', color: 'white' }}>Neem contact op</a>
           </div>
         </section>
