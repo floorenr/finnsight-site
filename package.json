@@ -1,7 +1,7 @@
 {
   "name": "finnsight-site",
   "version": "1.0.0",
-  "description": "Finnsight online presence (Phase 2). Messaging, non-canonical demos, trust & compliance.",
+  "description": "Finnsight online presence. Public messaging, trust & compliance, privacy.",
   "type": "module",
   "scripts": {
     "dev": "vite",
