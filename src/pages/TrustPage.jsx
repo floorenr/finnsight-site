@@ -66,13 +66,13 @@ export default function TrustPage({ onNavigate }) {
         <section>
           <h2>4. Privacy by Design</h2>
           <p>
-            <strong>Jouw werkgever ziet nooit individuele gegevens</strong> — alleen geaggregeerde inzichten onder strikte drempels (bijvoorbeeld: gemiddelde behoeften per leeftijdsgroep, maar pas na 10+ deelnemers).
+            <strong>Jouw werkgever ziet nooit individuele gegevens.</strong> Dit is niet conditioneel — niet eens geaggregeerd. Finnsight werkt volledig employee-first.
           </p>
           <ul>
             <li>Jij bent eigenaar van je gegevens</li>
             <li>Finnsight is employee-first</li>
             <li>Werkgevers zien alleen: "X medewerkers hebben intake voltooid" (voor monitoring)</li>
-            <li>Geen individuele data, geen gedrag, geen financieel beeld</li>
+            <li>Geen individuele data, geen gedrag, geen financieel beeld, geen aggregaten</li>
           </ul>
         </section>
 
