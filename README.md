@@ -5,16 +5,13 @@ Deterministic financial planning for Dutch employees.
 ## About
 
 Finnsight helps Dutch employees understand their financial future through transparent, private analysis. No advice. No guesses. Only facts.
-
 - **What you get:** Clear view of your income, housing, pensions, taxes, and available funds
 - **How it works:** Share your situation → deterministic calculation → understand your options
 - **Your privacy:** Your data stays with you. Employers never see individual information.
 
-## Demo
+## Live
 
-Try the interactive demos at [finnsight.app](https://finnsight.app):
-- **Quick-scan:** 6 questions, 1 minute
-- **Goal-first:** Choose your goal, see what it takes
+Public site: https://finnsight.app
 
 ## Technology
 
@@ -28,9 +25,8 @@ Built with:
 ```
 src/
 ├── pages/
-│   ├── LandingPage.jsx         # Hero, benefits, demos CTA
-│   ├── TrustPage.jsx           # Transparency & compliance
-│   └── DemosPage.jsx           # Interactive demos
+│   ├── LandingPage.jsx         # Hero, benefits, contact CTA
+│   └── TrustPage.jsx           # Transparency & compliance
 ├── components/
 │   └── ErrorBoundary.jsx       # Error handling
 └── styles/
@@ -62,19 +58,14 @@ npm run preview
 
 ## Important Notes
 
-### Non-canonical demos
-The demos on this site are **illustrative only**:
-- They do not store your data
-- They use simplified logic (not the full finnsight-core engines)
-- Results are ranges, not precise predictions
-- They are meant to show what's possible, not deliver final answers
+- This site contains no interactive demos. It presents the proposition, trust/compliance, and a contact CTA.
 
-### Privacy
+## Privacy
 - Your data is never sent to servers
 - No cookies, no tracking
 - Employer-neutral (your employer never sees your data)
 
-### Accessibility
+## Accessibility
 The site supports:
 - Keyboard navigation
 - Screen readers (WCAG 2.1 AA)
@@ -96,5 +87,5 @@ Questions or interest in partnership?
 
 ---
 
-**Phase 2 Status:** ✅ Live & production-ready  
-**Last Updated:** 2025-12-24
+**Public Site Status:** ✅ Live
+**Last Updated:** 2025-12-25
