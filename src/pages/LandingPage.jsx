@@ -96,7 +96,7 @@ export default function LandingPage({ onNavigate }) {
           <span style={{ color: '#6b7280' }}>|</span>
           <a href="mailto:hello@finnsight.nl">Contact</a>
           <span style={{ color: '#6b7280' }}>|</span>
-          <span style={{ color: '#9ca3af' }}>Privacy en voorwaarden volgen in latere fase</span>
+          <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('privacy-terms'); }}>Privacy en voorwaarden</a>
         </nav>
         <p style={{ marginTop: 'var(--spacing-md)', marginBottom: 0 }}>&copy; 2025 Finnsight</p>
       </footer>

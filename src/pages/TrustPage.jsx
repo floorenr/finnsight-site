@@ -122,6 +122,8 @@ export default function TrustPage({ onNavigate }) {
         <nav className="footer-nav" aria-label="Footer navigation">
           <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('landing'); }}>Terug naar start</a>
           <span style={{ color: '#6b7280' }}>|</span>
+          <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('privacy-terms'); }}>Privacy en voorwaarden</a>
+          <span style={{ color: '#6b7280' }}>|</span>
           <a href="mailto:hello@finnsight.nl">Contact</a>
         </nav>
         <p style={{ marginTop: 'var(--spacing-md)', marginBottom: 0 }}>&copy; 2025 Finnsight</p>
