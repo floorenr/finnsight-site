@@ -1,31 +1,37 @@
 import { render, screen } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
 import LandingPage from '../pages/LandingPage';
+
+// Helper to wrap component with Router context
+const renderWithRouter = (ui) => {
+  return render(<MemoryRouter>{ui}</MemoryRouter>);
+};
 
 describe('LandingPage', () => {
   it('renders without crashing', () => {
-    render(<LandingPage onNavigate={() => {}} />);
+    renderWithRouter(<LandingPage onNavigate={() => {}} />);
     expect(screen.getByRole('heading', { level: 1 })).toBeInTheDocument();
   });
 
   it('displays hero headline', () => {
-    render(<LandingPage onNavigate={() => {}} />);
+    renderWithRouter(<LandingPage onNavigate={() => {}} />);
     expect(screen.getByText(/Inzicht in jouw financiële toekomst/i)).toBeInTheDocument();
   });
 
   it('has mobile navigation toggle button', () => {
-    render(<LandingPage onNavigate={() => {}} />);
+    renderWithRouter(<LandingPage onNavigate={() => {}} />);
     const navToggle = screen.getByRole('button', { name: /Menu/i });
     expect(navToggle).toBeInTheDocument();
   });
 
   it('displays primary action button', () => {
-    render(<LandingPage onNavigate={() => {}} />);
+    renderWithRouter(<LandingPage onNavigate={() => {}} />);
     const buttons = screen.getAllByRole('button');
     expect(buttons.length).toBeGreaterThan(0);
   });
 
   it('has footer with navigation links', () => {
-    render(<LandingPage onNavigate={() => {}} />);
+    renderWithRouter(<LandingPage onNavigate={() => {}} />);
     const footer = screen.getByRole('contentinfo');
     expect(footer).toBeInTheDocument();
   });
