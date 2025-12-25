@@ -84,6 +84,12 @@ export default function LandingPage({ onNavigate }) {
 
           <div style={{ textAlign: 'center' }}>
             <a href="mailto:hello@finnsight.nl?subject=Pilotinformatie%20Finnsight" className="btn btn-primary">Vraag pilotinformatie aan</a>
+            <p style={{ marginTop: 'var(--spacing-sm)', marginBottom: 'var(--spacing-xs)' }}>
+              Beschikbaar voor 2–3 nieuwe pilots per maand.
+            </p>
+            <p style={{ marginTop: 0, marginBottom: 'var(--spacing-sm)' }}>
+              Pilotfase nu open; Q2 2026 bredere uitrol.
+            </p>
             <p style={{ fontSize: '0.875rem', color: 'var(--color-text-muted)', marginTop: 'var(--spacing-sm)', marginBottom: 0 }}>
               Finnsight geeft inzicht en scenario-impact; geen financieel advies.
             </p>
