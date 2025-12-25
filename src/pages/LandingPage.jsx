@@ -51,6 +51,46 @@ export default function LandingPage({ onNavigate }) {
           </div>
         </section>
 
+        {/* Section 2b: HR Value Proposition */}
+        <section className="section highlight">
+          <h2>HR-waarde, zonder privacy-compromissen</h2>
+          <p className="subtext" style={{ marginBottom: 'var(--spacing-xl)' }}>
+            Bied medewerkers helder financieel inzicht, zonder dat HR individuele of geaggregeerde financiële data hoeft te ontvangen.
+          </p>
+          
+          <div className="grid-2" style={{ marginBottom: 'var(--spacing-xl)' }}>
+            <article>
+              <h3>Employee-first ervaring</h3>
+              <p>Medewerkers krijgen één geïntegreerd overzicht (pensioen, hypotheek, vermogen) met scenario-impact. HR hoeft geen dossiers te beheren.</p>
+            </article>
+            <article>
+              <h3>Privacy by design</h3>
+              <p>Werkgevers krijgen geen toegang tot individuele financiële gegevens. Finnsight is ontworpen om medewerkers inzicht te geven zonder dat data in HR-processen belandt.</p>
+            </article>
+          </div>
+          
+          <article style={{ marginBottom: 'var(--spacing-lg)' }}>
+            <h3>Audit-ready uitgangspunt</h3>
+            <p>Deterministische rekenkern en transparante aannames. Eventuele uitleg verwijst uitsluitend naar meetbare modeloutput (geen 'advies').</p>
+          </article>
+
+          <div style={{ background: 'var(--color-bg)', padding: 'var(--spacing-lg)', borderRadius: 'var(--radius-md)', marginBottom: 'var(--spacing-lg)' }}>
+            <h3 style={{ marginTop: 0 }}>Pilot (4–6 weken)</h3>
+            <ul style={{ marginBottom: 0 }}>
+              <li>Snelle start met een kleine groep medewerkers</li>
+              <li>Minimale HR-belasting (alleen communicatie + opt-in)</li>
+              <li>Evaluatie op adoptie, begrip en product-fit (kwalitatief, zonder HR-data)</li>
+            </ul>
+          </div>
+
+          <div style={{ textAlign: 'center' }}>
+            <a href="mailto:hello@finnsight.nl?subject=Pilotinformatie%20Finnsight" className="btn btn-primary">Vraag pilotinformatie aan</a>
+            <p style={{ fontSize: '0.875rem', color: 'var(--color-text-muted)', marginTop: 'var(--spacing-sm)', marginBottom: 0 }}>
+              Finnsight geeft inzicht en scenario-impact; geen financieel advies.
+            </p>
+          </div>
+        </section>
+
         {/* Section 3: Problems addressed */}
         <section className="section">
           <h2>De problemen die we oplossen</h2>
