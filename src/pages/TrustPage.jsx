@@ -18,7 +18,6 @@ export default function TrustPage({ onNavigate }) {
           </button>
           <ul className={mobileMenuOpen ? 'nav-open' : ''}>
             <li><a href="#" onClick={(e) => { e.preventDefault(); setMobileMenuOpen(false); onNavigate('landing'); }}>← Terug naar start</a></li>
-            <li><a href="#" onClick={(e) => { e.preventDefault(); setMobileMenuOpen(false); onNavigate('demos'); }}>Demo's</a></li>
             <li><a href="mailto:hello@finnsight.nl" className="cta-nav">Contact</a></li>
           </ul>
         </nav>
@@ -65,22 +64,7 @@ export default function TrustPage({ onNavigate }) {
         </section>
 
         <section>
-          <h2>4. Geen gegevenspersistentie in Phase 2 (deze site)</h2>
-          <p>
-            De demo's op deze website:
-          </p>
-          <ul>
-            <li>Slaan je gegevens <strong>niet op</strong></li>
-            <li>Hebben <strong>geen loginaccounts</strong></li>
-            <li>Zijn <strong>illustratief en directief</strong> — niet voor echte planning</li>
-          </ul>
-          <p>
-            Zodra je <strong>echte planning</strong> wilt, ga je naar onze app (Phase 5+), waar je gegevens veilig worden opgeslagen en versleuteld.
-          </p>
-        </section>
-
-        <section>
-          <h2>5. Privacy by Design</h2>
+          <h2>4. Privacy by Design</h2>
           <p>
             <strong>Jouw werkgever ziet nooit individuele gegevens</strong> — alleen geaggregeerde inzichten onder strikte drempels (bijvoorbeeld: gemiddelde behoeften per leeftijdsgroep, maar pas na 10+ deelnemers).
           </p>
@@ -93,7 +77,7 @@ export default function TrustPage({ onNavigate }) {
         </section>
 
         <section>
-          <h2>6. AFM-grenzen (financiële regelgeving)</h2>
+          <h2>5. AFM-grenzen (financiële regelgeving)</h2>
           <p>
             Finnsight werkt binnen de grenzen van de AFM (Autoriteit Financiële Markten):
           </p>
@@ -108,7 +92,7 @@ export default function TrustPage({ onNavigate }) {
         </section>
 
         <section>
-          <h2>7. Wat we meten (en hoe we privacy beschermen)</h2>
+          <h2>6. Wat we meten (en hoe we privacy beschermen)</h2>
           <p>
             Als analytics worden ingeschakeld, meten we:
           </p>
@@ -124,7 +108,7 @@ export default function TrustPage({ onNavigate }) {
         </section>
 
         <section className="highlight">
-          <h2>8. Samen vertrouwen opbouwen</h2>
+          <h2>7. Samen vertrouwen opbouwen</h2>
           <p>
             Finnsight bestaat omdat werknemers meer rust nodig hebben. Dat verdienen ze.
           </p>
@@ -137,8 +121,6 @@ export default function TrustPage({ onNavigate }) {
       <footer className="footer">
         <nav className="footer-nav" aria-label="Footer navigation">
           <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('landing'); }}>Terug naar start</a>
-          <span style={{ color: '#6b7280' }}>|</span>
-          <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('demos'); }}>Demo's</a>
           <span style={{ color: '#6b7280' }}>|</span>
           <a href="mailto:hello@finnsight.nl">Contact</a>
         </nav>
