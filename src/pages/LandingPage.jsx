@@ -106,13 +106,15 @@ export default function LandingPage({ onNavigate }) {
           <div
             style={{
               display: 'grid',
-              gap: 'var(--spacing-lg)',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))'
+              gap: 'clamp(var(--spacing-md), 4vw, var(--spacing-xl))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+              maxWidth: '1100px',
+              margin: '0 auto'
             }}
           >
             <article
               style={{
-                padding: 'var(--spacing-lg)',
+                padding: 'clamp(var(--spacing-md), 4vw, var(--spacing-xl))',
                 borderRadius: 'var(--radius-lg)',
                 background: 'linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%)',
                 boxShadow: '0 12px 30px rgba(15, 23, 42, 0.08)'
@@ -164,7 +166,7 @@ export default function LandingPage({ onNavigate }) {
 
             <article
               style={{
-                padding: 'var(--spacing-lg)',
+                padding: 'clamp(var(--spacing-md), 4vw, var(--spacing-xl))',
                 borderRadius: 'var(--radius-lg)',
                 background: 'linear-gradient(135deg, #0f172a 0%, #111827 100%)',
                 color: '#e2e8f0',
@@ -209,7 +211,7 @@ export default function LandingPage({ onNavigate }) {
 
             <article
               style={{
-                padding: 'var(--spacing-lg)',
+                padding: 'clamp(var(--spacing-md), 4vw, var(--spacing-xl))',
                 borderRadius: 'var(--radius-lg)',
                 background: '#ffffff',
                 boxShadow: '0 12px 30px rgba(15, 23, 42, 0.08)',
@@ -265,7 +267,7 @@ export default function LandingPage({ onNavigate }) {
             </article>
           </div>
 
-          <p style={{ marginTop: 'var(--spacing-xl)', color: '#475569' }}>
+          <p style={{ marginTop: 'var(--spacing-lg)', color: '#475569', maxWidth: '960px', marginLeft: 'auto', marginRight: 'auto' }}>
             Mockups tonen de daadwerkelijke pilot-build (release Q1 2026). Data zijn illustratief, berekeningen deterministisch en consistent met de rekenkern in productie.
           </p>
         </section>
