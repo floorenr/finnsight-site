@@ -18,7 +18,6 @@ export default function LandingPage({ onNavigate }) {
           </button>
           <ul className={mobileMenuOpen ? 'nav-open' : ''}>
             <li><a href="#what" onClick={() => setMobileMenuOpen(false)}>Wat is Finnsight</a></li>
-            <li><a href="#demos" onClick={() => setMobileMenuOpen(false)}>Demo's</a></li>
             <li><a href="#" onClick={(e) => { e.preventDefault(); setMobileMenuOpen(false); onNavigate('trust'); }}>Vertrouwen</a></li>
             <li><a href="mailto:hello@finnsight.nl" className="cta-nav">Contact</a></li>
           </ul>
@@ -32,8 +31,7 @@ export default function LandingPage({ onNavigate }) {
           <p className="lead">Finnsight geeft Nederlandse werknemers een helder beeld van hun financiële mogelijkheden — tot en met pensioen.</p>
           <p className="subtext">Geen adviezen. Geen giswerk. Alleen feiten over wat jij kunt doen.</p>
           <div style={{ marginTop: 'var(--spacing-xl)' }}>
-            <button className="btn btn-primary" onClick={() => { onNavigate('demos'); window.scrollTo(0, 0); }} style={{ marginRight: 'var(--spacing-md)', fontSize: '1.1rem', padding: 'var(--spacing-md) var(--spacing-xl)' }}>Bekijk demo</button>
-            <a href="mailto:hello@finnsight.nl" className="btn" style={{ background: 'rgba(255,255,255,0.2)', border: '2px solid white', color: 'white' }}>Neem contact op</a>
+            <a href="mailto:hello@finnsight.nl" className="btn btn-primary" style={{ fontSize: '1.1rem', padding: 'var(--spacing-md) var(--spacing-xl)' }}>Neem contact op</a>
           </div>
         </section>
 
@@ -68,7 +66,7 @@ export default function LandingPage({ onNavigate }) {
           <ol className="process">
             <li><strong>Jij deelt je situatie:</strong> Inkomsten, woning, schulden, pensioen, uitgaven.</li>
             <li><strong>Finnsight rekent:</strong> Deterministische berekeningen (geen AI-adviezen) tonen je financiële beeld.</li>
-            <li><strong>Jij ziet helderheid:</strong> Inzichtelijk overzicht (illustratief) met scenario's. Geen interpretatie. Jij besluit.</li>
+            <li><strong>Jij ziet helderheid:</strong> Inzichtelijk overzicht met scenario's. Geen interpretatie. Jij besluit.</li>
           </ol>
         </section>
 
@@ -78,34 +76,16 @@ export default function LandingPage({ onNavigate }) {
           <ul className="dont-list">
             <li>❌ Biedt financieel advies (AFM-gerelateerd)</li>
             <li>❌ Gebruikt AI om conclusies te genereren</li>
-            <li>❌ Slaat persoonlijke gegevens op als je alleen een demo wilt zien</li>
             <li>❌ Geeft je werkgever inzicht in jouw financiën</li>
             <li>❌ Maakt beloftes over toekomstprognoses</li>
           </ul>
         </section>
 
-        {/* Section 6: Demos */}
-        <section id="demos" className="section scroll-target">
-          <h2>Probeer de demo's</h2>
-          <p>Beide demo's zijn illustratief. Ze gebruiken geen persoonlijke gegevens en slaan niets op.</p>
-          <div className="grid-2">
-            <div className="demo-card">
-              <h3>Quick-scan</h3>
-              <p>6 vragen, 1 minuut. Wat ziet jij als je verder kijkt?</p>
-              <button className="btn" onClick={() => { onNavigate('demos'); setTimeout(() => document.getElementById('quick-scan')?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100); }}>Quick-scan proberen</button>
-            </div>
-            <div className="demo-card">
-              <h3>Goal-first</h3>
-              <p>Begin met wat je wilt bereiken. Finnsight toont impact en trade-offs.</p>
-              <button className="btn" onClick={() => { onNavigate('demos'); setTimeout(() => document.getElementById('goal-first')?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100); }}>Goal-first proberen</button>
-            </div>
-          </div>
-        </section>
-
-        {/* Section 7: CTA */}
-        <section id="cta" className="section cta-section">
+        {/* Section 6: CTA */}
+        <section className="section cta-section">
           <h2>Interesse?</h2>
-          <p>Finnsight is beschikbaar voor werkgevers die hun medewerkers willen ondersteunen.<br/>Ben je onderzoeker, journalist, of adviseur?</p>
+          <p>Finnsight bevindt zich in de pilotfase. We werken met een select aantal werkgevers om het product samen te ontwikkelen.</p>
+          <p>Ben je werkgever, onderzoeker, journalist, of adviseur?</p>
           <a href="mailto:hello@finnsight.nl" className="btn btn-primary">Neem contact op</a>
         </section>
       </main>
