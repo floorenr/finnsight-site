@@ -79,7 +79,7 @@ a:hover {
 .header {
     background: var(--color-bg);
     border-bottom: 1px solid var(--color-border);
-    padding: var(--spacing-lg) 0;
+    padding: var(--spacing-sm) 0;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -683,4 +683,11 @@ select {
     .section {
         padding: var(--spacing-md);
     }
+}
+
+/* Logo link styling */
+.logo,
+.logo:hover {
+    color: var(--color-primary);
+    text-decoration: none;
 }

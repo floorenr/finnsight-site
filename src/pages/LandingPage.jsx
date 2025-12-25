@@ -7,7 +7,7 @@ export default function LandingPage({ onNavigate }) {
     <>
       <header className="header">
         <nav className="nav" aria-label="Main navigation">
-          <div className="logo">Finnsight</div>
+          <a href="#" className="logo" onClick={(e) => { e.preventDefault(); setMobileMenuOpen(false); onNavigate('landing'); }} aria-label="Ga naar startpagina">Finnsight</a>
           <button
             className="mobile-menu-toggle"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
