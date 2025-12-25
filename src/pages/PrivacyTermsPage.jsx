@@ -1,15 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 export default function PrivacyTermsPage({ onNavigate }) {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
   return (
     <>
       <header className="header">
         <nav className="nav" aria-label="Main navigation">
-          <a href="#" className="logo" onClick={(e) => { e.preventDefault(); onNavigate('landing'); }} aria-label="Ga naar startpagina">Finnsight</a>
+          <Link to="/" className="logo" onClick={() => setMobileMenuOpen(false)} aria-label="Ga naar startpagina">Finnsight</Link>
           <button
             className="mobile-menu-toggle"
-            onClick={() => onNavigate('landing')}
-            aria-label="Terug naar start"
+            onClick={() => window.history.back()}
+            aria-label="Terug naar vorige pagina"
           >
             ←
           </button>
@@ -47,9 +50,9 @@ export default function PrivacyTermsPage({ onNavigate }) {
 
       <footer className="footer">
         <nav className="footer-nav" aria-label="Footer navigation">
-          <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('landing'); }}>Start</a>
+          <Link to="/">Start</Link>
           <span style={{ color: '#6b7280' }}>|</span>
-          <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('trust'); }}>Vertrouwen & Compliance</a>
+          <Link to="/trust">Vertrouwen & Compliance</Link>
           <span style={{ color: '#6b7280' }}>|</span>
           <a href="mailto:hello@finnsight.nl">Contact</a>
         </nav>

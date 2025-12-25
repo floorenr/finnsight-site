@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 export default function TrustPage({ onNavigate }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -7,7 +8,7 @@ export default function TrustPage({ onNavigate }) {
     <>
       <header className="header">
         <nav className="nav" aria-label="Main navigation">
-          <a href="#" className="logo" onClick={(e) => { e.preventDefault(); setMobileMenuOpen(false); onNavigate('landing'); }} aria-label="Ga naar startpagina">Finnsight</a>
+          <Link to="/" className="logo" onClick={() => setMobileMenuOpen(false)} aria-label="Ga naar startpagina">Finnsight</Link>
           <button 
             className="mobile-menu-toggle" 
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -17,7 +18,7 @@ export default function TrustPage({ onNavigate }) {
             {mobileMenuOpen ? '×' : '☰'}
           </button>
           <ul className={mobileMenuOpen ? 'nav-open' : ''}>
-            <li><a href="#" onClick={(e) => { e.preventDefault(); setMobileMenuOpen(false); onNavigate('landing'); }}>← Terug naar start</a></li>
+            <li><Link to="/" onClick={() => setMobileMenuOpen(false)}>← Terug naar start</Link></li>
             <li><a href="mailto:hello@finnsight.nl" className="cta-nav">Contact</a></li>
           </ul>
         </nav>
@@ -104,9 +105,9 @@ export default function TrustPage({ onNavigate }) {
 
       <footer className="footer">
         <nav className="footer-nav" aria-label="Footer navigation">
-          <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('landing'); }}>Terug naar start</a>
+          <Link to="/">Terug naar start</Link>
           <span style={{ color: '#6b7280' }}>|</span>
-          <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('privacy-terms'); }}>Privacy en voorwaarden</a>
+          <Link to="/privacy">Privacy en voorwaarden</Link>
           <span style={{ color: '#6b7280' }}>|</span>
           <a href="mailto:hello@finnsight.nl">Contact</a>
         </nav>

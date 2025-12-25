@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 export default function LandingPage({ onNavigate }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -7,7 +8,7 @@ export default function LandingPage({ onNavigate }) {
     <>
       <header className="header">
         <nav className="nav" aria-label="Main navigation">
-          <a href="#" className="logo" onClick={(e) => { e.preventDefault(); setMobileMenuOpen(false); onNavigate('landing'); }} aria-label="Ga naar startpagina">Finnsight</a>
+          <Link to="/" className="logo" onClick={() => setMobileMenuOpen(false)} aria-label="Ga naar startpagina">Finnsight</Link>
           <button
             className="mobile-menu-toggle"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -18,7 +19,7 @@ export default function LandingPage({ onNavigate }) {
           </button>
           <ul className={mobileMenuOpen ? 'nav-open' : ''}>
             <li><a href="#what" onClick={() => setMobileMenuOpen(false)}>Wat is Finnsight</a></li>
-            <li><a href="#" onClick={(e) => { e.preventDefault(); setMobileMenuOpen(false); onNavigate('trust'); }}>Vertrouwen</a></li>
+            <li><Link to="/trust" onClick={() => setMobileMenuOpen(false)}>Vertrouwen</Link></li>
             <li><a href="mailto:hello@finnsight.nl" className="cta-nav">Contact</a></li>
           </ul>
         </nav>
@@ -92,11 +93,11 @@ export default function LandingPage({ onNavigate }) {
 
       <footer className="footer">
         <nav className="footer-nav" aria-label="Footer navigation">
-          <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('trust'); }}>Vertrouwen & Compliance</a>
+          <Link to="/trust">Vertrouwen & Compliance</Link>
           <span style={{ color: '#6b7280' }}>|</span>
           <a href="mailto:hello@finnsight.nl">Contact</a>
           <span style={{ color: '#6b7280' }}>|</span>
-          <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('privacy-terms'); }}>Privacy en voorwaarden</a>
+          <Link to="/privacy">Privacy en voorwaarden</Link>
         </nav>
         <p style={{ marginTop: 'var(--spacing-md)', marginBottom: 0 }}>&copy; 2025 Finnsight</p>
       </footer>
