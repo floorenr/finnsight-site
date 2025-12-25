@@ -18,7 +18,6 @@ export default function LandingPage({ onNavigate }) {
             {mobileMenuOpen ? '×' : '☰'}
           </button>
           <ul className={mobileMenuOpen ? 'nav-open' : ''}>
-            <li><a href="#what" onClick={() => setMobileMenuOpen(false)}>Wat is Finnsight</a></li>
             <li><Link to="/trust" onClick={() => setMobileMenuOpen(false)}>Vertrouwen</Link></li>
             <li><a href="mailto:hello@finnsight.nl" className="cta-nav">Contact</a></li>
           </ul>
