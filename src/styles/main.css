@@ -79,7 +79,7 @@ a:hover {
 .header {
     background: var(--color-bg);
     border-bottom: 1px solid var(--color-border);
-    padding: var(--spacing-sm) 0;
+    padding: 0;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -690,4 +690,18 @@ select {
 .logo:hover {
     color: var(--color-primary);
     text-decoration: none;
+}
+
+/* Logo link styling */
+.logo,
+.logo:hover,
+.logo:visited,
+.logo:active,
+.logo:focus,
+.logo:focus-visible {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+.logo {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
