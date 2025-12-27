@@ -271,6 +271,31 @@ li {
     color: var(--color-error);
 }
 
+/* Problems grid with icons */
+.problems-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
+}
+
+.problem-card {
+    padding: var(--spacing-lg);
+    background: var(--color-bg-alt);
+    border-radius: var(--radius-md);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.problem-icon {
+    height: 56px;
+    width: 56px;
+    opacity: 0.9;
+}
+
 .process {
     list-style: decimal;
 }
