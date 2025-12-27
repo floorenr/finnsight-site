@@ -1,10 +1,15 @@
 import { render, screen } from '@testing-library/react';
+import { HelmetProvider } from 'react-helmet-async';
 import { MemoryRouter } from 'react-router-dom';
 import LandingPage from '../pages/LandingPage';
 
-// Helper to wrap component with Router context
+// Helper to wrap component with Router context and HelmetProvider
 const renderWithRouter = (ui) => {
-  return render(<MemoryRouter>{ui}</MemoryRouter>);
+  return render(
+    <HelmetProvider>
+      <MemoryRouter>{ui}</MemoryRouter>
+    </HelmetProvider>
+  );
 };
 
 describe('LandingPage', () => {
