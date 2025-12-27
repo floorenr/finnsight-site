@@ -1,4 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <rect width="100" height="100" rx="20" fill="#1f2937"/>
-  <text x="50" y="70" font-family="Arial, sans-serif" font-size="60" font-weight="700" fill="#3b82f6" text-anchor="middle">F</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Finnsight favicon">
+  <!-- Ring (brand) -->
+  <circle cx="32" cy="32" r="22" fill="none" stroke="#0F2D5C" stroke-width="4"/>
+
+  <!-- Bars (data accent) — neutral pattern, same as master intent -->
+  <!-- Baseline at y=46 -->
+  <rect x="25" y="34" width="4" height="12" rx="1" fill="#2F6FDB"/>
+  <rect x="31" y="37" width="4" height="9"  rx="1" fill="#2F6FDB"/>
+  <rect x="37" y="35" width="4" height="11" rx="1" fill="#2F6FDB"/>
 </svg>
