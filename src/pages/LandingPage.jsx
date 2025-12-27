@@ -219,7 +219,7 @@ export default function LandingPage({ onNavigate }) {
 
               <div className="mock-footer">
                 <span>Alle teksten verwijzen naar meetbare modeluitkomsten.</span>
-                <span className="mock-footer-accent">Screenshot pilot-build</span>
+                <span className="mock-footer-accent">Voorbeeldweergave uit pilotversie</span>
               </div>
             </article>
           </div>
