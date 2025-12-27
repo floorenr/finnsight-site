@@ -461,6 +461,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .footer-note {
     margin-top: var(--spacing-md);
     margin-bottom: 0;
+    color: #f8fafc;
+    font-weight: 500;
 }
 
 .legal-note-text {
