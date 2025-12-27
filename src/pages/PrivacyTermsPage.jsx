@@ -1,11 +1,26 @@
-import React, { useState } from 'react'
+import React, { useEffect } from 'react'
+import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
 
 export default function PrivacyTermsPage({ onNavigate }) {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  useEffect(() => {
+    const header = document.querySelector('.header')
+    const handleScroll = () => {
+      if (!header) return
+      header.classList.toggle('scrolled', window.scrollY > 0)
+    }
+
+    handleScroll()
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   return (
     <>
+      <Helmet>
+        <title>Privacy en voorwaarden — Finnsight</title>
+        <meta name="description" content="Hoe Finnsight omgaat met privacy, opslag en gebruiksvoorwaarden." />
+      </Helmet>
       <header className="header">
         <nav className="nav" aria-label="Main navigation">
           <Link to="/" className="logo" onClick={() => setMobileMenuOpen(false)} aria-label="Ga naar startpagina">Finnsight</Link>
@@ -51,12 +66,12 @@ export default function PrivacyTermsPage({ onNavigate }) {
       <footer className="footer">
         <nav className="footer-nav" aria-label="Footer navigation">
           <Link to="/">Start</Link>
-          <span style={{ color: '#6b7280' }}>|</span>
+          <span className="divider-muted">|</span>
           <Link to="/trust">Vertrouwen & Compliance</Link>
-          <span style={{ color: '#6b7280' }}>|</span>
+          <span className="divider-muted">|</span>
           <a href="mailto:hello@finnsight.nl">Contact</a>
         </nav>
-        <p style={{ marginTop: 'var(--spacing-md)', marginBottom: 0 }}>&copy; 2025 Finnsight</p>
+        <p className="footer-note">&copy; 2025 Finnsight</p>
       </footer>
     </>
   )
