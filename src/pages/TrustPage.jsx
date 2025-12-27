@@ -1,11 +1,29 @@
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { Helmet } from 'react-helmet-async'
+import { Link, useLocation } from 'react-router-dom'
 
 export default function TrustPage({ onNavigate }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const { pathname } = useLocation()
+
+  useEffect(() => {
+    const header = document.querySelector('.header')
+    const handleScroll = () => {
+      if (!header) return
+      header.classList.toggle('scrolled', window.scrollY > 0)
+    }
+
+    handleScroll()
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   return (
     <>
+      <Helmet>
+        <title>Vertrouwen & Compliance — Finnsight</title>
+        <meta name="description" content="Hoe Finnsight deterministisch rekent, privacy bewaakt en binnen AFM-kaders blijft." />
+      </Helmet>
       <header className="header">
         <nav className="nav" aria-label="Main navigation">
           <Link to="/" className="logo" onClick={() => setMobileMenuOpen(false)} aria-label="Ga naar startpagina">Finnsight</Link>
@@ -17,8 +35,17 @@ export default function TrustPage({ onNavigate }) {
           >
             {mobileMenuOpen ? '×' : '☰'}
           </button>
-          <ul className={mobileMenuOpen ? 'nav-open' : ''}>
-            <li><Link to="/" onClick={() => setMobileMenuOpen(false)}>← Terug naar start</Link></li>
+          <ul className={`nav-list ${mobileMenuOpen ? 'nav-open' : ''}`}>
+            <li>
+              <Link
+                to="/"
+                onClick={() => setMobileMenuOpen(false)}
+                className={`nav-link ${pathname === '/' ? 'active' : ''}`}
+                aria-current={pathname === '/' ? 'page' : undefined}
+              >
+                ← Terug naar start
+              </Link>
+            </li>
             <li><a href="mailto:hello@finnsight.nl" className="cta-nav">Contact</a></li>
           </ul>
         </nav>
@@ -106,12 +133,12 @@ export default function TrustPage({ onNavigate }) {
       <footer className="footer">
         <nav className="footer-nav" aria-label="Footer navigation">
           <Link to="/">Terug naar start</Link>
-          <span style={{ color: '#6b7280' }}>|</span>
+          <span className="divider-muted">|</span>
           <Link to="/privacy">Privacy en voorwaarden</Link>
-          <span style={{ color: '#6b7280' }}>|</span>
+          <span className="divider-muted">|</span>
           <a href="mailto:hello@finnsight.nl">Contact</a>
         </nav>
-        <p style={{ marginTop: 'var(--spacing-md)', marginBottom: 0 }}>&copy; 2025 Finnsight</p>
+        <p className="footer-note">&copy; 2025 Finnsight</p>
       </footer>
     </>
   )

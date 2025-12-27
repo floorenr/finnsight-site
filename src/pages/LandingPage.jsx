@@ -1,11 +1,29 @@
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { Helmet } from 'react-helmet-async'
+import { Link, useLocation } from 'react-router-dom'
 
 export default function LandingPage({ onNavigate }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const { pathname } = useLocation()
+
+  useEffect(() => {
+    const header = document.querySelector('.header')
+    const handleScroll = () => {
+      if (!header) return
+      header.classList.toggle('scrolled', window.scrollY > 0)
+    }
+
+    handleScroll()
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   return (
     <>
+      <Helmet>
+        <title>Finnsight — Rust en inzicht voor medewerkers</title>
+        <meta name="description" content="Finnsight geeft Nederlandse werknemers helder inzicht in hun financiële toekomst — deterministisch, privacy-first." />
+      </Helmet>
       <header className="header">
         <nav className="nav" aria-label="Main navigation">
           <Link to="/" className="logo" onClick={() => setMobileMenuOpen(false)} aria-label="Ga naar startpagina">Finnsight</Link>
@@ -17,9 +35,20 @@ export default function LandingPage({ onNavigate }) {
           >
             {mobileMenuOpen ? '×' : '☰'}
           </button>
-          <ul className={mobileMenuOpen ? 'nav-open' : ''}>
-            <li><Link to="/trust" onClick={() => setMobileMenuOpen(false)}>Vertrouwen</Link></li>
-            <li><a href="mailto:hello@finnsight.nl" className="cta-nav">Contact</a></li>
+          <ul className={`nav-list ${mobileMenuOpen ? 'nav-open' : ''}`}>
+            <li>
+              <Link
+                to="/trust"
+                onClick={() => setMobileMenuOpen(false)}
+                className={`nav-link ${pathname === '/trust' ? 'active' : ''}`}
+                aria-current={pathname === '/trust' ? 'page' : undefined}
+              >
+                Vertrouwen
+              </Link>
+            </li>
+            <li>
+              <a href="mailto:hello@finnsight.nl" className="cta-nav">Contact</a>
+            </li>
           </ul>
         </nav>
       </header>
@@ -30,8 +59,8 @@ export default function LandingPage({ onNavigate }) {
           <h1>Inzicht in jouw financiële toekomst</h1>
           <p className="lead">Finnsight geeft Nederlandse werknemers een helder beeld van hun financiële mogelijkheden — tot en met pensioen.</p>
           <p className="subtext">Geen adviezen. Geen giswerk. Alleen feiten over wat jij kunt doen.</p>
-          <div style={{ marginTop: 'var(--spacing-xl)' }}>
-            <a href="mailto:hello@finnsight.nl" className="btn btn-primary" style={{ fontSize: '1.1rem', padding: 'var(--spacing-md) var(--spacing-xl)' }}>Neem contact op</a>
+          <div className="mt-xl">
+            <a href="mailto:hello@finnsight.nl" className="btn btn-primary btn-large">Neem contact op</a>
           </div>
         </section>
 
@@ -53,11 +82,11 @@ export default function LandingPage({ onNavigate }) {
         {/* Section 2b: HR Value Proposition */}
         <section className="section highlight">
           <h2>HR-waarde, zonder privacy-compromissen</h2>
-          <p className="subtext" style={{ marginBottom: 'var(--spacing-xl)' }}>
+          <p className="subtext mb-xl">
             Bied medewerkers helder financieel inzicht, zonder dat HR individuele of geaggregeerde financiële data hoeft te ontvangen.
           </p>
           
-          <div className="grid-2" style={{ marginBottom: 'var(--spacing-xl)' }}>
+          <div className="grid-2 mb-xl">
             <article>
               <h3>Employee-first ervaring</h3>
               <p>Medewerkers krijgen één geïntegreerd overzicht (pensioen, hypotheek, vermogen) met scenario-impact. HR hoeft geen dossiers te beheren.</p>
@@ -68,29 +97,29 @@ export default function LandingPage({ onNavigate }) {
             </article>
           </div>
           
-          <article style={{ marginBottom: 'var(--spacing-lg)' }}>
+          <article className="mb-lg">
             <h3>Audit-ready uitgangspunt</h3>
             <p>Deterministische rekenkern en transparante aannames. Eventuele uitleg verwijst uitsluitend naar meetbare modeloutput (geen 'advies').</p>
           </article>
 
-          <div style={{ background: 'var(--color-bg)', padding: 'var(--spacing-lg)', borderRadius: 'var(--radius-md)', marginBottom: 'var(--spacing-lg)' }}>
-            <h3 style={{ marginTop: 0 }}>Pilot (4–6 weken)</h3>
-            <ul style={{ marginBottom: 0 }}>
+          <div className="panel mb-lg">
+            <h3 className="mt-0">Pilot (4–6 weken)</h3>
+            <ul className="mb-0">
               <li>Snelle start met een kleine groep medewerkers</li>
               <li>Minimale HR-belasting (alleen communicatie + opt-in)</li>
               <li>Evaluatie op adoptie, begrip en product-fit (kwalitatief, zonder HR-data)</li>
             </ul>
           </div>
 
-          <div style={{ textAlign: 'center' }}>
+          <div className="text-center">
             <a href="mailto:hello@finnsight.nl?subject=Pilotinformatie%20Finnsight" className="btn btn-primary">Vraag pilotinformatie aan</a>
-            <p style={{ marginTop: 'var(--spacing-sm)', marginBottom: 'var(--spacing-xs)' }}>
+            <p className="mt-sm mb-xs">
               Beschikbaar voor 2–3 nieuwe pilots per maand.
             </p>
-            <p style={{ marginTop: 0, marginBottom: 'var(--spacing-sm)' }}>
+            <p className="mb-sm">
               Pilotfase nu open; Q2 2026 bredere uitrol.
             </p>
-            <p style={{ fontSize: '0.875rem', color: 'var(--color-text-muted)', marginTop: 'var(--spacing-sm)', marginBottom: 0 }}>
+            <p className="legal-note-text">
               Finnsight geeft inzicht en scenario-impact; geen financieel advies.
             </p>
           </div>
@@ -99,175 +128,144 @@ export default function LandingPage({ onNavigate }) {
         {/* Section 2c: Product mockups */}
         <section className="section">
           <h2>Hoe het er voor medewerkers uitziet</h2>
-          <p className="subtext" style={{ marginBottom: 'var(--spacing-xl)' }}>
+          <p className="subtext mb-xl">
             Dit zijn dezelfde schermen als in de pilotversie: deterministische berekeningen, maandlijn met scenario-impact, en tekst die uitsluitend naar feiten verwijst.
           </p>
 
-          <div
-            style={{
-              display: 'grid',
-              gap: 'clamp(var(--spacing-md), 4vw, var(--spacing-xl))',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-              maxWidth: '1100px',
-              margin: '0 auto'
-            }}
-          >
-            <article
-              style={{
-                padding: 'clamp(var(--spacing-md), 4vw, var(--spacing-xl))',
-                borderRadius: 'var(--radius-lg)',
-                background: 'linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%)',
-                boxShadow: '0 12px 30px rgba(15, 23, 42, 0.08)'
-              }}
-            >
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 'var(--spacing-sm)' }}>
-                <span style={{ fontWeight: 600 }}>Netto besteedbaar per maand</span>
-                <span style={{ fontSize: '0.85rem', color: '#475569' }}>Scenario A · Basis</span>
+          <div className="mock-grid">
+            <article className="mock-card mock-card-light">
+              <div className="mock-card-header">
+                <span className="mock-card-title">Netto besteedbaar per maand</span>
+                <span className="mock-card-subtitle">Scenario A · Basis</span>
               </div>
-              <p style={{ marginTop: 0, marginBottom: 'var(--spacing-md)', color: '#0f172a' }}>
+              <p className="mock-card-text">
                 Inclusief woonlasten, belasting, pensioenpremies en vaste lasten. Geen advies, alleen inzicht.
               </p>
 
-              <div style={{ background: '#0f172a', color: '#e2e8f0', borderRadius: 'var(--radius-md)', padding: 'var(--spacing-md)' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 'var(--spacing-sm)', fontSize: '0.95rem' }}>
+              <div className="mock-panel mock-panel-dark">
+                <div className="mock-panel-row">
                   <span>2025 · Na vaste lasten</span>
                   <strong>€3.120</strong>
                 </div>
-                <div style={{ height: '8px', background: '#1f2937', borderRadius: '999px', overflow: 'hidden', marginBottom: 'var(--spacing-sm)' }}>
-                  <div style={{ width: '82%', height: '100%', background: '#22d3ee' }} />
+                <div className="progress-track">
+                  <div className="progress-fill progress-cyan" style={{ width: '82%' }} />
                 </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 'var(--spacing-sm)', fontSize: '0.95rem' }}>
+                <div className="mock-panel-row">
                   <span>2030 · Na vaste lasten</span>
                   <strong>€3.480</strong>
                 </div>
-                <div style={{ height: '8px', background: '#1f2937', borderRadius: '999px', overflow: 'hidden', marginBottom: 'var(--spacing-md)' }}>
-                  <div style={{ width: '91%', height: '100%', background: '#38bdf8' }} />
+                <div className="progress-track">
+                  <div className="progress-fill progress-sky" style={{ width: '91%' }} />
                 </div>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 'var(--spacing-sm)', fontSize: '0.8rem', color: '#cbd5e1' }}>
-                  <div style={{ textAlign: 'center' }}>
-                    <div style={{ height: '28px', background: 'linear-gradient(180deg, #38bdf8, #0ea5e9)', borderRadius: '10px 10px 4px 4px', marginBottom: '4px' }} />
+                <div className="bar-grid">
+                  <div className="bar-col">
+                    <div className="bar bar-short" />
                     <span>2025</span>
                   </div>
-                  <div style={{ textAlign: 'center' }}>
-                    <div style={{ height: '36px', background: 'linear-gradient(180deg, #38bdf8, #0ea5e9)', borderRadius: '10px 10px 4px 4px', marginBottom: '4px' }} />
+                  <div className="bar-col">
+                    <div className="bar bar-mid" />
                     <span>2026</span>
                   </div>
-                  <div style={{ textAlign: 'center' }}>
-                    <div style={{ height: '42px', background: 'linear-gradient(180deg, #38bdf8, #0ea5e9)', borderRadius: '10px 10px 4px 4px', marginBottom: '4px' }} />
+                  <div className="bar-col">
+                    <div className="bar bar-tall" />
                     <span>2027</span>
                   </div>
-                  <div style={{ textAlign: 'center' }}>
-                    <div style={{ height: '48px', background: 'linear-gradient(180deg, #38bdf8, #0ea5e9)', borderRadius: '10px 10px 4px 4px', marginBottom: '4px' }} />
+                  <div className="bar-col">
+                    <div className="bar bar-x-tall" />
                     <span>2028</span>
                   </div>
                 </div>
               </div>
             </article>
 
-            <article
-              style={{
-                padding: 'clamp(var(--spacing-md), 4vw, var(--spacing-xl))',
-                borderRadius: 'var(--radius-lg)',
-                background: 'linear-gradient(135deg, #0f172a 0%, #111827 100%)',
-                color: '#e2e8f0',
-                boxShadow: '0 12px 30px rgba(15, 23, 42, 0.12)'
-              }}
-            >
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 'var(--spacing-sm)' }}>
-                <span style={{ fontWeight: 600 }}>Netto vermogen over tijd</span>
-                <span style={{ fontSize: '0.85rem', color: '#cbd5e1' }}>Scenario B · +2% sparen</span>
+            <article className="mock-card mock-card-dark">
+              <div className="mock-card-header">
+                <span className="mock-card-title">Netto vermogen over tijd</span>
+                <span className="mock-card-subtitle">Scenario B · +2% sparen</span>
               </div>
-              <p style={{ marginTop: 0, marginBottom: 'var(--spacing-md)', color: '#cbd5e1' }}>
+              <p className="mock-card-text mock-card-text-muted">
                 Spaar- en belegcomponent uitgesplitst. Alle bedragen in euro, maandstart als tijdas.
               </p>
 
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 'var(--spacing-sm)', alignItems: 'end', marginBottom: 'var(--spacing-md)' }}>
-                <div style={{ textAlign: 'center' }}>
-                  <div style={{ height: '34px', background: '#22d3ee', borderRadius: '8px 8px 4px 4px', marginBottom: '6px' }} />
-                  <div style={{ height: '22px', background: '#6366f1', borderRadius: '8px 8px 4px 4px', marginBottom: '8px' }} />
-                  <span style={{ fontSize: '0.85rem', color: '#cbd5e1' }}>2025</span>
+              <div className="stacked-grid">
+                <div className="stacked-col">
+                  <div className="stacked bar-top" />
+                  <div className="stacked bar-bottom" />
+                  <span>2025</span>
                 </div>
-                <div style={{ textAlign: 'center' }}>
-                  <div style={{ height: '48px', background: '#22d3ee', borderRadius: '8px 8px 4px 4px', marginBottom: '6px' }} />
-                  <div style={{ height: '32px', background: '#6366f1', borderRadius: '8px 8px 4px 4px', marginBottom: '8px' }} />
-                  <span style={{ fontSize: '0.85rem', color: '#cbd5e1' }}>2027</span>
+                <div className="stacked-col">
+                  <div className="stacked bar-top tall" />
+                  <div className="stacked bar-bottom mid" />
+                  <span>2027</span>
                 </div>
-                <div style={{ textAlign: 'center' }}>
-                  <div style={{ height: '60px', background: '#22d3ee', borderRadius: '8px 8px 4px 4px', marginBottom: '6px' }} />
-                  <div style={{ height: '42px', background: '#6366f1', borderRadius: '8px 8px 4px 4px', marginBottom: '8px' }} />
-                  <span style={{ fontSize: '0.85rem', color: '#cbd5e1' }}>2030</span>
+                <div className="stacked-col">
+                  <div className="stacked bar-top taller" />
+                  <div className="stacked bar-bottom tall" />
+                  <span>2030</span>
                 </div>
               </div>
 
-              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.95rem', marginBottom: 'var(--spacing-sm)' }}>
+              <div className="mock-panel-row">
                 <span>Sparen + beleggen (2030)</span>
                 <strong>€78.400</strong>
               </div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.95rem' }}>
+              <div className="mock-panel-row">
                 <span>Hypotheekrestant (2030)</span>
                 <strong>€212.000</strong>
               </div>
             </article>
 
-            <article
-              style={{
-                padding: 'clamp(var(--spacing-md), 4vw, var(--spacing-xl))',
-                borderRadius: 'var(--radius-lg)',
-                background: '#ffffff',
-                boxShadow: '0 12px 30px rgba(15, 23, 42, 0.08)',
-                border: '1px solid #e2e8f0'
-              }}
-            >
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 'var(--spacing-sm)' }}>
-                <span style={{ fontWeight: 600, color: '#0f172a' }}>Scenariovergelijking</span>
-                <span style={{ display: 'inline-flex', gap: '8px', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'flex-end', rowGap: '4px', fontSize: '0.9rem' }}>
-                  <span style={{ width: '10px', height: '10px', borderRadius: '999px', background: '#0ea5e9', display: 'inline-block' }} />
-                  <small style={{ color: '#475569' }}>Basis</small>
-                  <span style={{ width: '10px', height: '10px', borderRadius: '999px', background: '#6366f1', display: 'inline-block' }} />
-                  <small style={{ color: '#475569' }}>Hypotheek versnellen</small>
+            <article className="mock-card mock-card-plain">
+              <div className="mock-card-header">
+                <span className="mock-card-title">Scenariovergelijking</span>
+                <span className="legend">
+                  <span className="legend-dot legend-cyan" />
+                  <small>Basis</small>
+                  <span className="legend-dot legend-indigo" />
+                  <small>Hypotheek versnellen</small>
                 </span>
               </div>
-              <p style={{ marginTop: 0, marginBottom: 'var(--spacing-md)', color: '#334155' }}>
+              <p className="mock-card-text">
                 Direct zichtbaar: wat er verandert als je extra aflost of 2% extra spaart. Toonbaar per maandstart.
               </p>
 
-              <div style={{ display: 'grid', gap: 'var(--spacing-sm)', marginBottom: 'var(--spacing-md)' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <span style={{ color: '#334155' }}>Netto besteedbaar</span>
-                  <span style={{ color: '#0f172a', fontWeight: 600 }}>€+140</span>
+              <div className="mock-metrics">
+                <div className="mock-metric-row">
+                  <span>Netto besteedbaar</span>
+                  <span className="metric-strong">€+140</span>
                 </div>
-                <div style={{ height: '8px', background: '#e2e8f0', borderRadius: '999px', overflow: 'hidden' }}>
-                  <div style={{ width: '74%', height: '100%', background: '#0ea5e9' }} />
-                  <div style={{ width: '88%', height: '100%', background: '#6366f1', marginTop: '-8px' }} />
-                </div>
-
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 'var(--spacing-sm)' }}>
-                  <span style={{ color: '#334155' }}>Resthypotheek 2030</span>
-                  <span style={{ color: '#0f172a', fontWeight: 600 }}>€-14.200</span>
-                </div>
-                <div style={{ height: '8px', background: '#e2e8f0', borderRadius: '999px', overflow: 'hidden' }}>
-                  <div style={{ width: '72%', height: '100%', background: '#0ea5e9' }} />
-                  <div style={{ width: '58%', height: '100%', background: '#6366f1', marginTop: '-8px' }} />
+                <div className="progress-track light">
+                  <div className="progress-fill progress-cyan" style={{ width: '74%' }} />
+                  <div className="progress-fill progress-indigo overlay" style={{ width: '88%' }} />
                 </div>
 
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 'var(--spacing-sm)' }}>
-                  <span style={{ color: '#334155' }}>Pensioen + AOW (projectie)</span>
-                  <span style={{ color: '#0f172a', fontWeight: 600 }}>€3.250 p/m</span>
+                <div className="mock-metric-row mt-sm">
+                  <span>Resthypotheek 2030</span>
+                  <span className="metric-strong">€-14.200</span>
                 </div>
-                <div style={{ height: '8px', background: '#e2e8f0', borderRadius: '999px', overflow: 'hidden' }}>
-                  <div style={{ width: '81%', height: '100%', background: '#0ea5e9' }} />
-                  <div style={{ width: '81%', height: '100%', background: '#6366f1', marginTop: '-8px' }} />
+                <div className="progress-track light">
+                  <div className="progress-fill progress-cyan" style={{ width: '72%' }} />
+                  <div className="progress-fill progress-indigo overlay" style={{ width: '58%' }} />
+                </div>
+
+                <div className="mock-metric-row mt-sm">
+                  <span>Pensioen + AOW (projectie)</span>
+                  <span className="metric-strong">€3.250 p/m</span>
+                </div>
+                <div className="progress-track light">
+                  <div className="progress-fill progress-cyan" style={{ width: '81%' }} />
+                  <div className="progress-fill progress-indigo overlay" style={{ width: '81%' }} />
                 </div>
               </div>
 
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: '#f8fafc', borderRadius: 'var(--radius-md)', padding: 'var(--spacing-sm) var(--spacing-md)', border: '1px solid #e2e8f0' }}>
-                <span style={{ color: '#475569', fontSize: '0.95rem' }}>Alle teksten verwijzen naar meetbare modeluitkomsten.</span>
-                <span style={{ color: '#0ea5e9', fontWeight: 600 }}>Screenshot pilot-build</span>
+              <div className="mock-footer">
+                <span>Alle teksten verwijzen naar meetbare modeluitkomsten.</span>
+                <span className="mock-footer-accent">Screenshot pilot-build</span>
               </div>
             </article>
           </div>
 
-          <p style={{ marginTop: 'var(--spacing-lg)', color: '#475569', maxWidth: '960px', marginLeft: 'auto', marginRight: 'auto' }}>
+          <p className="mock-caption">
             Mockups tonen de daadwerkelijke pilot-build (release Q1 2026). Data zijn illustratief, berekeningen deterministisch en consistent met de rekenkern in productie.
           </p>
         </section>
@@ -315,12 +313,12 @@ export default function LandingPage({ onNavigate }) {
       <footer className="footer">
         <nav className="footer-nav" aria-label="Footer navigation">
           <Link to="/trust">Vertrouwen & Compliance</Link>
-          <span style={{ color: '#6b7280' }}>|</span>
+          <span className="divider-muted">|</span>
           <a href="mailto:hello@finnsight.nl">Contact</a>
-          <span style={{ color: '#6b7280' }}>|</span>
+          <span className="divider-muted">|</span>
           <Link to="/privacy">Privacy en voorwaarden</Link>
         </nav>
-        <p style={{ marginTop: 'var(--spacing-md)', marginBottom: 0 }}>&copy; 2025 Finnsight</p>
+        <p className="footer-note">&copy; 2025 Finnsight</p>
       </footer>
     </>
   )
