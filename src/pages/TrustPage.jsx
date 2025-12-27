@@ -43,7 +43,7 @@ export default function TrustPage({ onNavigate }) {
         <section>
           <h2>3. Geen persoonlijk advies</h2>
           <p>
-            Finnsight geeft <strong>geen financieel advies</strong>. Finnsight helpt je begrijpen wat cijfers betekenen in verschillende scenario’s, zonder te zeggen wat je ‘moet’ doen.
+            Finnsight helpt je begrijpen wat cijfers betekenen in verschillende scenario’s, zonder te zeggen wat je ‘moet’ doen.
           </p>
           <ul>
             <li>Wat je ongeveer beschikbaar hebt in verschillende scenario’s</li>
@@ -71,7 +71,7 @@ export default function TrustPage({ onNavigate }) {
             Finnsight werkt binnen de grenzen van de AFM (Autoriteit Financiële Markten):
           </p>
           <ul>
-            <li><strong>Geen advies:</strong> We vertellen wat feiten betekenen, niet wat je moet doen</li>
+            <li>We vertellen wat feiten betekenen, <strong>niet wat je moet doen</strong></li>
             <li><strong>Geen rendementsverwachtingen:</strong> We gissen niet over je beleggingen</li>
             <li><strong>Transparante aannames:</strong> Je ziet altijd welke regels we gebruiken</li>
           </ul>

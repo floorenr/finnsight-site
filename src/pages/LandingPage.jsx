@@ -16,8 +16,8 @@ export default function LandingPage({ onNavigate }) {
         {/* Section 1: What is Finnsight */}
         <section id="what" className="section hero scroll-target">
           <h1>Inzicht in jouw financiële toekomst</h1>
-          <p className="lead">Finnsight geeft Nederlandse medewerkers een helder overzicht van hun besteedbaar inkomen, woonlasten en pensioen — in scenario’s tot en met pensioen.</p>
-          <p className="subtext">Geen financieel advies. Wel transparante berekeningen en scenario’s, zodat je zelf kunt afwegen.</p>
+          <p className="lead">Finnsight geeft Nederlandse medewerkers een helder overzicht van hun besteedbaar inkomen, woonlasten en pensioen.</p>
+          <p className="subtext">Transparante berekeningen en scenario’s, jij beslist.</p>
           <div className="mt-xl">
             <a href="mailto:hello@finnsight.nl" className="btn btn-primary btn-large">Ik ben medewerker — stel een vraag</a>
           </div>
@@ -29,11 +29,11 @@ export default function LandingPage({ onNavigate }) {
           <div className="grid-2">
             <article>
               <h3>Voor medewerkers</h3>
-              <p>Wil je weten wat je later ongeveer overhoudt? Finnsight laat zien hoe inkomen, woonlasten, belasting en pensioen samenhangen — en wat er verandert als aannames veranderen.</p>
+              <p>Wil je weten wat je later overhoudt? Finnsight laat zien hoe inkomen, woonlasten, belasting en pensioen samenhangen — en wat er verandert als aannames veranderen.</p>
             </article>
             <article>
               <h3>Voor werkgevers</h3>
-              <p>Financiële onzekerheid speelt vaak mee op de achtergrond. Finnsight kan medewerkers praktisch helpen met overzicht en scenario’s — en kan zo bijdragen aan rust en focus.</p>
+              <p>Financiële onzekerheid speelt vaak een grote rol. Finnsight kan medewerkers praktisch helpen met overzicht en scenario’s — en kan zo bijdragen aan rust en focus.</p>
             </article>
           </div>
         </section>
@@ -44,7 +44,7 @@ export default function LandingPage({ onNavigate }) {
           <p className="subtext mb-xl">
             Geef medewerkers één helder overzicht van inkomen, woonlasten en pensioen in scenario’s. Werkgevers ontvangen nooit financiële data—niet individueel en niet als financiële aggregaten. Hooguit zien zij operationele voortgang (bijv. aantallen deelnemers/voltooiingen), zonder financiële inhoud.
           </p>
-          
+
           <div className="grid-2 mb-xl">
             <article>
               <h3>Employee-first ervaring</h3>
@@ -52,13 +52,13 @@ export default function LandingPage({ onNavigate }) {
             </article>
             <article>
               <h3>Privacy by design</h3>
-              <p>Werkgevers ontvangen nooit financiële data—niet individueel en niet als financiële aggregaten. Hooguit zien zij operationele voortgang (bijv. aantallen deelnemers/voltooiingen), zonder financiële inhoud.</p>
+              <p>Werkgevers ontvangen nooit financiële data. Punt. Hooguit zien zij operationele voortgang (bijv. aantallen deelnemers/voltooiingen), zonder financiële inhoud.</p>
             </article>
           </div>
-          
+
           <article className="mb-lg">
             <h3>Audit-ready uitgangspunt</h3>
-            <p>Transparante aannames en een deterministische rekenkern: dezelfde input geeft dezelfde uitkomst. Eventuele uitleg verwijst uitsluitend naar meetbare modeloutput (geen 'advies').</p>
+            <p>Transparante aannames en een deterministische rekenkern: dezelfde input geeft dezelfde uitkomst. Uitleg verwijst uitsluitend naar deze meetbare uitkomst.</p>
           </article>
 
           <div className="panel mb-lg">
@@ -185,7 +185,7 @@ export default function LandingPage({ onNavigate }) {
                 </span>
               </div>
               <p className="mock-card-text">
-                  Je ziet direct wat er verandert als je aannames wijzigt (bijv. aflossing of sparen). Inzicht per maand — zonder advies.
+                  Je ziet direct wat er verandert als je aannames wijzigt (bijv. aflossing of sparen). Inzicht per maand.
               </p>
 
               <div className="mock-metrics">
@@ -219,13 +219,12 @@ export default function LandingPage({ onNavigate }) {
 
               <div className="mock-footer">
                 <span>Alle teksten verwijzen naar meetbare modeluitkomsten.</span>
-                <span className="mock-footer-accent">Voorbeeldweergave uit pilotversie</span>
               </div>
             </article>
           </div>
 
           <p className="mock-caption">
-            Mockups tonen de daadwerkelijke pilot-build. Data zijn illustratief, berekeningen deterministisch en consistent met de deterministische rekenkern. Uitkomsten zijn projecties op basis van aannames en jouw input; ze zijn informatief, geen voorspelling.
+            Data zijn illustratief, berekeningen deterministisch en consistent met de rekenkern. Uitkomsten zijn projecties op basis van aannames en jouw input.
           </p>
         </section>
 
@@ -233,9 +232,9 @@ export default function LandingPage({ onNavigate }) {
         <section className="section">
           <h2>De problemen die we oplossen</h2>
           <ul className="problems">
-            <li><strong>Financiële onzekerheid:</strong> Veel medewerkers weten niet hoe hun inkomen, hypotheek, en pensioen samen optellen tot een werkelijk beeld.</li>
-            <li><strong>Vertrouwen in adviezen:</strong> Online calculators zijn vaak vag of geven tegenstrijdig advies. We geven geen adviezen — alleen feiten.</li>
-            <li><strong>Privacy:</strong> Medewerkers willen niet dat hun werkgever weet hoe ze hun geld besteden. Dat zal ook nooit gebeuren.</li>
+            <li><strong>Financiële onzekerheid:</strong> Veel medewerkers weten niet hoe hun inkomen, hypotheek, en pensioen samen optellen tot een werkelijk beeld naar de toekomst.</li>
+            <li><strong>Onduidelijke adviezen:</strong> Online calculators zijn vaak vaag of geven tegenstrijdig advies. Wij geven alleen feiten.</li>
+            <li><strong>Privacy:</strong> Medewerkers zitten niet te wachten op een werkgever die in hun portemonnee kijkt. Dat zal ook nooit gebeuren.</li>
           </ul>
         </section>
 
@@ -250,18 +249,7 @@ export default function LandingPage({ onNavigate }) {
           <p>Bijvoorbeeld: wat er gebeurt met je besteedbaar inkomen als rente, woonlasten of pensioenleeftijd verandert.</p>
         </section>
 
-        {/* Section 5: What Finnsight does NOT do */}
-        <section className="section highlight">
-          <h2>Wat Finnsight NIET doet</h2>
-          <ul className="dont-list">
-            <li>Biedt financieel advies (AFM-gerelateerd)</li>
-            <li>Gebruikt AI om conclusies te genereren</li>
-            <li>Geeft je werkgever inzicht in jouw financiën</li>
-            <li>Garandeert dat prognoses zullen uitkomen (ze zijn illustratief)</li>
-          </ul>
-        </section>
-
-        {/* Section 6: CTA */}
+        {/* Section 5: CTA */}
         <section className="section cta-section">
           <h2>Interesse?</h2>
           <p>We draaien pilots met een select aantal werkgevers om Finnsight verder aan te scherpen in de praktijk.</p>
