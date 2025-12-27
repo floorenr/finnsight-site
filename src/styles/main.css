@@ -140,12 +140,12 @@ a:hover {
 /* Main Content */
 main {
     max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+}
 
 .text-center {
     text-align: center;
-}
-    margin: 0 auto;
-    padding: 0 var(--spacing-lg);
 }
 
 .content {
@@ -186,6 +186,11 @@ main {
 
 .subtext {
     font-size: 1rem;
+    color: var(--color-text);
+}
+
+.hero .subtext,
+.cta-section .subtext {
     color: rgba(255, 255, 255, 0.9);
 }
 
@@ -525,7 +530,7 @@ input:focus, textarea:focus {
 /* Skip Link (Accessibility) */
 .skip-link {
     position: absolute;
-    top: -40px;
+    top: 0;
     left: 0;
     background: var(--color-secondary);
     color: white;
@@ -533,10 +538,16 @@ input:focus, textarea:focus {
     text-decoration: none;
     border-radius: 0 0 var(--radius-md) 0;
     z-index: 1000;
+    transform: translateY(-150%);
+    opacity: 0;
+    pointer-events: none;
 }
 
-.skip-link:focus {
-    top: 0;
+.skip-link:focus,
+.skip-link:focus-visible {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
 }
 
 /* Focus Visible (Accessibility) */
@@ -967,39 +978,14 @@ select {
 
 /* Logo link styling */
 .logo,
-.logo:hover {
-    color: var(--color-primary);
-    text-decoration: none;
-}
-
-/* Logo link styling */
-.logo,
 .logo:hover,
 .logo:visited,
-.logo:active,
-.logo:focus,
-.logo:focus-visible {
+.logo:active {
   color: var(--color-primary);
   text-decoration: none;
 }
 .logo {
   -webkit-tap-highlight-color: rgba(0,0,0,0);
-}
-
-/* Skip link visibility: hidden by default, visible on focus */
-.skip-link {
-    top: 0;
-    left: 0;
-    transform: translateY(-150%);
-    opacity: 0;
-    pointer-events: none;
-}
-
-.skip-link:focus,
-.skip-link:focus-visible {
-    transform: translateY(0);
-    opacity: 1;
-    pointer-events: auto;
 }
 
 /* Visible focus for logo */

@@ -58,7 +58,7 @@ export default function LandingPage({ onNavigate }) {
         <section id="what" className="section hero scroll-target">
           <h1>Inzicht in jouw financiële toekomst</h1>
           <p className="lead">Finnsight geeft Nederlandse werknemers een helder beeld van hun financiële mogelijkheden — tot en met pensioen.</p>
-          <p className="subtext">Geen adviezen. Geen giswerk. Alleen feiten over wat jij kunt doen.</p>
+          <p className="subtext">Geen adviezen. Geen giswerk. We tonen scenario-impact en de gevolgen van aannames; jij besluit.</p>
           <div className="mt-xl">
             <a href="mailto:hello@finnsight.nl" className="btn btn-primary btn-large">Neem contact op</a>
           </div>
@@ -83,7 +83,7 @@ export default function LandingPage({ onNavigate }) {
         <section className="section highlight">
           <h2>HR-waarde, zonder privacy-compromissen</h2>
           <p className="subtext mb-xl">
-            Bied medewerkers helder financieel inzicht, zonder dat HR individuele of geaggregeerde financiële data hoeft te ontvangen.
+            Bied medewerkers helder financieel inzicht. Werkgevers ontvangen nooit financiële data (individueel of geaggregeerd).
           </p>
           
           <div className="grid-2 mb-xl">
@@ -93,7 +93,7 @@ export default function LandingPage({ onNavigate }) {
             </article>
             <article>
               <h3>Privacy by design</h3>
-              <p>Werkgevers krijgen geen toegang tot individuele financiële gegevens. Finnsight is ontworpen om medewerkers inzicht te geven zonder dat data in HR-processen belandt.</p>
+              <p>Werkgevers ontvangen nooit financiële data (individueel of geaggregeerd). Hooguit operationele voortgang (bijvoorbeeld aantal deelnemers dat intake heeft voltooid) — geen financiële inhoud.</p>
             </article>
           </div>
           
@@ -266,7 +266,7 @@ export default function LandingPage({ onNavigate }) {
           </div>
 
           <p className="mock-caption">
-            Mockups tonen de daadwerkelijke pilot-build (release Q1 2026). Data zijn illustratief, berekeningen deterministisch en consistent met de rekenkern in productie.
+            Mockups tonen de daadwerkelijke pilot-build (release Q1 2026). Data zijn illustratief, berekeningen deterministisch en consistent met de deterministische rekenkern.
           </p>
         </section>
 

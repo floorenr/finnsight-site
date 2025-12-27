@@ -1,8 +1,11 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet-async'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 export default function PrivacyTermsPage({ onNavigate }) {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const { pathname } = useLocation()
+
   useEffect(() => {
     const header = document.querySelector('.header')
     const handleScroll = () => {
@@ -26,11 +29,37 @@ export default function PrivacyTermsPage({ onNavigate }) {
           <Link to="/" className="logo" onClick={() => setMobileMenuOpen(false)} aria-label="Ga naar startpagina">Finnsight</Link>
           <button
             className="mobile-menu-toggle"
-            onClick={() => window.history.back()}
-            aria-label="Terug naar vorige pagina"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-expanded={mobileMenuOpen}
+            aria-label="Menu"
           >
-            ←
+            {mobileMenuOpen ? '×' : '☰'}
           </button>
+          <ul className={`nav-list ${mobileMenuOpen ? 'nav-open' : ''}`}>
+            <li>
+              <Link
+                to="/"
+                onClick={() => setMobileMenuOpen(false)}
+                className={`nav-link ${pathname === '/' ? 'active' : ''}`}
+                aria-current={pathname === '/' ? 'page' : undefined}
+              >
+                Start
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/trust"
+                onClick={() => setMobileMenuOpen(false)}
+                className={`nav-link ${pathname === '/trust' ? 'active' : ''}`}
+                aria-current={pathname === '/trust' ? 'page' : undefined}
+              >
+                Vertrouwen
+              </Link>
+            </li>
+            <li>
+              <a href="mailto:hello@finnsight.nl" className="cta-nav">Contact</a>
+            </li>
+          </ul>
         </nav>
       </header>
 
