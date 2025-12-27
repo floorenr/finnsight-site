@@ -71,9 +71,9 @@ npm run preview
 - This site contains no interactive demos. It presents the proposition, trust/compliance, and a contact CTA.
 
 ## Privacy
-- Your data is never sent to servers
-- No cookies, no tracking
-- Employer-neutral (your employer never sees your data)
+- We do not store intake submissions via the website. If you email us, we retain that email to respond.
+- No tracking cookies and no third-party analytics.
+- Employers receive no financial data—neither individual nor aggregates. At most they may see operational progress (e.g., counts of participants/completions), without financial content.
 
 ## Accessibility
 The site supports:

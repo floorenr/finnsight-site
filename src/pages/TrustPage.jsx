@@ -27,15 +27,16 @@ export default function TrustPage({ onNavigate }) {
             <li>Elk getal kan je terugvoeren naar jouw feiten en de regels</li>
             <li>AI wordt <strong>nooit</strong> gebruikt in berekeningen zelf</li>
           </ul>
+          <p>Kort gezegd: dezelfde gegevens geven altijd dezelfde uitkomst—je kunt het narekenen.</p>
         </section>
 
         <section>
           <h2>2. Geen AI in jouw financiële berekeningen</h2>
           <p>
-            Alle kern-output (je beschikbare inkomens, hypotheek-aflosstrategie, pensioen, belasting) komt uit <strong>deterministische code</strong>, niet uit taalmodellen of machine learning.
+            Alle kern-output (je beschikbare inkomens, hypotheeklasten en aflossing (scenario’s), pensioen, belasting) komt uit <strong>deterministische code</strong>, niet uit taalmodellen of machine learning.
           </p>
           <p>
-            <strong>Wat we wel kunnen doen (later):</strong> AI gebruiken om je output uit te leggen in jouw taal — maar altijd <em>over</em> feiten, nooit <em>in plaats van</em> feiten.
+            <strong>Wat we wel kunnen doen (later):</strong> AI gebruiken om je output uit te leggen in jouw taal — maar altijd <em>over</em> feiten, nooit <em>in plaats van</em> feiten. Als AI-uitleg wordt toegevoegd, vat die uitsluitend bestaande rekenuitkomsten samen; er worden geen nieuwe bedragen gegenereerd.
           </p>
         </section>
 
@@ -55,11 +56,11 @@ export default function TrustPage({ onNavigate }) {
         <section>
           <h2>4. Privacy by Design</h2>
           <p>
-            <strong>Werkgevers ontvangen nooit financiële data (individueel of geaggregeerd).</strong> Finnsight werkt volledig employee-first.
+            <strong>Werkgevers ontvangen nooit financiële data—niet individueel en niet als financiële aggregaten. Hooguit zien zij operationele voortgang (bijv. aantallen deelnemers/voltooiingen), zonder financiële inhoud.</strong> Finnsight werkt volledig employee-first.
           </p>
           <ul>
             <li>Jij bent eigenaar van je gegevens</li>
-            <li>Hooguit operationele voortgang (bijvoorbeeld: aantal deelnemers dat intake heeft voltooid) — geen financiële inhoud</li>
+            <li>Hooguit zien zij operationele voortgang (bijv. aantallen deelnemers/voltooiingen), zonder financiële inhoud</li>
             <li>Geen individuele data, geen gedrag, geen financieel beeld, geen aggregaten</li>
           </ul>
         </section>
@@ -82,7 +83,7 @@ export default function TrustPage({ onNavigate }) {
         <section className="highlight">
           <h2>6. Samen vertrouwen opbouwen</h2>
           <p>
-            Finnsight bestaat omdat werknemers meer rust nodig hebben. Dat verdienen ze.
+            Finnsight bestaat omdat medewerkers meer rust nodig hebben. Dat verdienen ze.
           </p>
           <p>
             We bouwen dit samen met werkgevers die hetzelfde geloven.

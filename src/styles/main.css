@@ -603,10 +603,16 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     gap: var(--spacing-sm);
     font-size: 0.8rem;
     color: #cbd5e1;
+    align-items: end; /* bottom-align bars for consistent baseline */
 }
 
 .bar-col {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    height: 72px; /* fixed height to normalize bar baseline */
 }
 
 .bar {
