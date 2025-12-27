@@ -16,23 +16,53 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'npm'
-      
+          node-version: "20"
+          cache: "npm"
+
       - name: Install dependencies
         run: npm ci
-      
-      - name: Run tests (CI-specific or default)
-        run: |
-          npm run test:ci --if-present || npm run test --if-present || echo "No tests found, skipping"
-      
-      - name: Build
+
+      # Preserve CI behavior (no tests => pipeline still passes)
+      # while also preserving CI/CD behavior (coverage is produced when tests exist).
+      - name: Run tests (with coverage)
+        run: npm test -- --coverage --watchAll=false --passWithNoTests
+
+      # Preserve CI/CD behavior: upload coverage (best-effort; never blocks)
+      - name: Upload coverage reports (Codecov)
+        uses: codecov/codecov-action@v4
+        if: always()
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: ./coverage/coverage-final.json
+          fail_ci_if_error: false
+
+      # Preserve both workflows: build is required
+      - name: Build production
         run: npm run build
+
+      # Preserve CI/CD behavior: verify dist exists
+      - name: Verify dist folder
+        run: |
+          if [ -d dist ]; then
+            echo "✓ Build successful - dist/ folder created"
+            ls -lah dist/
+          else
+            echo "✗ Build failed - dist/ folder not found"
+            exit 1
+          fi
+
+      # Preserve CI/CD behavior: upload dist as artifact
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/
+          retention-days: 7
