@@ -313,7 +313,7 @@ export default function LandingPage({ onNavigate }) {
       </main>
 
       <footer className="footer">
-        <img src="/brand/mark-master.svg" alt="Finnsight" className="footer-mark" />
+        <img src="/brand/mark-on-dark.svg" alt="Finnsight" className="footer-mark" />
         <nav className="footer-nav" aria-label="Footer navigation">
           <Link to="/trust">Vertrouwen & Compliance</Link>
           <span className="divider-muted">|</span>
