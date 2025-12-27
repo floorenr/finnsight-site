@@ -54,6 +54,14 @@ npm run build       # Creates dist/
 
 # Preview build
 npm run preview
+
+## Workflow (CI/CD)
+
+- Branches: `main` is production and protected.
+- CI: GitHub Actions workflow `CI / build` runs on PRs and main; steps are `npm ci`, tests (`test:ci` then `test` if present), then `npm run build`; concurrency cancels redundant runs per ref.
+- PR flow: create a branch → push → open PR to `main` → CI must pass → Vercel posts a Preview URL → run smoke checks → merge → production deploy.
+- Vercel: PRs deploy to Preview (Preview env vars); merges to `main` deploy to Production (Production env vars). Keep secrets separated.
+- Rollback: prefer revert via PR; emergency = Vercel "Promote previous deployment" then follow with a revert PR to fix `main`.
 ```
 
 ## Important Notes
