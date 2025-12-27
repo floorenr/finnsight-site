@@ -726,6 +726,38 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     scroll-margin-top: 100px;
 }
 
+/* How it works illustration */
+.how-figure-large {
+    margin-bottom: var(--spacing-2xl);
+    text-align: center;
+}
+
+.how-illustration-large {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 900px;
+    margin: 0 auto var(--spacing-md);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 8px 24px rgba(15, 45, 92, 0.1);
+}
+
+.how-caption {
+    text-align: center;
+    color: var(--color-text-light);
+    font-size: 0.9rem;
+    margin-top: var(--spacing-sm);
+}
+
+@media (max-width: 768px) {
+    .how-figure-large {
+        margin-bottom: var(--spacing-xl);
+    }
+    .how-illustration-large {
+        border-radius: var(--radius-md);
+    }
+}
+
 /* Input Font Size (Prevent iOS Zoom) */
 input[type="text"],
 input[type="email"],
