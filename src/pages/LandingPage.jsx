@@ -241,6 +241,15 @@ export default function LandingPage({ onNavigate }) {
         {/* Section 4: How it works */}
         <section className="section">
           <h2>Hoe werkt Finnsight?</h2>
+          <figure className="how-figure-large">
+            <img
+              src="/illustrations/how-it-works.svg"
+              alt="Schematisch: jouw input → deterministische berekening → helder overzicht"
+              className="how-illustration-large"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
           <ol className="process">
             <li><strong>Jij deelt je situatie:</strong> Inkomsten, woning, schulden, pensioen, uitgaven.</li>
             <li><strong>Finnsight rekent:</strong> Deterministische berekeningen (geen AI-adviezen) tonen je financiële beeld.</li>
