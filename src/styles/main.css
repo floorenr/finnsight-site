@@ -181,14 +181,6 @@ main {
     margin-top: 0;
 }
 
-.hero-icon {
-    height: 48px;
-    width: 48px;
-    margin-bottom: var(--spacing-md);
-    opacity: 0.85;
-    filter: brightness(1.1);
-}
-
 .section.hero h1 {
     color: white;
     margin-top: 0;
@@ -277,6 +269,31 @@ li {
     position: absolute;
     left: 0;
     color: var(--color-error);
+}
+
+/* Problems grid with icons */
+.problems-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
+}
+
+.problem-card {
+    padding: var(--spacing-lg);
+    background: var(--color-bg-alt);
+    border-radius: var(--radius-md);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.problem-icon {
+    height: 56px;
+    width: 56px;
+    opacity: 0.9;
 }
 
 .process {
