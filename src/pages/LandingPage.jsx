@@ -26,7 +26,9 @@ export default function LandingPage({ onNavigate }) {
       </Helmet>
       <header className="header">
         <nav className="nav" aria-label="Main navigation">
-          <Link to="/" className="logo" onClick={() => setMobileMenuOpen(false)} aria-label="Ga naar startpagina">Finnsight</Link>
+          <Link to="/" className="logo" onClick={() => setMobileMenuOpen(false)} aria-label="Ga naar startpagina">
+            <img src="/brand/logo-primary-horizontal.svg" alt="Finnsight" className="logo-img" />
+          </Link>
           <button
             className="mobile-menu-toggle"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -311,6 +313,7 @@ export default function LandingPage({ onNavigate }) {
       </main>
 
       <footer className="footer">
+        <img src="/brand/mark-on-dark.svg" alt="Finnsight" className="footer-mark" />
         <nav className="footer-nav" aria-label="Footer navigation">
           <Link to="/trust">Vertrouwen & Compliance</Link>
           <span className="divider-muted">|</span>

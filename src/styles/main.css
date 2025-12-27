@@ -2,12 +2,18 @@
 /* Use Phase 1 branding baseline colors, typography */
 
 :root {
-    --color-primary: #1f2937;      /* dark slate */
-    --color-secondary: #3b82f6;    /* blue (interactive) */
+    /* Brand tokens (authoritative) */
+    --brand-navy: #0F2D5C;
+    --brand-blue: #2F6FDB;
+    --brand-bg: #F6F9FF;
+
+    /* Site tokens mapped to brand */
+    --color-primary: var(--brand-navy);      /* primary brand */
+    --color-secondary: var(--brand-blue);    /* interactive brand blue */
     --color-accent: #10b981;       /* emerald (positive) */
     --color-warning: #f59e0b;      /* amber (caution) */
     --color-bg: #ffffff;
-    --color-bg-alt: #f9fafb;       /* light gray */
+    --color-bg-alt: var(--brand-bg);       /* light brand background */
     --color-border: #e5e7eb;       /* medium gray */
     --color-text: #1f2937;         /* dark slate */
     --color-text-light: #6b7280;   /* medium gray */
@@ -98,6 +104,14 @@ a:hover {
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--color-primary);
+}
+
+/* Logo image in header (prevent layout shift) */
+.logo-img {
+    height: 39px;
+    max-height: 40px;
+    width: auto;
+    display: block;
 }
 
 .nav ul {
@@ -506,6 +520,15 @@ input:focus, textarea:focus {
     color: white;
     text-align: center;
     border-top: 1px solid var(--color-border);
+}
+
+/* Subtle footer mark */
+.footer-mark {
+    height: 24px;
+    width: auto;
+    display: inline-block;
+    margin-bottom: var(--spacing-md);
+    opacity: 0.9;
 }
 
 .footer a {
