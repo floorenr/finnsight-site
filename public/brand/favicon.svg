@@ -1,10 +1,33 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Finnsight favicon">
-  <!-- Ring (brand) -->
-  <circle cx="32" cy="32" r="22" fill="none" stroke="#0F2D5C" stroke-width="4"/>
+  <!-- Solid background (dark/light browser safe) -->
+  <rect width="64" height="64" rx="14" fill="#0F2D5C"/>
 
-  <!-- Bars (data accent) — neutral pattern, same as master intent -->
-  <!-- Baseline at y=46 -->
-  <rect x="25" y="34" width="4" height="12" rx="1" fill="#2F6FDB"/>
-  <rect x="31" y="37" width="4" height="9"  rx="1" fill="#2F6FDB"/>
-  <rect x="37" y="35" width="4" height="11" rx="1" fill="#2F6FDB"/>
+  <!-- Lens ring -->
+  <!-- Center (28,28), radius 14 -->
+  <circle
+    cx="28"
+    cy="28"
+    r="14"
+    fill="none"
+    stroke="#FFFFFF"
+    stroke-width="3"
+  />
+
+  <!-- Data bars (neutral pattern) -->
+  <rect x="22" y="28" width="3" height="8" rx="1" fill="#FFFFFF"/>
+  <rect x="27" y="30" width="3" height="6" rx="1" fill="#FFFFFF"/>
+  <rect x="32" y="29" width="3" height="7" rx="1" fill="#FFFFFF"/>
+
+  <!-- Handle (tangent to ring, no overlap) -->
+  <!-- Ring outer radius = 14 + 1.5 ≈ 15.5 -->
+  <!-- Tangent start ≈ (28 + 11, 28 + 11) -->
+  <line
+    x1="39"
+    y1="39"
+    x2="48"
+    y2="48"
+    stroke="#FFFFFF"
+    stroke-width="3.5"
+    stroke-linecap="round"
+  />
 </svg>
