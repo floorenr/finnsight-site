@@ -1,22 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { Helmet } from 'react-helmet-async'
-import { Link, useLocation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import Header from '../components/Header'
 
 export default function PrivacyTermsPage({ onNavigate }) {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const { pathname } = useLocation()
-
-  useEffect(() => {
-    const header = document.querySelector('.header')
-    const handleScroll = () => {
-      if (!header) return
-      header.classList.toggle('scrolled', window.scrollY > 0)
-    }
-
-    handleScroll()
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
 
   return (
     <>
@@ -24,57 +11,18 @@ export default function PrivacyTermsPage({ onNavigate }) {
         <title>Privacy en voorwaarden — Finnsight</title>
         <meta name="description" content="Hoe Finnsight omgaat met privacy, opslag en gebruiksvoorwaarden." />
       </Helmet>
-      <header className="header">
-        <nav className="nav" aria-label="Main navigation">
-          <Link to="/" className="logo" onClick={() => setMobileMenuOpen(false)} aria-label="Ga naar startpagina">
-            <img src="/brand/logo-primary-horizontal.svg" alt="Finnsight" className="logo-img" />
-          </Link>
-          <button
-            className="mobile-menu-toggle"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-expanded={mobileMenuOpen}
-            aria-label="Menu"
-          >
-            {mobileMenuOpen ? '×' : '☰'}
-          </button>
-          <ul className={`nav-list ${mobileMenuOpen ? 'nav-open' : ''}`}>
-            <li>
-              <Link
-                to="/"
-                onClick={() => setMobileMenuOpen(false)}
-                className={`nav-link ${pathname === '/' ? 'active' : ''}`}
-                aria-current={pathname === '/' ? 'page' : undefined}
-              >
-                Start
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/trust"
-                onClick={() => setMobileMenuOpen(false)}
-                className={`nav-link ${pathname === '/trust' ? 'active' : ''}`}
-                aria-current={pathname === '/trust' ? 'page' : undefined}
-              >
-                Vertrouwen
-              </Link>
-            </li>
-            <li>
-              <a href="mailto:hello@finnsight.nl" className="cta-nav">Contact</a>
-            </li>
-          </ul>
-        </nav>
-      </header>
+      <Header />
 
       <main className="content" id="main-content">
         <h1>Privacy en voorwaarden</h1>
-        <p className="lead">Kernsamenvatting van hoe wij met je gegevens en gebruik omgaan.</p>
+        <p className="lead">Kernsamenvatting van hoe wij met je gegevens en gebruik omgaan. Volledige privacy- en gebruiksvoorwaarden kunnen op verzoek beschikbaar worden gesteld.</p>
 
         <section>
           <h2>Privacy</h2>
           <ul>
             <li>Geen accounts, geen opslag: we bewaren geen ingevulde gegevens.</li>
             <li>Geen tracking: geen cookies, geen third-party analytics.</li>
-            <li>Niet delen met werkgevers: individuele data gaat nooit naar werkgevers.</li>
+            <li>Werkgevers ontvangen nooit financiële data (individueel of geaggregeerd).</li>
             <li>Contact: mail ons via <a href="mailto:hello@finnsight.nl">hello@finnsight.nl</a>.</li>
           </ul>
         </section>

@@ -31,7 +31,6 @@ Tests follow the pattern: `**/*.test.js`
 **Component tests:**
 - `src/pages/LandingPage.test.js` — Landing page rendering, navigation, footer
 - `src/pages/TrustPage.test.js` — Trust & compliance page content
-- `src/pages/DemosPage.test.js` — Demo forms, inputs, disclaimers
 - `src/components/ErrorBoundary.test.js` — Error handling, recovery UI
 
 **Scope:**
@@ -46,7 +45,7 @@ Tests follow the pattern: `**/*.test.js`
 - Styling (CSS is not unit-tested)
 - API calls (none exist in Phase 2)
 
-## GitHub Actions CI/CD Pipeline
+## GitHub Actions CI Pipeline
 
 **Trigger:** Every push to `main` branch and all pull requests
 
@@ -64,10 +63,12 @@ Tests follow the pattern: `**/*.test.js`
    - Uploads artifacts for 7 days
    - **Fails if:** Build fails or `dist/` not created
 
-3. **Deploy Job** (runs after build succeeds, only on `main` branch)
-   - Deploys to Vercel using secrets
-   - Updates live site at https://finnsight.app
-   - **Requires:** Vercel secrets configured
+## Deployment
+
+**Vercel Git Integration:**
+- PRs deploy to Preview environments automatically
+- Merges to `main` deploy to Production automatically
+- No deploy job in GitHub Actions; Vercel handles deployment directly
 
 ## Configuration Files
 
@@ -90,14 +91,9 @@ Tests follow the pattern: `**/*.test.js`
 }
 ```
 
-## Setting Up Vercel Deployment (Required)
+## Vercel Setup
 
-For the GitHub Actions deploy job to work, add these secrets to your GitHub repository:
-
-1. Go to **Settings → Secrets and variables → Actions**
-2. Add three **Repository secrets:**
-   - `VERCEL_TOKEN` — Get from https://vercel.com/account/tokens
-   - `VERCEL_ORG_ID` — Your Vercel organization ID
+Vercel deployment is configured via Git integration in the Vercel dashboard. No GitHub secrets required for deployment.
    - `VERCEL_PROJECT_ID` — Your finnsight-site project ID
 
 Without these, the deploy job will fail silently.

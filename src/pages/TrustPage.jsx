@@ -1,22 +1,8 @@
-import { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet-async'
-import { Link, useLocation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import Header from '../components/Header'
 
 export default function TrustPage({ onNavigate }) {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const { pathname } = useLocation()
-
-  useEffect(() => {
-    const header = document.querySelector('.header')
-    const handleScroll = () => {
-      if (!header) return
-      header.classList.toggle('scrolled', window.scrollY > 0)
-    }
-
-    handleScroll()
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
 
   return (
     <>
@@ -24,34 +10,7 @@ export default function TrustPage({ onNavigate }) {
         <title>Vertrouwen & Compliance — Finnsight</title>
         <meta name="description" content="Hoe Finnsight deterministisch rekent, privacy bewaakt en binnen AFM-kaders blijft." />
       </Helmet>
-      <header className="header">
-        <nav className="nav" aria-label="Main navigation">
-          <Link to="/" className="logo" onClick={() => setMobileMenuOpen(false)} aria-label="Ga naar startpagina">
-            <img src="/brand/logo-primary-horizontal.svg" alt="Finnsight" className="logo-img" />
-          </Link>
-          <button 
-            className="mobile-menu-toggle" 
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-expanded={mobileMenuOpen}
-            aria-label="Menu"
-          >
-            {mobileMenuOpen ? '×' : '☰'}
-          </button>
-          <ul className={`nav-list ${mobileMenuOpen ? 'nav-open' : ''}`}>
-            <li>
-              <Link
-                to="/"
-                onClick={() => setMobileMenuOpen(false)}
-                className={`nav-link ${pathname === '/' ? 'active' : ''}`}
-                aria-current={pathname === '/' ? 'page' : undefined}
-              >
-                ← Terug naar start
-              </Link>
-            </li>
-            <li><a href="mailto:hello@finnsight.nl" className="cta-nav">Contact</a></li>
-          </ul>
-        </nav>
-      </header>
+      <Header />
 
       <main className="content" id="main-content">
         <h1>Vertrouwen & Compliance</h1>
@@ -100,8 +59,7 @@ export default function TrustPage({ onNavigate }) {
           </p>
           <ul>
             <li>Jij bent eigenaar van je gegevens</li>
-            <li>Finnsight is employee-first</li>
-            <li>Werkgevers zien hooguit operationele voortgang (bijvoorbeeld: "X medewerkers hebben intake voltooid") — geen financiële inhoud</li>
+            <li>Hooguit operationele voortgang (bijvoorbeeld: aantal deelnemers dat intake heeft voltooid) — geen financiële inhoud</li>
             <li>Geen individuele data, geen gedrag, geen financieel beeld, geen aggregaten</li>
           </ul>
         </section>

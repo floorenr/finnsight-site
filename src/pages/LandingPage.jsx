@@ -1,22 +1,7 @@
-import { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet-async'
-import { Link, useLocation } from 'react-router-dom'
+import Header from '../components/Header'
 
 export default function LandingPage({ onNavigate }) {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const { pathname } = useLocation()
-
-  useEffect(() => {
-    const header = document.querySelector('.header')
-    const handleScroll = () => {
-      if (!header) return
-      header.classList.toggle('scrolled', window.scrollY > 0)
-    }
-
-    handleScroll()
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
 
   return (
     <>
@@ -24,36 +9,7 @@ export default function LandingPage({ onNavigate }) {
         <title>Finnsight — Rust en inzicht voor medewerkers</title>
         <meta name="description" content="Finnsight geeft Nederlandse werknemers helder inzicht in hun financiële toekomst — deterministisch, privacy-first." />
       </Helmet>
-      <header className="header">
-        <nav className="nav" aria-label="Main navigation">
-          <Link to="/" className="logo" onClick={() => setMobileMenuOpen(false)} aria-label="Ga naar startpagina">
-            <img src="/brand/logo-primary-horizontal.svg" alt="Finnsight" className="logo-img" />
-          </Link>
-          <button
-            className="mobile-menu-toggle"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-expanded={mobileMenuOpen}
-            aria-label="Menu"
-          >
-            {mobileMenuOpen ? '×' : '☰'}
-          </button>
-          <ul className={`nav-list ${mobileMenuOpen ? 'nav-open' : ''}`}>
-            <li>
-              <Link
-                to="/trust"
-                onClick={() => setMobileMenuOpen(false)}
-                className={`nav-link ${pathname === '/trust' ? 'active' : ''}`}
-                aria-current={pathname === '/trust' ? 'page' : undefined}
-              >
-                Vertrouwen
-              </Link>
-            </li>
-            <li>
-              <a href="mailto:hello@finnsight.nl" className="cta-nav">Contact</a>
-            </li>
-          </ul>
-        </nav>
-      </header>
+      <Header />
 
       <main id="main-content">
         {/* Section 1: What is Finnsight */}
@@ -119,7 +75,7 @@ export default function LandingPage({ onNavigate }) {
               Beschikbaar voor 2–3 nieuwe pilots per maand.
             </p>
             <p className="mb-sm">
-              Pilotfase nu open; Q2 2026 bredere uitrol.
+              Pilotfase nu open; bredere uitrol gepland voor 2026.
             </p>
             <p className="legal-note-text">
               Finnsight geeft inzicht en scenario-impact; geen financieel advies.
@@ -268,7 +224,7 @@ export default function LandingPage({ onNavigate }) {
           </div>
 
           <p className="mock-caption">
-            Mockups tonen de daadwerkelijke pilot-build (release Q1 2026). Data zijn illustratief, berekeningen deterministisch en consistent met de deterministische rekenkern.
+            Mockups tonen de daadwerkelijke pilot-build. Data zijn illustratief, berekeningen deterministisch en consistent met de deterministische rekenkern.
           </p>
         </section>
 
@@ -296,10 +252,10 @@ export default function LandingPage({ onNavigate }) {
         <section className="section highlight">
           <h2>Wat Finnsight NIET doet</h2>
           <ul className="dont-list">
-            <li>❌ Biedt financieel advies (AFM-gerelateerd)</li>
-            <li>❌ Gebruikt AI om conclusies te genereren</li>
-            <li>❌ Geeft je werkgever inzicht in jouw financiën</li>
-            <li>❌ Garandeert dat prognoses zullen uitkomen (ze zijn illustratief)</li>
+            <li>Biedt financieel advies (AFM-gerelateerd)</li>
+            <li>Gebruikt AI om conclusies te genereren</li>
+            <li>Geeft je werkgever inzicht in jouw financiën</li>
+            <li>Garandeert dat prognoses zullen uitkomen (ze zijn illustratief)</li>
           </ul>
         </section>
 
