@@ -16,8 +16,8 @@ export default function LandingPage({ onNavigate }) {
         {/* Section 1: What is Finnsight */}
         <section id="what" className="section hero scroll-target">
           <h1>Inzicht in jouw financiële toekomst</h1>
-          <p className="lead">Finnsight geeft Nederlandse medewerkers een helder beeld van hun financiële mogelijkheden — tot en met pensioen.</p>
-          <p className="subtext">Geen adviezen. Geen giswerk. We tonen scenario-impact en de gevolgen van aannames; jij besluit.</p>
+          <p className="lead">Finnsight geeft Nederlandse medewerkers een helder overzicht van hun besteedbaar inkomen, woonlasten en pensioen — in scenario’s tot en met pensioen.</p>
+          <p className="subtext">Geen financieel advies. Wel transparante berekeningen en scenario’s, zodat je zelf kunt afwegen.</p>
           <div className="mt-xl">
             <a href="mailto:hello@finnsight.nl" className="btn btn-primary btn-large">Ik ben medewerker — stel een vraag</a>
           </div>
@@ -29,11 +29,11 @@ export default function LandingPage({ onNavigate }) {
           <div className="grid-2">
             <article>
               <h3>Voor medewerkers</h3>
-              <p>Wil je weten hoeveel je later beschikbaar hebt? Finnsight laat je zien hoe je huisvesting, belasting, pensioen en uitgaven samenhangen.</p>
+              <p>Wil je weten wat je later ongeveer overhoudt? Finnsight laat zien hoe inkomen, woonlasten, belasting en pensioen samenhangen — en wat er verandert als aannames veranderen.</p>
             </article>
             <article>
               <h3>Voor werkgevers</h3>
-              <p>Inzicht in de financiële toekomst kan bijdragen aan rust en focus. Finnsight is een benefit die medewerkers praktisch helpt.</p>
+              <p>Financiële onzekerheid speelt vaak mee op de achtergrond. Finnsight kan medewerkers praktisch helpen met overzicht en scenario’s — en kan zo bijdragen aan rust en focus.</p>
             </article>
           </div>
         </section>
@@ -42,13 +42,13 @@ export default function LandingPage({ onNavigate }) {
         <section className="section highlight">
           <h2>HR-waarde, zonder privacy-compromissen</h2>
           <p className="subtext mb-xl">
-            Bied medewerkers helder financieel inzicht. Werkgevers ontvangen nooit financiële data—niet individueel en niet als financiële aggregaten. Hooguit zien zij operationele voortgang (bijv. aantallen deelnemers/voltooiingen), zonder financiële inhoud.
+            Geef medewerkers één helder overzicht van inkomen, woonlasten en pensioen in scenario’s. Werkgevers ontvangen nooit financiële data—niet individueel en niet als financiële aggregaten. Hooguit zien zij operationele voortgang (bijv. aantallen deelnemers/voltooiingen), zonder financiële inhoud.
           </p>
           
           <div className="grid-2 mb-xl">
             <article>
               <h3>Employee-first ervaring</h3>
-              <p>Medewerkers krijgen één geïntegreerd overzicht (pensioen, hypotheek, vermogen) met scenario-impact. HR hoeft geen dossiers te beheren.</p>
+              <p>Medewerkers krijgen één overzicht (pensioen, hypotheek, vermogen) met scenario’s. HR hoeft geen individuele dossiers of financiële vragen te beheren.</p>
             </article>
             <article>
               <h3>Privacy by design</h3>
@@ -58,7 +58,7 @@ export default function LandingPage({ onNavigate }) {
           
           <article className="mb-lg">
             <h3>Audit-ready uitgangspunt</h3>
-            <p>Deterministische rekenkern en transparante aannames. Eventuele uitleg verwijst uitsluitend naar meetbare modeloutput (geen 'advies').</p>
+            <p>Transparante aannames en een deterministische rekenkern: dezelfde input geeft dezelfde uitkomst. Eventuele uitleg verwijst uitsluitend naar meetbare modeloutput (geen 'advies').</p>
           </article>
 
           <div className="panel mb-lg">
@@ -88,7 +88,7 @@ export default function LandingPage({ onNavigate }) {
         <section className="section">
           <h2>Hoe het er voor medewerkers uitziet</h2>
           <p className="subtext mb-xl">
-            Dit zijn dezelfde schermen als in de pilotversie: deterministische berekeningen, maandlijn met scenario-impact, en tekst die uitsluitend naar feiten verwijst.
+            Voorbeeldweergave uit de pilotversie: deterministische berekeningen, scenario’s per maand en toelichting die alleen naar meetbare uitkomsten verwijst.
           </p>
 
           <div className="mock-grid">
@@ -181,11 +181,11 @@ export default function LandingPage({ onNavigate }) {
                   <span className="legend-dot legend-cyan" />
                   <small>Basis</small>
                   <span className="legend-dot legend-indigo" />
-                  <small>Hypotheek versnellen</small>
+                    <small>Aflossing aanpassen (scenario)</small>
                 </span>
               </div>
               <p className="mock-card-text">
-                Direct zichtbaar: wat er verandert als je extra aflost of 2% extra spaart. Toonbaar per maandstart.
+                  Je ziet direct wat er verandert als je aannames wijzigt (bijv. aflossing of sparen). Inzicht per maand — zonder advies.
               </p>
 
               <div className="mock-metrics">
@@ -264,9 +264,9 @@ export default function LandingPage({ onNavigate }) {
         {/* Section 6: CTA */}
         <section className="section cta-section">
           <h2>Interesse?</h2>
-          <p>Finnsight bevindt zich in de pilotfase. We werken met een select aantal werkgevers om het product samen te ontwikkelen.</p>
+          <p>We draaien pilots met een select aantal werkgevers om Finnsight verder aan te scherpen in de praktijk.</p>
           <p>Ben je werkgever, onderzoeker, journalist, of adviseur?</p>
-          <a href="mailto:hello@finnsight.nl" className="btn btn-primary">Ik ben werkgever — vraag pilotinfo</a>
+          <a href="mailto:hello@finnsight.nl" className="btn btn-primary">Ik ben werkgever — ontvang pilotopzet</a>
         </section>
       </main>
 

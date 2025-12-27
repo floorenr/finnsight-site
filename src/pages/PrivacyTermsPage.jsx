@@ -20,10 +20,10 @@ export default function PrivacyTermsPage({ onNavigate }) {
         <section>
           <h2>Privacy</h2>
           <ul>
-            <li>Geen accounts, geen opslag via deze website: we slaan geen ingevulde intakegegevens op.</li>
-            <li>Geen tracking: geen tracking cookies en geen third-party analytics.</li>
+            <li>Geen account nodig; we slaan via deze website geen ingevulde intakegegevens op.</li>
+            <li>Geen tracking cookies en geen third-party analytics.</li>
             <li>Werkgevers ontvangen nooit financiële data—niet individueel en niet als financiële aggregaten. Hooguit zien zij operationele voortgang (bijv. aantallen deelnemers/voltooiingen), zonder financiële inhoud.</li>
-            <li>Contact: mail ons via <a href="mailto:hello@finnsight.nl">hello@finnsight.nl</a>; we bewaren je e-mail om te kunnen antwoorden.</li>
+            <li>Mail je ons via <a href="mailto:hello@finnsight.nl">hello@finnsight.nl</a>, dan bewaren we je e-mail alleen om te kunnen antwoorden.</li>
           </ul>
         </section>
 
