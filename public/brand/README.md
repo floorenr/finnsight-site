@@ -75,3 +75,7 @@ Example (Inkscape):
 - No currency symbols (EU-based, neutral stance).
 - No “always up-and-to-the-right” performance messaging.
 - Mark must remain calm, factual, and non-normative.
+
+## 7) Runtime Assets vs Brand Kit
+
+Brand kit lives in `/public/brand`. Runtime assets used by the site remain in `/public` (favicon.svg, og-image.png). When updating brand assets, update runtime copies accordingly.
