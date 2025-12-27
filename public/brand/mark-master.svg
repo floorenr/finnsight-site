@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" role="img" aria-label="Finnsight master mark">
+  <defs>
+    <style>
+      /* Canonical color tokens (do not change per-variant; variants remap these) */
+      .fs-brand { stroke: #0F2D5C; }
+      .fs-data  { fill:   #2F6FDB; }
+    </style>
+  </defs>
+
+  <!--
+    CANONICAL GEOMETRY
+    - Center: (160,160)
+    - Ring radius: 112
+    - Ring stroke: 16
+    - Outer radius: 112 + 8 = 120
+    - Handle starts OUTSIDE outer radius (no intrusion)
+  -->
+
+  <!-- Lens ring -->
+  <circle
+    cx="160"
+    cy="160"
+    r="112"
+    fill="none"
+    class="fs-brand"
+    stroke-width="16"
+  />
+
+  <!-- Data bars (neutral pattern; not monotone 'up-right') -->
+  <!-- Baseline implied at y=230 -->
+  <rect x="121" y="168" width="18" height="62" rx="4" class="fs-data"/>
+  <rect x="151" y="184" width="18" height="46" rx="4" class="fs-data"/>
+  <rect x="181" y="176" width="18" height="54" rx="4" class="fs-data"/>
+
+  <!-- Handle (45°), with a short connector; starts outside outer radius -->
+  <line x1="247" y1="247" x2="262" y2="262"
+        class="fs-brand" stroke-width="16" stroke-linecap="round"/>
+  <line x1="266" y1="266" x2="296" y2="296"
+        class="fs-brand" stroke-width="20" stroke-linecap="round"/>
+</svg>
