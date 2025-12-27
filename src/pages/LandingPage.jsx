@@ -8,7 +8,7 @@ export default function LandingPage({ onNavigate }) {
     <>
       <Helmet>
         <title>Finnsight — Rust en inzicht voor medewerkers</title>
-        <meta name="description" content="Finnsight geeft Nederlandse werknemers helder inzicht in hun financiële toekomst — deterministisch, privacy-first." />
+        <meta name="description" content="Finnsight geeft Nederlandse medewerkers helder inzicht in hun financiële toekomst — deterministisch, privacy-first." />
       </Helmet>
       <Header />
 
@@ -16,10 +16,10 @@ export default function LandingPage({ onNavigate }) {
         {/* Section 1: What is Finnsight */}
         <section id="what" className="section hero scroll-target">
           <h1>Inzicht in jouw financiële toekomst</h1>
-          <p className="lead">Finnsight geeft Nederlandse werknemers een helder beeld van hun financiële mogelijkheden — tot en met pensioen.</p>
+          <p className="lead">Finnsight geeft Nederlandse medewerkers een helder beeld van hun financiële mogelijkheden — tot en met pensioen.</p>
           <p className="subtext">Geen adviezen. Geen giswerk. We tonen scenario-impact en de gevolgen van aannames; jij besluit.</p>
           <div className="mt-xl">
-            <a href="mailto:hello@finnsight.nl" className="btn btn-primary btn-large">Neem contact op</a>
+            <a href="mailto:hello@finnsight.nl" className="btn btn-primary btn-large">Ik ben medewerker — stel een vraag</a>
           </div>
         </section>
 
@@ -28,12 +28,12 @@ export default function LandingPage({ onNavigate }) {
           <h2>Voor wie is Finnsight?</h2>
           <div className="grid-2">
             <article>
-              <h3>Voor werknemers</h3>
+              <h3>Voor medewerkers</h3>
               <p>Wil je weten hoeveel je later beschikbaar hebt? Finnsight laat je zien hoe je huisvesting, belasting, pensioen en uitgaven samenhangen.</p>
             </article>
             <article>
               <h3>Voor werkgevers</h3>
-              <p>Werknemers die inzicht hebben in hun financiële toekomst zijn meer gefocust en kalmer. Finnsight is een benefit die echt werkt.</p>
+              <p>Inzicht in de financiële toekomst kan bijdragen aan rust en focus. Finnsight is een benefit die medewerkers praktisch helpt.</p>
             </article>
           </div>
         </section>
@@ -42,7 +42,7 @@ export default function LandingPage({ onNavigate }) {
         <section className="section highlight">
           <h2>HR-waarde, zonder privacy-compromissen</h2>
           <p className="subtext mb-xl">
-            Bied medewerkers helder financieel inzicht. Werkgevers ontvangen nooit financiële data (individueel of geaggregeerd).
+            Bied medewerkers helder financieel inzicht. Werkgevers ontvangen nooit financiële data—niet individueel en niet als financiële aggregaten. Hooguit zien zij operationele voortgang (bijv. aantallen deelnemers/voltooiingen), zonder financiële inhoud.
           </p>
           
           <div className="grid-2 mb-xl">
@@ -52,7 +52,7 @@ export default function LandingPage({ onNavigate }) {
             </article>
             <article>
               <h3>Privacy by design</h3>
-              <p>Werkgevers ontvangen nooit financiële data (individueel of geaggregeerd). Hooguit operationele voortgang (bijvoorbeeld aantal deelnemers dat intake heeft voltooid) — geen financiële inhoud.</p>
+              <p>Werkgevers ontvangen nooit financiële data—niet individueel en niet als financiële aggregaten. Hooguit zien zij operationele voortgang (bijv. aantallen deelnemers/voltooiingen), zonder financiële inhoud.</p>
             </article>
           </div>
           
@@ -71,12 +71,12 @@ export default function LandingPage({ onNavigate }) {
           </div>
 
           <div className="text-center">
-            <a href="mailto:hello@finnsight.nl?subject=Pilotinformatie%20Finnsight" className="btn btn-primary">Vraag pilotinformatie aan</a>
+            <a href="mailto:hello@finnsight.nl?subject=Pilotinformatie%20Finnsight" className="btn btn-primary">Ik ben werkgever — vraag pilotinfo</a>
             <p className="mt-sm mb-xs">
               Beschikbaar voor 2–3 nieuwe pilots per maand.
             </p>
             <p className="mb-sm">
-              Pilotfase nu open; bredere uitrol gepland voor 2026.
+              Pilotfase nu open; bredere uitrol gepland voor 2026 (planning onder voorbehoud).
             </p>
             <p className="legal-note-text">
               Finnsight geeft inzicht en scenario-impact; geen financieel advies.
@@ -225,7 +225,7 @@ export default function LandingPage({ onNavigate }) {
           </div>
 
           <p className="mock-caption">
-            Mockups tonen de daadwerkelijke pilot-build. Data zijn illustratief, berekeningen deterministisch en consistent met de deterministische rekenkern.
+            Mockups tonen de daadwerkelijke pilot-build. Data zijn illustratief, berekeningen deterministisch en consistent met de deterministische rekenkern. Uitkomsten zijn projecties op basis van aannames en jouw input; ze zijn informatief, geen voorspelling.
           </p>
         </section>
 
@@ -233,9 +233,9 @@ export default function LandingPage({ onNavigate }) {
         <section className="section">
           <h2>De problemen die we oplossen</h2>
           <ul className="problems">
-            <li><strong>Financiële onzekerheid:</strong> Veel werknemers weten niet hoe hun inkomen, hypotheek, en pensioen samen optellen tot een werkelijk beeld.</li>
+            <li><strong>Financiële onzekerheid:</strong> Veel medewerkers weten niet hoe hun inkomen, hypotheek, en pensioen samen optellen tot een werkelijk beeld.</li>
             <li><strong>Vertrouwen in adviezen:</strong> Online calculators zijn vaak vag of geven tegenstrijdig advies. We geven geen adviezen — alleen feiten.</li>
-            <li><strong>Privacy:</strong> Werknemers willen niet dat hun werkgever weet hoe ze hun geld besteden. Dat zal ook nooit gebeuren.</li>
+            <li><strong>Privacy:</strong> Medewerkers willen niet dat hun werkgever weet hoe ze hun geld besteden. Dat zal ook nooit gebeuren.</li>
           </ul>
         </section>
 
@@ -247,6 +247,7 @@ export default function LandingPage({ onNavigate }) {
             <li><strong>Finnsight rekent:</strong> Deterministische berekeningen (geen AI-adviezen) tonen je financiële beeld.</li>
             <li><strong>Jij ziet helderheid:</strong> Inzichtelijk overzicht met scenario's. Geen interpretatie. Jij besluit.</li>
           </ol>
+          <p>Bijvoorbeeld: wat er gebeurt met je besteedbaar inkomen als rente, woonlasten of pensioenleeftijd verandert.</p>
         </section>
 
         {/* Section 5: What Finnsight does NOT do */}
@@ -265,7 +266,7 @@ export default function LandingPage({ onNavigate }) {
           <h2>Interesse?</h2>
           <p>Finnsight bevindt zich in de pilotfase. We werken met een select aantal werkgevers om het product samen te ontwikkelen.</p>
           <p>Ben je werkgever, onderzoeker, journalist, of adviseur?</p>
-          <a href="mailto:hello@finnsight.nl" className="btn btn-primary">Neem contact op</a>
+          <a href="mailto:hello@finnsight.nl" className="btn btn-primary">Ik ben werkgever — vraag pilotinfo</a>
         </section>
       </main>
 
