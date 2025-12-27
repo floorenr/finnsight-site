@@ -181,6 +181,14 @@ main {
     margin-top: 0;
 }
 
+.hero-icon {
+    height: 48px;
+    width: 48px;
+    margin-bottom: var(--spacing-md);
+    opacity: 0.85;
+    filter: brightness(1.1);
+}
+
 .section.hero h1 {
     color: white;
     margin-top: 0;

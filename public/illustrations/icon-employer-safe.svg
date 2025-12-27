@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-label="Werkgever-proof">
+  <rect x="4" y="8" width="16" height="11" rx="3"
+        fill="none" stroke="#0F2D5C" stroke-width="2.5"/>
+  <path d="M9 8 V6.8 C9 5.3 10.3 4 11.8 4 H12.2 C13.7 4 15 5.3 15 6.8 V8"
+        fill="none" stroke="#2F6FDB" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="4" y1="12.5" x2="20" y2="12.5" stroke="#0F2D5C" stroke-width="2.5" opacity="0.35"/>
+</svg>

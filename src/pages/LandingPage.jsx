@@ -15,6 +15,7 @@ export default function LandingPage({ onNavigate }) {
       <main id="main-content">
         {/* Section 1: What is Finnsight */}
         <section id="what" className="section hero scroll-target">
+          <img src="/illustrations/icon-insight.svg" alt="" className="hero-icon" aria-hidden="true" />
           <h1>Inzicht in jouw financiële toekomst</h1>
           <p className="lead">Finnsight geeft Nederlandse medewerkers een helder overzicht van hun besteedbaar inkomen, woonlasten en pensioen.</p>
           <p className="subtext">Transparante berekeningen en scenario’s, jij beslist.</p>
