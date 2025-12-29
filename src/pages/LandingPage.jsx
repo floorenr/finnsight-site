@@ -231,16 +231,37 @@ export default function LandingPage({ onNavigate }) {
         {/* Section 3: Problems addressed */}
         <section className="section">
           <h2>De problemen die we oplossen</h2>
-          <ul className="problems">
-            <li><strong>Financiële onzekerheid:</strong> Veel medewerkers weten niet hoe hun inkomen, hypotheek, en pensioen samen optellen tot een werkelijk beeld naar de toekomst.</li>
-            <li><strong>Onduidelijke adviezen:</strong> Online calculators zijn vaak vaag of geven tegenstrijdig advies. Wij geven alleen feiten.</li>
-            <li><strong>Privacy:</strong> Medewerkers zitten niet te wachten op een werkgever die in hun portemonnee kijkt. Dat zal ook nooit gebeuren.</li>
-          </ul>
+          <div className="problems-grid">
+            <article className="problem-card">
+              <img src="/illustrations/icon-mortgage.svg" alt="" className="problem-icon" aria-hidden="true" />
+              <h3>Financiële onzekerheid</h3>
+              <p>Veel medewerkers weten niet hoe hun inkomen, hypotheek, en pensioen samen optellen tot een werkelijk beeld naar de toekomst.</p>
+            </article>
+            <article className="problem-card">
+              <img src="/illustrations/icon-transparent.svg" alt="" className="problem-icon" aria-hidden="true" />
+              <h3>Onduidelijke adviezen</h3>
+              <p>Online calculators zijn vaak vaag of geven tegenstrijdig advies. Wij geven alleen feiten.</p>
+            </article>
+            <article className="problem-card">
+              <img src="/illustrations/icon-privacy.svg" alt="" className="problem-icon" aria-hidden="true" />
+              <h3>Privacy</h3>
+              <p>Medewerkers zitten niet te wachten op een werkgever die in hun portemonnee kijkt. Dat zal ook nooit gebeuren.</p>
+            </article>
+          </div>
         </section>
 
         {/* Section 4: How it works */}
         <section className="section">
           <h2>Hoe werkt Finnsight?</h2>
+          <figure className="how-figure-large">
+            <img
+              src="/illustrations/how-it-works.svg"
+              alt="Schematisch: jouw input → deterministische berekening → helder overzicht"
+              className="how-illustration-large"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
           <ol className="process">
             <li><strong>Jij deelt je situatie:</strong> Inkomsten, woning, schulden, pensioen, uitgaven.</li>
             <li><strong>Finnsight rekent:</strong> Deterministische berekeningen (geen AI-adviezen) tonen je financiële beeld.</li>

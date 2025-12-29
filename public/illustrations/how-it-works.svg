@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 1200 220"
+  role="img"
+  aria-label="Hoe Finnsight werkt"
+>
+  <!-- Background -->
+  <rect x="0" y="0" width="1200" height="220" rx="28" fill="#F6F9FF"/>
+
+  <!-- Connecting line -->
+  <line x1="150" y1="110" x2="1050" y2="110" stroke="#0F2D5C" stroke-width="3" stroke-linecap="round" opacity="0.22"/>
+
+  <!-- Step 1: Documenten -->
+  <g transform="translate(90 50)">
+    <circle cx="60" cy="60" r="44" fill="#FFFFFF" stroke="#0F2D5C" stroke-width="3"/>
+    <rect x="42" y="38" width="36" height="44" rx="6" fill="none" stroke="#0F2D5C" stroke-width="3"/>
+    <line x1="48" y1="52" x2="72" y2="52" stroke="#2F6FDB" stroke-width="3" stroke-linecap="round"/>
+    <line x1="48" y1="62" x2="72" y2="62" stroke="#2F6FDB" stroke-width="3" stroke-linecap="round"/>
+    <text x="60" y="135" text-anchor="middle" fill="#0F2D5C" font-size="22" font-weight="700">Documenten</text>
+    <text x="60" y="158" text-anchor="middle" fill="#0F2D5C" font-size="15" font-weight="600" opacity="0.75">Upload of invoer</text>
+  </g>
+
+  <!-- Step 2: Begrijpen -->
+  <g transform="translate(380 50)">
+    <circle cx="60" cy="60" r="44" fill="#FFFFFF" stroke="#0F2D5C" stroke-width="3"/>
+    <circle cx="56" cy="56" r="16" fill="none" stroke="#0F2D5C" stroke-width="3"/>
+    <line x1="68" y1="68" x2="82" y2="82" stroke="#0F2D5C" stroke-width="4" stroke-linecap="round"/>
+    <rect x="48" y="56" width="4" height="10" rx="1" fill="#2F6FDB"/>
+    <rect x="54" y="60" width="4" height="6" rx="1" fill="#2F6FDB"/>
+    <rect x="60" y="58" width="4" height="8" rx="1" fill="#2F6FDB"/>
+    <text x="60" y="135" text-anchor="middle" fill="#0F2D5C" font-size="22" font-weight="700">Begrijpen</text>
+    <text x="60" y="158" text-anchor="middle" fill="#0F2D5C" font-size="15" font-weight="600" opacity="0.75">Structuur en controle</text>
+  </g>
+
+  <!-- Step 3: Rekenkern -->
+  <g transform="translate(670 50)">
+    <circle cx="60" cy="60" r="44" fill="#FFFFFF" stroke="#0F2D5C" stroke-width="3"/>
+    <rect x="40" y="44" width="16" height="16" rx="4" fill="none" stroke="#0F2D5C" stroke-width="3"/>
+    <rect x="64" y="44" width="16" height="16" rx="4" fill="none" stroke="#0F2D5C" stroke-width="3"/>
+    <rect x="52" y="64" width="16" height="16" rx="4" fill="none" stroke="#2F6FDB" stroke-width="3"/>
+    <text x="60" y="135" text-anchor="middle" fill="#0F2D5C" font-size="22" font-weight="700">Rekenkern</text>
+    <text x="60" y="158" text-anchor="middle" fill="#0F2D5C" font-size="15" font-weight="600" opacity="0.75">Deterministisch</text>
+  </g>
+
+  <!-- Step 4: Inzicht -->
+  <g transform="translate(960 50)">
+    <circle cx="60" cy="60" r="44" fill="#FFFFFF" stroke="#0F2D5C" stroke-width="3"/>
+    <rect x="38" y="46" width="44" height="32" rx="8" fill="none" stroke="#0F2D5C" stroke-width="3"/>
+    <rect x="44" y="54" width="10" height="18" rx="3" fill="#2F6FDB"/>
+    <rect x="58" y="60" width="10" height="12" rx="3" fill="#2F6FDB"/>
+    <rect x="72" y="56" width="6" height="16" rx="3" fill="#2F6FDB"/>
+    <text x="60" y="135" text-anchor="middle" fill="#0F2D5C" font-size="22" font-weight="700">Inzicht</text>
+    <text x="60" y="158" text-anchor="middle" fill="#0F2D5C" font-size="15" font-weight="600" opacity="0.75">Heldere dashboards</text>
+  </g>
+</svg>

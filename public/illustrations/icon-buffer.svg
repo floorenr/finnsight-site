@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-label="Buffer">
+  <path d="M6 10 C6 7.5 8 6 12 6 C16 6 18 7.5 18 10 V18 C18 19.1 17.1 20 16 20 H8 C6.9 20 6 19.1 6 18 Z"
+        fill="none" stroke="#0F2D5C" stroke-width="2.5" stroke-linejoin="round"/>
+  <line x1="9" y1="10" x2="15" y2="10" stroke="#2F6FDB" stroke-width="2.5" stroke-linecap="round"/>
+</svg>
