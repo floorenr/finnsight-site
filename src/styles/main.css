@@ -751,6 +751,19 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     scroll-margin-top: 100px;
 }
 
+/* How-it-works illustration (improve mobile legibility) */
+.how-figure-large {
+    margin: var(--spacing-lg) auto;
+    max-width: 1000px;
+}
+
+.how-illustration-large {
+    width: 100%;
+    height: auto;
+    display: block;
+    transform-origin: center top;
+}
+
 /* How it works illustration */
 .how-figure-large {
     margin-bottom: var(--spacing-2xl);
@@ -868,6 +881,14 @@ select {
         min-height: auto;
     }
 
+    /* Zoom the how-it-works SVG for better readability */
+    .how-figure-large {
+        overflow: hidden;
+    }
+    .how-illustration-large {
+        transform: scale(1.25);
+    }
+
     /* Mobile: slightly larger than before for readability */
     .logo-img {
         height: 46px;
@@ -885,6 +906,11 @@ select {
     
     .section {
         padding: var(--spacing-md);
+    }
+
+    /* Slightly stronger zoom on very small screens */
+    .how-illustration-large {
+        transform: scale(1.35);
     }
 }
 
