@@ -1,3 +1,13 @@
+// Mock IntersectionObserver for jsdom environment
+beforeAll(() => {
+  global.IntersectionObserver = class {
+    constructor() {}
+    observe() {}
+    disconnect() {}
+    unobserve() {}
+  };
+});
+
 import { render, screen } from '@testing-library/react';
 import { HelmetProvider } from 'react-helmet-async';
 import { MemoryRouter } from 'react-router-dom';
