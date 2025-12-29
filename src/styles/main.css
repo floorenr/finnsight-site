@@ -168,8 +168,8 @@ main {
 
 /* Sections */
 .section {
-    margin: var(--spacing-2xl) 0;
-    padding: var(--spacing-2xl) var(--spacing-lg);
+    margin: clamp(var(--spacing-xl), 6vw, var(--spacing-2xl)) 0;
+    padding: clamp(var(--spacing-xl), 5vw, var(--spacing-2xl)) var(--spacing-lg);
     background: var(--color-bg);
 }
 
@@ -190,7 +190,13 @@ main {
     background: var(--color-bg-alt);
     border-left: 4px solid var(--color-accent);
     border-radius: var(--radius-md);
+    /* Slightly tighter than default sections */
+    margin: clamp(var(--spacing-lg), 5vw, var(--spacing-xl)) 0;
+    padding: clamp(var(--spacing-lg), 4vw, var(--spacing-xl)) var(--spacing-lg);
 }
+
+/* Remove top margin when heading is first child in a section */
+.section > h2:first-child { margin-top: 0; }
 
 .lead {
     font-size: 1.25rem;
@@ -344,6 +350,9 @@ li {
     text-align: center;
     background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
     color: white;
+    /* Slightly more prominent spacing to bookend the page */
+    margin: clamp(var(--spacing-2xl), 7vw, calc(var(--spacing-2xl) + var(--spacing-md))) 0;
+    padding: clamp(var(--spacing-2xl), 7vw, calc(var(--spacing-2xl) + var(--spacing-md))) var(--spacing-lg);
 }
 
 .cta-section h2 {
@@ -940,4 +949,68 @@ select {
     outline-offset: 4px;
     box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
     border-radius: var(--radius-sm);
+}
+
+/* Scroll Progress Bar */
+.scroll-progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--brand-blue), var(--color-accent));
+    z-index: 200;
+    transition: width 0.1s ease-out;
+}
+
+/* Section Reveal Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.mock-grid > article {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.mock-grid > article:nth-child(1) { transition-delay: 0.1s; }
+.mock-grid > article:nth-child(2) { transition-delay: 0.2s; }
+.mock-grid > article:nth-child(3) { transition-delay: 0.3s; }
+
+.mock-grid > article.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.problems-grid > article {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.problems-grid > article:nth-child(1) { transition-delay: 0.1s; }
+.problems-grid > article:nth-child(2) { transition-delay: 0.2s; }
+.problems-grid > article:nth-child(3) { transition-delay: 0.3s; }
+
+.problems-grid > article.is-visible {
+    opacity: 1;
+    transform: translateY(0);
 }

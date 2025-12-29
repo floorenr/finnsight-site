@@ -1,8 +1,14 @@
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import Header from '../components/Header'
+import ScrollProgress from '../components/ScrollProgress'
+import { initializeGlobalObserver } from '../hooks/useIntersectionObserver'
 
 export default function LandingPage({ onNavigate }) {
+  useEffect(() => {
+    initializeGlobalObserver()
+  }, [])
 
   return (
     <>
@@ -10,6 +16,7 @@ export default function LandingPage({ onNavigate }) {
         <title>Finnsight — Rust en inzicht voor medewerkers</title>
         <meta name="description" content="Finnsight geeft Nederlandse medewerkers helder inzicht in hun financiële toekomst — deterministisch, privacy-first." />
       </Helmet>
+      <ScrollProgress />
       <Header />
 
       <main id="main-content">
@@ -17,7 +24,7 @@ export default function LandingPage({ onNavigate }) {
         <section id="what" className="section hero scroll-target">
           <h1>Inzicht in jouw financiële toekomst</h1>
           <p className="lead">Finnsight geeft Nederlandse medewerkers een helder overzicht van hun besteedbaar inkomen, woonlasten en pensioen.</p>
-          <p className="subtext">Transparante berekeningen en scenario’s, jij beslist.</p>
+          <p className="subtext">Transparante berekeningen en scenario's, jij beslist.</p>
           <div className="mt-xl">
             <a href="mailto:hello@finnsight.nl" className="btn btn-primary btn-large">Ik ben medewerker — stel een vraag</a>
           </div>
@@ -33,7 +40,7 @@ export default function LandingPage({ onNavigate }) {
             </article>
             <article>
               <h3>Voor werkgevers</h3>
-              <p>Financiële onzekerheid speelt vaak een grote rol. Finnsight kan medewerkers praktisch helpen met overzicht en scenario’s — en kan zo bijdragen aan rust en focus.</p>
+              <p>Financiële onzekerheid speelt vaak een grote rol. Finnsight kan medewerkers praktisch helpen met overzicht en scenario's — en kan zo bijdragen aan rust en focus.</p>
             </article>
           </div>
         </section>
@@ -42,13 +49,13 @@ export default function LandingPage({ onNavigate }) {
         <section className="section highlight">
           <h2>HR-waarde, zonder privacy-compromissen</h2>
           <p className="subtext mb-xl">
-            Geef medewerkers één helder overzicht van inkomen, woonlasten en pensioen in scenario’s. Werkgevers ontvangen nooit financiële data—niet individueel en niet als financiële aggregaten. Hooguit zien zij operationele voortgang (bijv. aantallen deelnemers/voltooiingen), zonder financiële inhoud.
+            Geef medewerkers één helder overzicht van inkomen, woonlasten en pensioen in scenario's. Werkgevers ontvangen nooit financiële data—niet individueel en niet als financiële aggregaten. Hooguit zien zij operationele voortgang (bijv. aantallen deelnemers/voltooiingen), zonder financiële inhoud.
           </p>
 
           <div className="grid-2 mb-xl">
             <article>
               <h3>Employee-first ervaring</h3>
-              <p>Medewerkers krijgen één overzicht (pensioen, hypotheek, vermogen) met scenario’s. HR hoeft geen individuele dossiers of financiële vragen te beheren.</p>
+              <p>Medewerkers krijgen één overzicht (pensioen, hypotheek, vermogen) met scenario's. HR hoeft geen individuele dossiers of financiële vragen te beheren.</p>
             </article>
             <article>
               <h3>Privacy by design</h3>
@@ -88,7 +95,7 @@ export default function LandingPage({ onNavigate }) {
         <section className="section">
           <h2>Hoe het er voor medewerkers uitziet</h2>
           <p className="subtext mb-xl">
-            Voorbeeldweergave uit de pilotversie: deterministische berekeningen, scenario’s per maand en toelichting die alleen naar meetbare uitkomsten verwijst.
+            Voorbeeldweergave uit de pilotversie: deterministische berekeningen, scenario's per maand en toelichting die alleen naar meetbare uitkomsten verwijst.
           </p>
 
           <div className="mock-grid">
