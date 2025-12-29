@@ -886,7 +886,9 @@ select {
         overflow: hidden;
     }
     .how-illustration-large {
+        /* Scale up for legibility without causing overflow by inversely adjusting width */
         transform: scale(1.25);
+        width: calc(100% / 1.25);
     }
 
     /* Mobile: slightly larger than before for readability */
@@ -911,6 +913,7 @@ select {
     /* Slightly stronger zoom on very small screens */
     .how-illustration-large {
         transform: scale(1.35);
+        width: calc(100% / 1.35);
     }
 }
 
