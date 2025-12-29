@@ -881,14 +881,16 @@ select {
         min-height: auto;
     }
 
-    /* Zoom the how-it-works SVG for better readability */
+    /* Full-bleed how-it-works SVG for mobile */
     .how-figure-large {
-        overflow: hidden;
+        margin-left: calc((100vw - 100%) / -2);
+        margin-right: calc((100vw - 100%) / -2);
     }
     .how-illustration-large {
-        /* Scale up for legibility without causing overflow by inversely adjusting width */
-        transform: scale(1.25);
-        width: calc(100% / 1.25);
+        width: 100vw;
+        max-width: none;
+        height: auto;
+        transform: none;
     }
 
     /* Mobile: slightly larger than before for readability */
@@ -910,10 +912,12 @@ select {
         padding: var(--spacing-md);
     }
 
-    /* Slightly stronger zoom on very small screens */
+    /* Maintain full-bleed on very small screens */
     .how-illustration-large {
-        transform: scale(1.35);
-        width: calc(100% / 1.35);
+        width: 100vw;
+        max-width: none;
+        height: auto;
+        transform: none;
     }
 }
 
