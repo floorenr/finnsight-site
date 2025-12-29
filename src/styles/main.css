@@ -108,8 +108,8 @@ a:hover {
 
 /* Logo image in header (prevent layout shift) */
 .logo-img {
-    height: 39px;
-    max-height: 40px;
+    height: 72px;
+    max-height: 80px;
     width: auto;
     display: block;
 }
@@ -806,6 +806,12 @@ select {
     main {
         max-width: 900px;
     }
+
+    /* Tablet: moderate logo size */
+    .logo-img {
+        height: 56px;
+        max-height: 64px;
+    }
 }
 
 /* Responsive */
@@ -860,6 +866,12 @@ select {
     
     .demo-card {
         min-height: auto;
+    }
+
+    /* Mobile: slightly larger than before for readability */
+    .logo-img {
+        height: 46px;
+        max-height: 52px;
     }
 }
 
