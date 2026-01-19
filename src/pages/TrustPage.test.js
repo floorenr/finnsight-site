@@ -44,4 +44,11 @@ describe('TrustPage', () => {
     const footer = screen.getByRole('contentinfo');
     expect(footer).toBeInTheDocument();
   });
+
+  it('has link to explainer video on landing page', () => {
+    renderWithRouter(<TrustPage onNavigate={() => {}} />);
+    const videoLink = screen.getByRole('link', { name: /Bekijk de 1-minuut explainer/i });
+    expect(videoLink).toBeInTheDocument();
+    expect(videoLink).toHaveAttribute('href', '/#glass-box-video');
+  });
 });
