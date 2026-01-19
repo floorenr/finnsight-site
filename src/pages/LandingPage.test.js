@@ -50,4 +50,12 @@ describe('LandingPage', () => {
     const footer = screen.getByRole('contentinfo');
     expect(footer).toBeInTheDocument();
   });
+
+  it('displays explainer video', () => {
+    renderWithRouter(<LandingPage onNavigate={() => {}} />);
+    const video = screen.getByTestId('explainer-video');
+    expect(video).toBeInTheDocument();
+    expect(video).toHaveAttribute('src', '/media/explainer_video.mp4');
+    expect(video).toHaveAttribute('poster', '/media/explainer-video-poster.jpg');
+  });
 });

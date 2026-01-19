@@ -28,6 +28,9 @@ export default function TrustPage({ onNavigate }) {
             <li>AI wordt <strong>nooit</strong> gebruikt in berekeningen zelf</li>
           </ul>
           <p>Kort gezegd: dezelfde gegevens geven altijd dezelfde uitkomst—je kunt het narekenen.</p>
+          <p className="mt-sm">
+            <Link to="/#glass-box-video" className="btn">Bekijk de 1-minuut explainer</Link>
+          </p>
         </section>
 
         <section>

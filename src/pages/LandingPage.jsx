@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import Header from '../components/Header'
 import ScrollProgress from '../components/ScrollProgress'
+import ExplainerVideo from '../components/ExplainerVideo'
 import { initializeGlobalObserver } from '../hooks/useIntersectionObserver'
 
 export default function LandingPage({ onNavigate }) {
@@ -233,6 +234,15 @@ export default function LandingPage({ onNavigate }) {
           <p className="mock-caption">
             Data zijn illustratief, berekeningen deterministisch en consistent met de rekenkern. Uitkomsten zijn projecties op basis van aannames en jouw input.
           </p>
+        </section>
+
+        {/* Section 2d: Explainer Video */}
+        <section className="section" id="glass-box-video">
+          <h2>In 1 minuut: De Glazen Doos</h2>
+          <p className="subtext mb-xl">
+            Zie hoe Finnsight transparantie en controleerbaarheid combineert in een praktisch overzicht.
+          </p>
+          <ExplainerVideo />
         </section>
 
         {/* Section 3: Problems addressed */}

@@ -951,6 +951,51 @@ select {
     border-radius: var(--radius-sm);
 }
 
+/* Explainer Video Card */
+.explainerVideoCard {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: var(--spacing-xl);
+    background: var(--color-bg-alt);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 8px 24px rgba(15, 45, 92, 0.1);
+}
+
+.explainerVideo {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
+    background: #000;
+    display: block;
+}
+
+.explainerVideoCaption {
+    margin-top: var(--spacing-md);
+    margin-bottom: 0;
+    text-align: center;
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+    font-style: italic;
+}
+
+.explainerVideoFallback {
+    padding: var(--spacing-lg);
+    text-align: center;
+    color: white;
+    background: #1f2937;
+}
+
+.explainerVideoFallback a {
+    color: var(--color-secondary);
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .explainerVideoCard {
+        padding: var(--spacing-lg);
+    }
+}
+
 /* Scroll Progress Bar */
 .scroll-progress-bar {
     position: fixed;
