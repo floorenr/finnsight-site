@@ -38,7 +38,7 @@ function validateInput(body) {
   return errors
 }
 
-async function sendLeadEmail(data) {
+async function sendNotificationEmail(data) {
   const roleLabels = {
     werkgever: 'Werkgever/HR',
     medewerker: 'Medewerker',
@@ -100,7 +100,59 @@ async function sendLeadEmail(data) {
 
   if (!response.ok) {
     const errorText = await response.text()
-    throw new Error(`Email sending failed: ${response.status} - ${errorText}`)
+    throw new Error(`Notification email failed: ${response.status} - ${errorText}`)
+  }
+
+  return response.json()
+}
+
+async function sendConfirmationEmail(data) {
+  const response = await fetch('https://api.resend.com/emails', {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${RESEND_API_KEY}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      from: 'Finnsight <noreply@finnsight.nl>',
+      to: [data.email],
+      reply_to: NOTIFICATION_EMAIL,
+      subject: 'Bedankt voor je pilotaanvraag - Finnsight',
+      html: `
+        <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto;">
+          <h2 style="color: #1e293b;">Bedankt voor je interesse in Finnsight, ${data.name}!</h2>
+
+          <p style="color: #475569; line-height: 1.6;">
+            We hebben je aanvraag voor pilotinformatie ontvangen. Fijn dat je geïnteresseerd bent in hoe Finnsight kan helpen bij het bieden van financieel inzicht aan medewerkers.
+          </p>
+
+          <p style="color: #475569; line-height: 1.6;">
+            <strong>Wat kun je verwachten?</strong><br>
+            We nemen binnen 2 werkdagen contact met je op via dit e-mailadres om je vragen te beantwoorden en de mogelijkheden te bespreken.
+          </p>
+
+          <p style="color: #475569; line-height: 1.6;">
+            Heb je in de tussentijd vragen? Je kunt altijd antwoorden op deze e-mail.
+          </p>
+
+          <p style="color: #475569; line-height: 1.6; margin-top: 32px;">
+            Met vriendelijke groet,<br>
+            <strong>Team Finnsight</strong>
+          </p>
+
+          <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 32px 0;" />
+
+          <p style="font-size: 12px; color: #9ca3af;">
+            Dit is een automatisch gegenereerde e-mail. Je ontvangt deze omdat je het pilotformulier op finnsight.nl hebt ingevuld.
+          </p>
+        </div>
+      `,
+    }),
+  })
+
+  if (!response.ok) {
+    const errorText = await response.text()
+    throw new Error(`Confirmation email failed: ${response.status} - ${errorText}`)
   }
 
   return response.json()
@@ -144,8 +196,11 @@ export default async function handler(req, res) {
       source: source || req.headers.referer || 'direct',
     }
 
-    // Send lead to email
-    await sendLeadEmail(leadData)
+    // Send notification to Finnsight team
+    await sendNotificationEmail(leadData)
+
+    // Send confirmation to the requester
+    await sendConfirmationEmail(leadData)
 
     return res.status(201).json({ success: true })
   } catch (error) {

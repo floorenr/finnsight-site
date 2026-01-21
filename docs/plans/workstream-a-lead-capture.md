@@ -86,8 +86,9 @@ CTA → Modal → Form → /api/site/leads → Email to hello@finnsight.nl
 
 **Behavior:**
 - Validates input
-- Sends formatted email to hello@finnsight.nl with lead details
-- Reply-to set to submitter's email for easy follow-up
+- Sends formatted notification email to hello@finnsight.nl with lead details
+- Sends confirmation email to the requester
+- Reply-to set appropriately for easy two-way communication
 - No database storage
 
 ---
