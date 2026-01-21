@@ -40,8 +40,8 @@ export default function SEOHead({
       {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
 
       {/* hreflang tags (not for 404) */}
-      {canonicalUrl && <link rel="alternate" hreflang={hreflang} href={canonicalUrl} />}
-      {canonicalUrl && <link rel="alternate" hreflang="x-default" href={canonicalUrl} />}
+      {canonicalUrl && <link rel="alternate" hrefLang={hreflang} href={canonicalUrl} />}
+      {canonicalUrl && <link rel="alternate" hrefLang="x-default" href={baseUrl} />}
 
       {/* Open Graph tags */}
       <meta property="og:type" content={ogType} />
