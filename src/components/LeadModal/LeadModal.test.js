@@ -102,7 +102,7 @@ describe('LeadModal', () => {
     expect(screen.queryByRole('dialog')).not.toBeInTheDocument()
   })
 
-  it('closes when clicking overlay background', () => {
+  it('does NOT close when clicking overlay background (prevents accidental data loss)', () => {
     renderWithProviders(
       <>
         <ModalTrigger />
@@ -113,10 +113,10 @@ describe('LeadModal', () => {
     fireEvent.click(screen.getByText('Open Modal'))
     expect(screen.getByRole('dialog')).toBeInTheDocument()
 
-    // Click on the overlay (parent of dialog)
+    // Click on the overlay (parent of dialog) - should NOT close
     const overlay = screen.getByRole('dialog').parentElement
     fireEvent.click(overlay)
-    expect(screen.queryByRole('dialog')).not.toBeInTheDocument()
+    expect(screen.getByRole('dialog')).toBeInTheDocument()
   })
 
   it('contains lead capture form', () => {

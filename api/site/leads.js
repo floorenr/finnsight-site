@@ -12,6 +12,17 @@ const NOTIFICATION_EMAIL = process.env.NOTIFICATION_EMAIL || 'hello@finnsight.nl
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 const VALID_ROLES = ['werkgever', 'medewerker', 'adviseur', 'anders']
 
+// Escape HTML to prevent XSS in emails
+function escapeHtml(str) {
+  if (!str) return ''
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;')
+}
+
 function validateInput(body) {
   const errors = []
 
@@ -62,14 +73,14 @@ async function sendNotificationEmail(data) {
       from: 'Finnsight Website <noreply@finnsight.nl>',
       to: [NOTIFICATION_EMAIL],
       reply_to: data.email,
-      subject: `Pilotaanvraag: ${data.name} (${roleLabels[data.role]})`,
+      subject: `Pilotaanvraag: ${escapeHtml(data.name)} (${roleLabels[data.role]})`,
       html: `
         <h2>Nieuwe pilotaanvraag ontvangen</h2>
         <p style="color: #666; margin-bottom: 20px;">Ontvangen op ${timestamp}</p>
         <table style="border-collapse: collapse; width: 100%; max-width: 500px;">
           <tr>
             <td style="padding: 12px; border: 1px solid #e5e7eb; background: #f9fafb; width: 140px;"><strong>Naam</strong></td>
-            <td style="padding: 12px; border: 1px solid #e5e7eb;">${data.name}</td>
+            <td style="padding: 12px; border: 1px solid #e5e7eb;">${escapeHtml(data.name)}</td>
           </tr>
           <tr>
             <td style="padding: 12px; border: 1px solid #e5e7eb; background: #f9fafb;"><strong>Rol</strong></td>
@@ -77,22 +88,22 @@ async function sendNotificationEmail(data) {
           </tr>
           <tr>
             <td style="padding: 12px; border: 1px solid #e5e7eb; background: #f9fafb;"><strong>Organisatie</strong></td>
-            <td style="padding: 12px; border: 1px solid #e5e7eb;">${data.company || '—'}</td>
+            <td style="padding: 12px; border: 1px solid #e5e7eb;">${escapeHtml(data.company) || '—'}</td>
           </tr>
           <tr>
             <td style="padding: 12px; border: 1px solid #e5e7eb; background: #f9fafb;"><strong>E-mail</strong></td>
-            <td style="padding: 12px; border: 1px solid #e5e7eb;"><a href="mailto:${data.email}">${data.email}</a></td>
+            <td style="padding: 12px; border: 1px solid #e5e7eb;"><a href="mailto:${encodeURIComponent(data.email)}">${escapeHtml(data.email)}</a></td>
           </tr>
           <tr>
             <td style="padding: 12px; border: 1px solid #e5e7eb; background: #f9fafb;"><strong>Bron</strong></td>
-            <td style="padding: 12px; border: 1px solid #e5e7eb;">${data.source || 'direct'}</td>
+            <td style="padding: 12px; border: 1px solid #e5e7eb;">${escapeHtml(data.source) || 'direct'}</td>
           </tr>
         </table>
         <p style="margin-top: 20px; padding: 12px; background: #fef3c7; border-radius: 6px; color: #92400e;">
-          <strong>Actie:</strong> Neem binnen 2 werkdagen contact op met ${data.name}.
+          <strong>Actie:</strong> Neem binnen 2 werkdagen contact op met ${escapeHtml(data.name)}.
         </p>
         <p style="margin-top: 16px; font-size: 12px; color: #9ca3af;">
-          Je kunt direct antwoorden op deze e-mail om ${data.name} te bereiken.
+          Je kunt direct antwoorden op deze e-mail om ${escapeHtml(data.name)} te bereiken.
         </p>
       `,
     }),
@@ -120,7 +131,7 @@ async function sendConfirmationEmail(data) {
       subject: 'Bedankt voor je pilotaanvraag - Finnsight',
       html: `
         <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto;">
-          <h2 style="color: #1e293b;">Bedankt voor je interesse in Finnsight, ${data.name}!</h2>
+          <h2 style="color: #1e293b;">Bedankt voor je interesse in Finnsight, ${escapeHtml(data.name)}!</h2>
 
           <p style="color: #475569; line-height: 1.6;">
             We hebben je aanvraag voor pilotinformatie ontvangen. Fijn dat je geïnteresseerd bent in hoe Finnsight kan helpen bij het bieden van financieel inzicht aan medewerkers.
@@ -143,7 +154,7 @@ async function sendConfirmationEmail(data) {
           <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 32px 0;" />
 
           <p style="font-size: 12px; color: #9ca3af;">
-            Dit is een automatisch gegenereerde e-mail. Je ontvangt deze omdat je het pilotformulier op finnsight.nl hebt ingevuld.
+            Dit is een automatisch gegenereerde e-mail. Je ontvangt deze omdat je het pilotformulier op finnsight.app hebt ingevuld.
           </p>
         </div>
       `,

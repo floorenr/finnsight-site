@@ -17,24 +17,17 @@ export default function LeadModal() {
   const { isOpen, closeModal } = useModal()
   const modalRef = useRef(null)
   const closeButtonRef = useRef(null)
-  const previousActiveElement = useRef(null)
 
-  // Store previously focused element and focus close button on open
+  // Focus close button on open, manage body scroll
+  // Note: focus return to trigger is handled by ModalContext
   useEffect(() => {
     if (isOpen) {
-      previousActiveElement.current = document.activeElement
-      // Focus the close button after modal renders
       setTimeout(() => {
         closeButtonRef.current?.focus()
       }, 0)
-      // Prevent body scroll
       document.body.style.overflow = 'hidden'
     } else {
       document.body.style.overflow = ''
-      // Return focus to previous element
-      if (previousActiveElement.current) {
-        previousActiveElement.current.focus()
-      }
     }
 
     return () => {
