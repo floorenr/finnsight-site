@@ -1,16 +1,21 @@
-import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
+import SEOHead from '../components/SEOHead'
+import { PAGE_SEO } from '../utils/seo'
 import Header from '../components/Header'
 import CTAButton from '../components/CTAButton/CTAButton'
 
 export default function TrustPage({ onNavigate }) {
+  const seo = PAGE_SEO.trust
 
   return (
     <>
-      <Helmet>
-        <title>Vertrouwen & Compliance — Finnsight</title>
-        <meta name="description" content="Hoe Finnsight deterministisch rekent, privacy bewaakt en binnen AFM-kaders blijft." />
-      </Helmet>
+      <SEOHead
+        title={seo.title}
+        description={seo.description}
+        path={seo.path}
+        ogTitle={seo.ogTitle}
+        ogDescription={seo.ogDescription}
+      />
       <Header />
 
       <main className="content" id="main-content">
