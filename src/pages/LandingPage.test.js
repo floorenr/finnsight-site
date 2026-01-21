@@ -11,13 +11,16 @@ beforeAll(() => {
 import { render, screen } from '@testing-library/react';
 import { HelmetProvider } from 'react-helmet-async';
 import { MemoryRouter } from 'react-router-dom';
+import { ModalProvider } from '../context/site/ModalContext';
 import LandingPage from '../pages/LandingPage';
 
-// Helper to wrap component with Router context and HelmetProvider
+// Helper to wrap component with Router context, HelmetProvider, and ModalProvider
 const renderWithRouter = (ui) => {
   return render(
     <HelmetProvider>
-      <MemoryRouter>{ui}</MemoryRouter>
+      <MemoryRouter>
+        <ModalProvider>{ui}</ModalProvider>
+      </MemoryRouter>
     </HelmetProvider>
   );
 };

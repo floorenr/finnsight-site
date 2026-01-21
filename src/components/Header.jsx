@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
+import CTAButton from './CTAButton/CTAButton'
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -57,7 +58,7 @@ export default function Header() {
             </li>
           )}
           <li>
-            <a href="mailto:hello@finnsight.nl" className="cta-nav">Contact</a>
+            <CTAButton variant="nav">Contact</CTAButton>
           </li>
         </ul>
       </nav>

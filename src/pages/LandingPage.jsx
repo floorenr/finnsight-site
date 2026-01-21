@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet-async'
 import Header from '../components/Header'
 import ScrollProgress from '../components/ScrollProgress'
 import ExplainerVideo from '../components/ExplainerVideo'
+import CTAButton from '../components/CTAButton/CTAButton'
 import { initializeGlobalObserver } from '../hooks/useIntersectionObserver'
 
 export default function LandingPage({ onNavigate }) {
@@ -27,7 +28,7 @@ export default function LandingPage({ onNavigate }) {
           <p className="lead">Finnsight geeft Nederlandse medewerkers een helder overzicht van hun besteedbaar inkomen, woonlasten en pensioen.</p>
           <p className="subtext">Transparante berekeningen en scenario's, jij beslist.</p>
           <div className="mt-xl">
-            <a href="mailto:hello@finnsight.nl" className="btn btn-primary btn-large">Ik ben medewerker — stel een vraag</a>
+            <CTAButton variant="primaryLarge">Vraag pilotinformatie aan</CTAButton>
           </div>
         </section>
 
@@ -79,7 +80,7 @@ export default function LandingPage({ onNavigate }) {
           </div>
 
           <div className="text-center">
-            <a href="mailto:hello@finnsight.nl?subject=Pilotinformatie%20Finnsight" className="btn btn-primary">Ik ben werkgever — vraag pilotinfo</a>
+            <CTAButton variant="primary">Vraag pilotinformatie aan</CTAButton>
             <p className="mt-sm mb-xs">
               Beschikbaar voor 2–3 nieuwe pilots per maand.
             </p>
@@ -292,7 +293,7 @@ export default function LandingPage({ onNavigate }) {
           <h2>Interesse?</h2>
           <p>We draaien pilots met een select aantal werkgevers om Finnsight verder aan te scherpen in de praktijk.</p>
           <p>Ben je werkgever, onderzoeker, journalist, of adviseur?</p>
-          <a href="mailto:hello@finnsight.nl" className="btn btn-primary">Ik ben werkgever — ontvang pilotopzet</a>
+          <CTAButton variant="primary">Vraag pilotinformatie aan</CTAButton>
         </section>
       </main>
 
@@ -301,7 +302,7 @@ export default function LandingPage({ onNavigate }) {
         <nav className="footer-nav" aria-label="Footer navigation">
           <Link to="/trust">Vertrouwen & Compliance</Link>
           <span className="divider-muted">|</span>
-          <a href="mailto:hello@finnsight.nl">Contact</a>
+          <CTAButton variant="text" className="footer-cta-link">Contact</CTAButton>
           <span className="divider-muted">|</span>
           <Link to="/privacy">Privacy en voorwaarden</Link>
         </nav>
