@@ -82,13 +82,6 @@ export default function LeadModal() {
     []
   )
 
-  // Handle overlay click
-  const handleOverlayClick = (e) => {
-    if (e.target === e.currentTarget) {
-      closeModal()
-    }
-  }
-
   const handleFormSuccess = () => {
     // Keep modal open to show success state
     // User can close manually
@@ -99,7 +92,6 @@ export default function LeadModal() {
   return createPortal(
     <div
       className="modal-overlay"
-      onClick={handleOverlayClick}
       aria-hidden="false"
     >
       <div
