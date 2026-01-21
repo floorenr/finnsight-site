@@ -114,7 +114,7 @@ async function sendConfirmationEmail(data) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      from: 'Finnsight <noreply@finnsight.nl>',
+      from: 'Finnsight <hello@finnsight.nl>',
       to: [data.email],
       reply_to: NOTIFICATION_EMAIL,
       subject: 'Bedankt voor je pilotaanvraag - Finnsight',
