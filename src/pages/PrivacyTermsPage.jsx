@@ -1,16 +1,21 @@
-import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
+import SEOHead from '../components/SEOHead'
+import { PAGE_SEO } from '../utils/seo'
 import Header from '../components/Header'
 import CTAButton from '../components/CTAButton/CTAButton'
 
 export default function PrivacyTermsPage({ onNavigate }) {
+  const seo = PAGE_SEO.privacy
 
   return (
     <>
-      <Helmet>
-        <title>Privacy en voorwaarden — Finnsight</title>
-        <meta name="description" content="Hoe Finnsight omgaat met privacy, opslag en gebruiksvoorwaarden." />
-      </Helmet>
+      <SEOHead
+        title={seo.title}
+        description={seo.description}
+        path={seo.path}
+        ogTitle={seo.ogTitle}
+        ogDescription={seo.ogDescription}
+      />
       <Header />
 
       <main className="content" id="main-content">

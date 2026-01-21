@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { Helmet } from 'react-helmet-async'
+import SEOHead from '../components/SEOHead'
+import { PAGE_SEO } from '../utils/seo'
 import Header from '../components/Header'
 import ScrollProgress from '../components/ScrollProgress'
 import ExplainerVideo from '../components/ExplainerVideo'
@@ -12,12 +13,17 @@ export default function LandingPage({ onNavigate }) {
     initializeGlobalObserver()
   }, [])
 
+  const seo = PAGE_SEO.landing
+
   return (
     <>
-      <Helmet>
-        <title>Finnsight — Rust en inzicht voor medewerkers</title>
-        <meta name="description" content="Finnsight geeft Nederlandse medewerkers helder inzicht in hun financiële toekomst — deterministisch, privacy-first." />
-      </Helmet>
+      <SEOHead
+        title={seo.title}
+        description={seo.description}
+        path={seo.path}
+        ogTitle={seo.ogTitle}
+        ogDescription={seo.ogDescription}
+      />
       <ScrollProgress />
       <Header />
 

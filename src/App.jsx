@@ -5,6 +5,7 @@ import LeadModal from './components/LeadModal/LeadModal'
 import LandingPage from './pages/LandingPage'
 import TrustPage from './pages/TrustPage'
 import PrivacyTermsPage from './pages/PrivacyTermsPage'
+import NotFoundPage from './pages/NotFoundPage'
 
 function AppContent() {
   const navigate = useNavigate()
@@ -22,8 +23,7 @@ function AppContent() {
             <Route path="/" element={<LandingPage onNavigate={handleNavigate} />} />
             <Route path="/trust" element={<TrustPage onNavigate={handleNavigate} />} />
             <Route path="/privacy" element={<PrivacyTermsPage onNavigate={handleNavigate} />} />
-            {/* Catch-all: redirect unknown routes to home */}
-            <Route path="*" element={<LandingPage onNavigate={handleNavigate} />} />
+            <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </div>
         <LeadModal />
