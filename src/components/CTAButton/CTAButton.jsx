@@ -31,7 +31,8 @@ export default function CTAButton({
     text: '', // Inherits link styling from parent
   }
 
-  const classes = [baseClasses[variant] || baseClasses.primary, className]
+  const variantClass = variant in baseClasses ? baseClasses[variant] : baseClasses.primary
+  const classes = [variantClass, className]
     .filter(Boolean)
     .join(' ')
 
