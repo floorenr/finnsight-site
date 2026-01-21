@@ -369,6 +369,51 @@ li {
     padding: var(--spacing-md) var(--spacing-xl);
 }
 
+/* Text variant button (looks like a link) */
+button.footer-cta-link {
+    background: none;
+    border: none;
+    color: #60a5fa;
+    cursor: pointer;
+    font-size: inherit;
+    font-family: inherit;
+    padding: 0;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+button.footer-cta-link:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+button.footer-cta-link:focus-visible {
+    outline: 2px solid #60a5fa;
+    outline-offset: 2px;
+}
+
+/* Inline text button (in body content, looks like a link) */
+.content button:not(.btn):not(.cta-nav):not(.footer-cta-link) {
+    background: none;
+    border: none;
+    color: var(--color-secondary);
+    cursor: pointer;
+    font-size: inherit;
+    font-family: inherit;
+    padding: 0;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.content button:not(.btn):not(.cta-nav):not(.footer-cta-link):hover {
+    text-decoration: underline;
+}
+
+.content button:not(.btn):not(.cta-nav):not(.footer-cta-link):focus-visible {
+    outline: 2px solid var(--color-secondary);
+    outline-offset: 2px;
+}
+
 /* Footer */
 .footer {
     margin-top: var(--spacing-2xl);

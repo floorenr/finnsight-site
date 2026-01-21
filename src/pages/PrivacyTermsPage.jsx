@@ -1,7 +1,7 @@
-import React from 'react'
 import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
 import Header from '../components/Header'
+import CTAButton from '../components/CTAButton/CTAButton'
 
 export default function PrivacyTermsPage({ onNavigate }) {
 
@@ -23,8 +23,21 @@ export default function PrivacyTermsPage({ onNavigate }) {
             <li>Geen account nodig; we slaan via deze website geen ingevulde intakegegevens op.</li>
             <li>Geen tracking cookies en geen third-party analytics.</li>
             <li>Werkgevers ontvangen nooit financiële data—niet individueel en niet als financiële aggregaten. Hooguit zien zij operationele voortgang (bijv. aantallen deelnemers/voltooiingen), zonder financiële inhoud.</li>
-            <li>Mail je ons via <a href="mailto:hello@finnsight.nl">hello@finnsight.nl</a>, dan bewaren we je e-mail alleen om te kunnen antwoorden.</li>
+            <li>Mail je ons via hello@finnsight.nl, dan bewaren we je e-mail alleen om te kunnen antwoorden.</li>
           </ul>
+        </section>
+
+        <section>
+          <h2>Pilotformulier</h2>
+          <p>Via het pilotaanvraagformulier op deze website verzamelen we de volgende gegevens:</p>
+          <ul>
+            <li><strong>Welke gegevens:</strong> naam, rol, organisatie (optioneel), e-mailadres</li>
+            <li><strong>Doel:</strong> uitsluitend om contact met je op te nemen over deelname aan de Finnsight pilot</li>
+            <li><strong>Opslag:</strong> gegevens worden opgeslagen in een beveiligde omgeving (geen gedeelde toegang met derden)</li>
+            <li><strong>Bewaartermijn:</strong> gegevens worden verwijderd zodra de pilotfase is afgerond of op jouw verzoek eerder</li>
+            <li><strong>Verwijdering:</strong> stuur een e-mail naar hello@finnsight.nl om je gegevens te laten verwijderen</li>
+          </ul>
+          <p><strong>Let op:</strong> dit formulier is geen financieel intakeformulier. We verzamelen geen financiële gegevens via dit formulier.</p>
         </section>
 
         <section>
@@ -38,7 +51,7 @@ export default function PrivacyTermsPage({ onNavigate }) {
 
         <section>
           <h2>Contact</h2>
-          <p>Vragen of verzoeken? <a href="mailto:hello@finnsight.nl">hello@finnsight.nl</a>.</p>
+          <p>Vragen of verzoeken? Neem contact met ons op via hello@finnsight.nl of <CTAButton variant="text">vul het contactformulier in</CTAButton>.</p>
         </section>
       </main>
 
@@ -49,7 +62,7 @@ export default function PrivacyTermsPage({ onNavigate }) {
           <span className="divider-muted">|</span>
           <Link to="/trust">Vertrouwen & Compliance</Link>
           <span className="divider-muted">|</span>
-          <a href="mailto:hello@finnsight.nl">Contact</a>
+          <CTAButton variant="text" className="footer-cta-link">Contact</CTAButton>
         </nav>
         <p className="footer-note">&copy; 2025 Finnsight</p>
       </footer>

@@ -1,5 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom'
 import ErrorBoundary from './components/ErrorBoundary'
+import { ModalProvider } from './context/site/ModalContext'
+import LeadModal from './components/LeadModal/LeadModal'
 import LandingPage from './pages/LandingPage'
 import TrustPage from './pages/TrustPage'
 import PrivacyTermsPage from './pages/PrivacyTermsPage'
@@ -13,17 +15,20 @@ function AppContent() {
   }
 
   return (
-    <ErrorBoundary>
-      <div className="app">
-        <Routes>
-          <Route path="/" element={<LandingPage onNavigate={handleNavigate} />} />
-          <Route path="/trust" element={<TrustPage onNavigate={handleNavigate} />} />
-          <Route path="/privacy" element={<PrivacyTermsPage onNavigate={handleNavigate} />} />
-          {/* Catch-all: redirect unknown routes to home */}
-          <Route path="*" element={<LandingPage onNavigate={handleNavigate} />} />
-        </Routes>
-      </div>
-    </ErrorBoundary>
+    <ModalProvider>
+      <ErrorBoundary>
+        <div className="app">
+          <Routes>
+            <Route path="/" element={<LandingPage onNavigate={handleNavigate} />} />
+            <Route path="/trust" element={<TrustPage onNavigate={handleNavigate} />} />
+            <Route path="/privacy" element={<PrivacyTermsPage onNavigate={handleNavigate} />} />
+            {/* Catch-all: redirect unknown routes to home */}
+            <Route path="*" element={<LandingPage onNavigate={handleNavigate} />} />
+          </Routes>
+        </div>
+        <LeadModal />
+      </ErrorBoundary>
+    </ModalProvider>
   )
 }
 

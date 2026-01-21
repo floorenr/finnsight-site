@@ -7,6 +7,7 @@ __pycache__/
 .DS_Store
 dist/
 build/
+coverage/
 .vercel/
 .netlify/
 *.log

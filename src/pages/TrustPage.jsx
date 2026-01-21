@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
 import Header from '../components/Header'
+import CTAButton from '../components/CTAButton/CTAButton'
 
 export default function TrustPage({ onNavigate }) {
 
@@ -79,7 +80,7 @@ export default function TrustPage({ onNavigate }) {
             <li><strong>Transparante aannames:</strong> Je ziet altijd welke regels we gebruiken</li>
           </ul>
           <p>
-            Vragen over compliance? <a href="mailto:hello@finnsight.nl">Neem contact op</a>.
+            Vragen over compliance? <CTAButton variant="text">Neem contact op</CTAButton>.
           </p>
         </section>
 
@@ -101,7 +102,7 @@ export default function TrustPage({ onNavigate }) {
           <span className="divider-muted">|</span>
           <Link to="/privacy">Privacy en voorwaarden</Link>
           <span className="divider-muted">|</span>
-          <a href="mailto:hello@finnsight.nl">Contact</a>
+          <CTAButton variant="text" className="footer-cta-link">Contact</CTAButton>
         </nav>
         <p className="footer-note">&copy; 2025 Finnsight</p>
       </footer>
