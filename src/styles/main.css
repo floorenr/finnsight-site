@@ -911,11 +911,12 @@ select {
         width: 100%;
     }
 
-    .nav a, .nav .cta-nav {
+    .nav a, .nav .cta-nav, .nav button.cta-nav {
         display: block;
         padding: var(--spacing-md);
         min-height: 44px;
         text-align: center;
+        width: 100%;
     }
 
     .goal-buttons {
@@ -987,8 +988,11 @@ select {
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
-/* Visible focus for logo */
-.logo:focus,
+/* Only show focus outline for keyboard navigation, not mouse clicks */
+.logo:focus {
+    outline: none;
+    box-shadow: none;
+}
 .logo:focus-visible {
     outline: 3px solid var(--color-secondary);
     outline-offset: 4px;

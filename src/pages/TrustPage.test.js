@@ -52,6 +52,7 @@ describe('TrustPage', () => {
     renderWithRouter(<TrustPage onNavigate={() => {}} />);
     const videoLink = screen.getByRole('link', { name: /Bekijk de 1-minuut explainer/i });
     expect(videoLink).toBeInTheDocument();
-    expect(videoLink).toHaveAttribute('href', '/#glass-box-video');
+    // Link navigates to / and scrolls to #glass-box-video via onClick handler
+    expect(videoLink).toHaveAttribute('href', '/');
   });
 });
