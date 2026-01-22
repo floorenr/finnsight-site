@@ -121,14 +121,14 @@ export default function LandingPage({ onNavigate }) {
                   <span>2025 · Na vaste lasten</span>
                   <strong>€3.120</strong>
                 </div>
-                <div className="progress-track">
+                <div className="progress-track" role="img" aria-hidden="true">
                   <div className="progress-fill progress-cyan" style={{ width: '82%' }} />
                 </div>
                 <div className="mock-panel-row">
                   <span>2030 · Na vaste lasten</span>
                   <strong>€3.480</strong>
                 </div>
-                <div className="progress-track">
+                <div className="progress-track" role="img" aria-hidden="true">
                   <div className="progress-fill progress-sky" style={{ width: '91%' }} />
                 </div>
                 <div className="bar-grid">
@@ -208,7 +208,7 @@ export default function LandingPage({ onNavigate }) {
                   <span>Netto besteedbaar</span>
                   <span className="metric-strong">€+140</span>
                 </div>
-                <div className="progress-track light">
+                <div className="progress-track light" role="img" aria-hidden="true">
                   <div className="progress-fill progress-cyan" style={{ width: '74%' }} />
                   <div className="progress-fill progress-indigo overlay" style={{ width: '88%' }} />
                 </div>
@@ -217,7 +217,7 @@ export default function LandingPage({ onNavigate }) {
                   <span>Resthypotheek 2030</span>
                   <span className="metric-strong">€-14.200</span>
                 </div>
-                <div className="progress-track light">
+                <div className="progress-track light" role="img" aria-hidden="true">
                   <div className="progress-fill progress-cyan" style={{ width: '72%' }} />
                   <div className="progress-fill progress-indigo overlay" style={{ width: '58%' }} />
                 </div>
@@ -226,7 +226,7 @@ export default function LandingPage({ onNavigate }) {
                   <span>Pensioen + AOW (projectie)</span>
                   <span className="metric-strong">€3.250 p/m</span>
                 </div>
-                <div className="progress-track light">
+                <div className="progress-track light" role="img" aria-hidden="true">
                   <div className="progress-fill progress-cyan" style={{ width: '81%' }} />
                   <div className="progress-fill progress-indigo overlay" style={{ width: '81%' }} />
                 </div>
@@ -285,6 +285,9 @@ export default function LandingPage({ onNavigate }) {
               loading="lazy"
               decoding="async"
             />
+            <figcaption className="visually-hidden">
+              Visuele weergave van het Finnsight proces: jouw financiële gegevens worden verwerkt door een deterministische rekenkern tot een helder overzicht.
+            </figcaption>
           </figure>
           <ol className="process">
             <li><strong>Jij deelt je situatie:</strong> Inkomsten, woning, schulden, pensioen, uitgaven.</li>
@@ -304,7 +307,7 @@ export default function LandingPage({ onNavigate }) {
       </main>
 
       <footer className="footer">
-        <img src="/brand/mark-on-dark.svg" alt="Finnsight" className="footer-mark" />
+        <img src="/brand/mark-on-dark.svg" alt="" className="footer-mark" aria-hidden="true" />
         <nav className="footer-nav" aria-label="Footer navigation">
           <Link to="/trust">Vertrouwen & Compliance</Link>
           <span className="divider-muted">|</span>

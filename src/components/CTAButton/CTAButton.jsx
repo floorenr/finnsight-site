@@ -14,6 +14,7 @@ export default function CTAButton({
   children = 'Vraag pilotinformatie aan',
   variant = 'primary',
   className = '',
+  'aria-label': ariaLabel,
   ...props
 }) {
   const { openModal } = useModal()
@@ -42,6 +43,7 @@ export default function CTAButton({
       type="button"
       className={classes}
       onClick={handleClick}
+      aria-label={ariaLabel}
       {...props}
     >
       {children}
