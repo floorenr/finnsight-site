@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import SEOHead from '../components/SEOHead'
 import { PAGE_SEO } from '../utils/seo'
 import Header from '../components/Header'
@@ -6,6 +6,19 @@ import CTAButton from '../components/CTAButton/CTAButton'
 
 export default function TrustPage({ onNavigate }) {
   const seo = PAGE_SEO.trust
+  const navigate = useNavigate()
+
+  const handleVideoLinkClick = (e) => {
+    e.preventDefault()
+    navigate('/')
+    // Scroll to element after navigation completes
+    setTimeout(() => {
+      const element = document.getElementById('glass-box-video')
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' })
+      }
+    }, 100)
+  }
 
   return (
     <>
@@ -35,7 +48,7 @@ export default function TrustPage({ onNavigate }) {
           </ul>
           <p>Kort gezegd: dezelfde gegevens geven altijd dezelfde uitkomst—je kunt het narekenen.</p>
           <p className="mt-sm">
-            <Link to="/#glass-box-video" className="btn">Bekijk de 1-minuut explainer</Link>
+            <Link to="/" onClick={handleVideoLinkClick} className="btn">Bekijk de 1-minuut explainer</Link>
           </p>
         </section>
 
