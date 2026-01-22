@@ -1,10 +1,17 @@
 import { useState, useEffect, useRef } from 'react'
 
 export default function ExplainerVideo() {
-  const [isVisible, setIsVisible] = useState(false)
+  // If IntersectionObserver is unsupported, show video immediately
+  const [isVisible, setIsVisible] = useState(() => typeof IntersectionObserver === 'undefined')
   const containerRef = useRef(null)
 
   useEffect(() => {
+    // Fallback for browsers without IntersectionObserver
+    if (typeof IntersectionObserver === 'undefined') {
+      setIsVisible(true)
+      return
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {

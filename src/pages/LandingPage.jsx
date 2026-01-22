@@ -10,7 +10,8 @@ import { initializeGlobalObserver } from '../hooks/useIntersectionObserver'
 
 export default function LandingPage({ onNavigate }) {
   useEffect(() => {
-    initializeGlobalObserver()
+    const observer = initializeGlobalObserver()
+    return () => observer?.disconnect()
   }, [])
 
   const seo = PAGE_SEO.landing
@@ -29,7 +30,7 @@ export default function LandingPage({ onNavigate }) {
 
       <main id="main-content">
         {/* Section 1: What is Finnsight */}
-        <section id="what" className="section hero scroll-target">
+        <section id="what" className="section hero scroll-target is-visible">
           <h1>Inzicht in jouw financiële toekomst</h1>
           <p className="lead">Finnsight geeft Nederlandse medewerkers een helder overzicht van hun besteedbaar inkomen, woonlasten en pensioen.</p>
           <p className="subtext">Transparante berekeningen en scenario's, jij beslist.</p>
