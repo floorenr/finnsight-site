@@ -417,10 +417,7 @@ button.footer-cta-link:focus-visible {
 }
 
 .content button:not(.btn):not(.cta-nav):not(.footer-cta-link):focus-visible {
-    outline: 2px solid var(--color-secondary);
-    outline-offset: 2px;
-}
-
+    outline: none;
 /* Footer */
 .footer {
     margin-top: var(--spacing-2xl);
@@ -919,6 +916,11 @@ select {
     }
 
     .nav a, .nav .cta-nav {
+
+            .nav .cta-nav {
+                width: 100%;
+                max-width: 100%;
+            }
         display: block;
         padding: var(--spacing-md);
         min-height: 44px;
