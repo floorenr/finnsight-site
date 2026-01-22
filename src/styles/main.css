@@ -44,6 +44,7 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 100px;
 }
 
 body {
@@ -367,6 +368,12 @@ li {
 .btn-large {
     font-size: 1.1rem;
     padding: var(--spacing-md) var(--spacing-xl);
+}
+
+@media (max-width: 768px) {
+    .btn-large {
+        width: 100%;
+    }
 }
 
 /* Text variant button (looks like a link) */
@@ -992,7 +999,6 @@ select {
 .logo:focus-visible {
     outline: 3px solid var(--color-secondary);
     outline-offset: 4px;
-    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
     border-radius: var(--radius-sm);
 }
 
