@@ -4,7 +4,7 @@ import { PAGE_SEO } from '../utils/seo';
 import Header from '../components/Header';
 import CTAButton from '../components/CTAButton/CTAButton';
 
-export default function TrustPage({ onNavigate }) {
+export default function TrustPage({ onNavigate: _onNavigate }) {
   const seo = PAGE_SEO.trust;
   const navigate = useNavigate();
 

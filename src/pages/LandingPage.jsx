@@ -8,7 +8,7 @@ import ExplainerVideo from '../components/ExplainerVideo';
 import CTAButton from '../components/CTAButton/CTAButton';
 import { initializeGlobalObserver } from '../hooks/useIntersectionObserver';
 
-export default function LandingPage({ onNavigate }) {
+export default function LandingPage({ onNavigate: _onNavigate }) {
   useEffect(() => {
     const observer = initializeGlobalObserver();
     return () => observer?.disconnect();
