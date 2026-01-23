@@ -5,6 +5,7 @@ This folder contains the canonical Finnsight logo system.
 ## 1) Single Source of Truth
 
 ### `mark-master.svg`
+
 This is the ONLY file where the mark geometry may be edited.
 All other assets must be derived from this mark by scaling/positioning only.
 
@@ -19,24 +20,28 @@ If you change the mark, regenerate all dependent variants.
 ## 3) File Overview & Intended Use
 
 ### Primary logos
+
 - `logo-primary-horizontal.svg`
   - Use in website headers/navbars and product UI.
 - `logo-primary-stacked.svg`
   - Use on covers (pitch decks, trust pages, hero sections).
 
 ### Monochrome variants (print/legal/dark backgrounds)
+
 - `logo-mono-dark-stacked.svg`
 - `logo-mono-light-stacked.svg`
 - `logo-mono-dark-horizontal.svg`
 - `logo-mono-light-horizontal.svg`
 
 ### Marks (icon-only)
+
 - `mark-master.svg` (canonical geometry)
 - `mark-mono-dark.svg`
 - `mark-mono-light.svg`
 - `mark-on-dark.svg` (white mark on navy background)
 
 ### Platform assets
+
 - `favicon.svg`
   - Simplified (ring + bars only). Handle removed for micro-legibility.
 - `app-icon.svg`
@@ -48,6 +53,7 @@ If you change the mark, regenerate all dependent variants.
   - 1024x1024 for social profiles.
 
 ### Common startup collateral
+
 - `brand-badge.svg`
   - Rounded pill for “Trusted by”, partner pages, deck badges.
 - `press-kit-header.svg`
@@ -67,6 +73,7 @@ Prefer SVG wherever possible. Export to PNG only for platforms that require it
 (e.g., some email clients, app stores, ad networks).
 
 Example (Inkscape):
+
 - `inkscape brand/og-image.svg --export-type=png --export-filename=public/og.png --export-width=1200`
 - `inkscape brand/app-icon.svg --export-type=png --export-filename=public/icon-512.png --export-width=512`
 

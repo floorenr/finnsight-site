@@ -1,11 +1,11 @@
-import { Link } from 'react-router-dom'
-import SEOHead from '../components/SEOHead'
-import Header from '../components/Header'
-import CTAButton from '../components/CTAButton/CTAButton'
-import { PAGE_SEO } from '../utils/seo'
+import { Link } from 'react-router-dom';
+import SEOHead from '../components/SEOHead';
+import Header from '../components/Header';
+import CTAButton from '../components/CTAButton/CTAButton';
+import { PAGE_SEO } from '../utils/seo';
 
 export default function NotFoundPage() {
-  const seo = PAGE_SEO.notFound
+  const seo = PAGE_SEO.notFound;
 
   return (
     <>
@@ -19,9 +19,7 @@ export default function NotFoundPage() {
 
       <main className="content" id="main-content">
         <h1>Pagina niet gevonden</h1>
-        <p className="lead">
-          De pagina die je zocht bestaat niet of is verplaatst.
-        </p>
+        <p className="lead">De pagina die je zocht bestaat niet of is verplaatst.</p>
 
         <section>
           <h2>Wat kun je doen?</h2>
@@ -37,7 +35,8 @@ export default function NotFoundPage() {
             </li>
           </ul>
           <p className="mt-lg">
-            Denk je dat dit een fout is? <CTAButton variant="text">Neem contact met ons op</CTAButton>.
+            Denk je dat dit een fout is?{' '}
+            <CTAButton variant="text">Neem contact met ons op</CTAButton>.
           </p>
         </section>
       </main>
@@ -49,10 +48,12 @@ export default function NotFoundPage() {
           <span className="divider-muted">|</span>
           <Link to="/trust">Vertrouwen & Compliance</Link>
           <span className="divider-muted">|</span>
-          <CTAButton variant="text" className="footer-cta-link">Contact</CTAButton>
+          <CTAButton variant="text" className="footer-cta-link">
+            Contact
+          </CTAButton>
         </nav>
         <p className="footer-note">&copy; 2025 Finnsight</p>
       </footer>
     </>
-  )
+  );
 }

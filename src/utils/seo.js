@@ -7,7 +7,7 @@ export const SITE_CONFIG = {
   twitterCard: 'summary',
   locale: 'nl_NL',
   hreflang: 'nl-NL',
-}
+};
 
 export const PAGE_SEO = {
   landing: {
@@ -41,4 +41,4 @@ export const PAGE_SEO = {
     description: 'De pagina die je zocht bestaat niet of is verplaatst.',
     noIndex: true,
   },
-}
+};

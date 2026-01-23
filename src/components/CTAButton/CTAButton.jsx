@@ -1,5 +1,5 @@
-import { useRef } from 'react'
-import { useModal } from '../../context/site/ModalContext'
+import { useRef } from 'react';
+import { useModal } from '../../context/site/ModalContext';
 
 /**
  * Unified CTA button that opens the lead capture modal.
@@ -17,25 +17,23 @@ export default function CTAButton({
   'aria-label': ariaLabel,
   ...props
 }) {
-  const { openModal } = useModal()
-  const buttonRef = useRef(null)
+  const { openModal } = useModal();
+  const buttonRef = useRef(null);
 
   const handleClick = (e) => {
-    e.preventDefault()
-    openModal(buttonRef)
-  }
+    e.preventDefault();
+    openModal(buttonRef);
+  };
 
   const baseClasses = {
     primary: 'btn btn-primary',
     primaryLarge: 'btn btn-primary btn-large',
     nav: 'cta-nav',
     text: '', // Inherits link styling from parent
-  }
+  };
 
-  const variantClass = variant in baseClasses ? baseClasses[variant] : baseClasses.primary
-  const classes = [variantClass, className]
-    .filter(Boolean)
-    .join(' ')
+  const variantClass = variant in baseClasses ? baseClasses[variant] : baseClasses.primary;
+  const classes = [variantClass, className].filter(Boolean).join(' ');
 
   return (
     <button
@@ -48,5 +46,5 @@ export default function CTAButton({
     >
       {children}
     </button>
-  )
+  );
 }

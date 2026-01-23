@@ -1,5 +1,5 @@
-import { Helmet } from 'react-helmet-async'
-import { SITE_CONFIG } from '../utils/seo'
+import { Helmet } from 'react-helmet-async';
+import { SITE_CONFIG } from '../utils/seo';
 
 /**
  * SEOHead component - Manages all SEO-related meta tags per page
@@ -23,9 +23,9 @@ export default function SEOHead({
   ogType = 'website',
   noIndex = false,
 }) {
-  const { baseUrl, siteName, defaultImage, twitterCard, locale, hreflang } = SITE_CONFIG
-  const canonicalUrl = path !== null ? `${baseUrl}${path}` : null
-  const fullOgImage = ogImage || defaultImage
+  const { baseUrl, siteName, defaultImage, twitterCard, locale, hreflang } = SITE_CONFIG;
+  const canonicalUrl = path !== null ? `${baseUrl}${path}` : null;
+  const fullOgImage = ogImage || defaultImage;
 
   return (
     <Helmet>
@@ -58,5 +58,5 @@ export default function SEOHead({
       <meta name="twitter:description" content={ogDescription || description} />
       <meta name="twitter:image" content={fullOgImage} />
     </Helmet>
-  )
+  );
 }
