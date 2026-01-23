@@ -1,10 +1,21 @@
 // Mock IntersectionObserver for jsdom environment
 beforeAll(() => {
   global.IntersectionObserver = class {
-    constructor() {}
-    observe() {}
-    disconnect() {}
-    unobserve() {}
+    constructor(callback) {
+      this.callback = callback
+      this.elements = new Set()
+    }
+    observe(element) {
+      this.elements.add(element)
+      // Simulate intersection by calling the callback with intersecting element
+      this.callback([{ isIntersecting: true, target: element }])
+    }
+    disconnect() {
+      this.elements.clear()
+    }
+    unobserve(element) {
+      this.elements.delete(element)
+    }
   };
 });
 

@@ -16,6 +16,11 @@ export default function ScrollProgress() {
   }, [])
 
   return (
-    <div className="scroll-progress-bar" style={{ width: `${scrollProgress}%` }} />
+    <div
+      className="scroll-progress-bar"
+      style={{ width: `${scrollProgress}%` }}
+      aria-hidden="true"
+      role="presentation"
+    />
   )
 }

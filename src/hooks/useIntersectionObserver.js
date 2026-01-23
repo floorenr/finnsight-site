@@ -1,14 +1,24 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useMemo } from 'react'
 
 export default function useIntersectionObserver(options = {}) {
   const elementRef = useRef(null)
-  const defaultOptions = {
+
+  // Memoize options to prevent effect re-runs on every render
+  const observerOptions = useMemo(() => ({
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px',
     ...options
-  }
+  }), [options.threshold, options.rootMargin, options.root])
 
   useEffect(() => {
+    // Fallback: if IntersectionObserver is unsupported, show element immediately
+    if (typeof IntersectionObserver === 'undefined') {
+      if (elementRef.current) {
+        elementRef.current.classList.add('is-visible')
+      }
+      return
+    }
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -16,24 +26,34 @@ export default function useIntersectionObserver(options = {}) {
           observer.unobserve(entry.target)
         }
       })
-    }, defaultOptions)
+    }, observerOptions)
 
     if (elementRef.current) {
       observer.observe(elementRef.current)
     }
 
     return () => {
-      if (elementRef.current) {
-        observer.unobserve(elementRef.current)
-      }
+      observer.disconnect()
     }
-  }, [defaultOptions])
+  }, [observerOptions])
 
   return elementRef
 }
 
 // Initialize global observer for all animatable elements
 export function initializeGlobalObserver(options = {}) {
+  // Selector for elements that should animate on scroll
+  const selector = '.section, .mock-grid > article, .problems-grid > article'
+  const sectionsToObserve = document.querySelectorAll(selector)
+
+  // Fallback: if IntersectionObserver is unsupported, show all elements immediately
+  if (typeof IntersectionObserver === 'undefined') {
+    sectionsToObserve.forEach((element) => {
+      element.classList.add('is-visible')
+    })
+    return null
+  }
+
   const defaultOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px',
@@ -49,11 +69,6 @@ export function initializeGlobalObserver(options = {}) {
     })
   }, defaultOptions)
 
-  // Observe all elements that need animation
-  const sectionsToObserve = document.querySelectorAll(
-    '.section, .mock-grid > article, .problems-grid > article'
-  )
-  
   sectionsToObserve.forEach((element) => {
     observer.observe(element)
   })

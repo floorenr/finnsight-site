@@ -114,7 +114,7 @@ export default function TrustPage({ onNavigate }) {
       </main>
 
       <footer className="footer">
-        <img src="/brand/mark-on-dark.svg" alt="Finnsight" className="footer-mark" />
+        <img src="/brand/mark-on-dark.svg" alt="" className="footer-mark" aria-hidden="true" />
         <nav className="footer-nav" aria-label="Footer navigation">
           <Link to="/">Terug naar start</Link>
           <span className="divider-muted">|</span>
