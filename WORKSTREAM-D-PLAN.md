@@ -154,6 +154,7 @@ To keep this workstream focused on hygiene, the following are explicitly **out o
      ```
 
 2. **Job structure**
+
    ```
    lint ─────┐
              ├──→ build
