@@ -3,14 +3,13 @@ import { useEffect, useRef, useMemo } from 'react';
 export default function useIntersectionObserver(options = {}) {
   const elementRef = useRef(null);
 
-  // Memoize options to prevent effect re-runs on every render
+  // Destructure only the properties IntersectionObserver supports, with defaults
+  const { threshold = 0.1, rootMargin = '0px 0px -50px 0px', root = null } = options;
+
+  // Memoize options based on stable primitives
   const observerOptions = useMemo(
-    () => ({
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px',
-      ...options,
-    }),
-    [options.threshold, options.rootMargin, options.root]
+    () => ({ threshold, rootMargin, root }),
+    [threshold, rootMargin, root]
   );
 
   useEffect(() => {
@@ -57,11 +56,10 @@ export function initializeGlobalObserver(options = {}) {
     return null;
   }
 
-  const defaultOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px',
-    ...options,
-  };
+  // Destructure only the properties IntersectionObserver supports, with defaults
+  const { threshold = 0.1, rootMargin = '0px 0px -50px 0px', root = null } = options;
+
+  const observerOptions = { threshold, rootMargin, root };
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -70,7 +68,7 @@ export function initializeGlobalObserver(options = {}) {
         observer.unobserve(entry.target);
       }
     });
-  }, defaultOptions);
+  }, observerOptions);
 
   sectionsToObserve.forEach((element) => {
     observer.observe(element);
