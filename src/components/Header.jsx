@@ -1,28 +1,33 @@
-import { useEffect, useState, useRef } from 'react'
-import { Link, NavLink, useLocation } from 'react-router-dom'
-import CTAButton from './CTAButton/CTAButton'
+import { useEffect, useState, useRef } from 'react';
+import { Link, NavLink, useLocation } from 'react-router-dom';
+import CTAButton from './CTAButton/CTAButton';
 
 export default function Header() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const headerRef = useRef(null)
-  const { pathname } = useLocation()
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const headerRef = useRef(null);
+  const { pathname } = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
       if (headerRef.current) {
-        headerRef.current.classList.toggle('scrolled', window.scrollY > 0)
+        headerRef.current.classList.toggle('scrolled', window.scrollY > 0);
       }
-    }
+    };
 
-    handleScroll()
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+    handleScroll();
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <header className="header" ref={headerRef}>
       <nav className="nav" aria-label="Main navigation">
-        <Link to="/" className="logo" onClick={() => setMobileMenuOpen(false)} aria-label="Ga naar startpagina">
+        <Link
+          to="/"
+          className="logo"
+          onClick={() => setMobileMenuOpen(false)}
+          aria-label="Ga naar startpagina"
+        >
           <img src="/brand/logo-primary-horizontal.svg" alt="Finnsight" className="logo-img" />
         </Link>
         <button
@@ -63,5 +68,5 @@ export default function Header() {
         </ul>
       </nav>
     </header>
-  )
+  );
 }

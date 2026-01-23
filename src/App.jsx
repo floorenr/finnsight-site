@@ -1,22 +1,22 @@
-import { lazy, Suspense } from 'react'
-import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom'
-import ErrorBoundary from './components/ErrorBoundary'
-import { ModalProvider } from './context/site/ModalContext'
-import LeadModal from './components/LeadModal/LeadModal'
-import LandingPage from './pages/LandingPage' // Eager load - critical path
+import { lazy, Suspense } from 'react';
+import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+import ErrorBoundary from './components/ErrorBoundary';
+import { ModalProvider } from './context/site/ModalContext';
+import LeadModal from './components/LeadModal/LeadModal';
+import LandingPage from './pages/LandingPage'; // Eager load - critical path
 
 // Lazy load non-critical routes
-const TrustPage = lazy(() => import('./pages/TrustPage'))
-const PrivacyTermsPage = lazy(() => import('./pages/PrivacyTermsPage'))
-const NotFoundPage = lazy(() => import('./pages/NotFoundPage'))
+const TrustPage = lazy(() => import('./pages/TrustPage'));
+const PrivacyTermsPage = lazy(() => import('./pages/PrivacyTermsPage'));
+const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
 
 function AppContent() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleNavigate = (page) => {
-    navigate(`/${page === 'landing' ? '' : page}`)
-    window.scrollTo(0, 0)
-  }
+    navigate(`/${page === 'landing' ? '' : page}`);
+    window.scrollTo(0, 0);
+  };
 
   return (
     <ModalProvider>
@@ -34,7 +34,7 @@ function AppContent() {
         <LeadModal />
       </ErrorBoundary>
     </ModalProvider>
-  )
+  );
 }
 
 export default function App() {
@@ -42,5 +42,5 @@ export default function App() {
     <Router>
       <AppContent />
     </Router>
-  )
+  );
 }

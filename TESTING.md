@@ -3,21 +3,25 @@
 ## Running Tests Locally
 
 ### Install dependencies
+
 ```bash
 npm install
 ```
 
 ### Run all tests
+
 ```bash
 npm test
 ```
 
 ### Run tests in watch mode (re-run on file changes)
+
 ```bash
 npm test:watch
 ```
 
 ### Generate coverage report
+
 ```bash
 npm test:coverage
 ```
@@ -29,17 +33,20 @@ This creates a `coverage/` folder with detailed coverage metrics.
 Tests follow the pattern: `**/*.test.js`
 
 **Component tests:**
+
 - `src/pages/LandingPage.test.js` — Landing page rendering, navigation, footer
 - `src/pages/TrustPage.test.js` — Trust & compliance page content
 - `src/components/ErrorBoundary.test.js` — Error handling, recovery UI
 
 **Scope:**
+
 - Render tests: Component mounts without crashing
 - Content tests: Key text/headings present
 - Accessibility tests: Buttons, navigation, footer exist
 - Form tests: Inputs and spinbuttons accessible
 
 **NOT tested (by design):**
+
 - Complex calculations (Phase 2 is illustrative, not canonical)
 - User interactions (click, form submit) — too complex for Phase 2
 - Styling (CSS is not unit-tested)
@@ -66,6 +73,7 @@ Tests follow the pattern: `**/*.test.js`
 ## Deployment
 
 **Vercel Git Integration:**
+
 - PRs deploy to Preview environments automatically
 - Merges to `main` deploy to Production automatically
 - No deploy job in GitHub Actions; Vercel handles deployment directly
@@ -73,16 +81,19 @@ Tests follow the pattern: `**/*.test.js`
 ## Configuration Files
 
 **jest.config.js**
+
 - Test environment: jsdom (browser-like)
 - Setup file: jest.setup.js (imports @testing-library/jest-dom)
 - Module mapper: CSS modules → identity-obj-proxy (mock imports)
 - Transform: JSX → JS via babel-jest
 
 **.babelrc.json**
+
 - Preset: @babel/preset-env (for Jest)
 - Preset: @babel/preset-react with automatic runtime
 
 **package.json scripts:**
+
 ```json
 {
   "test": "jest",
@@ -94,13 +105,15 @@ Tests follow the pattern: `**/*.test.js`
 ## Vercel Setup
 
 Vercel deployment is configured via Git integration in the Vercel dashboard. No GitHub secrets required for deployment.
-   - `VERCEL_PROJECT_ID` — Your finnsight-site project ID
+
+- `VERCEL_PROJECT_ID` — Your finnsight-site project ID
 
 Without these, the deploy job will fail silently.
 
 ## Best Practices
 
 ✅ **Do:**
+
 - Write tests for new components
 - Keep tests simple and focused (one assertion per test)
 - Use semantic queries: `getByRole`, `getByText`, `getByLabelText`
@@ -108,6 +121,7 @@ Without these, the deploy job will fail silently.
 - Run `npm run build` before committing
 
 ❌ **Don't:**
+
 - Test implementation details (internal state, props)
 - Test CSS or styling
 - Create complex multi-step interaction tests
@@ -119,16 +133,19 @@ Without these, the deploy job will fail silently.
 ### Common errors:
 
 **"Unable to find an element..."**
+
 - Element text may be broken across multiple DOM nodes
 - Use `screen.debug()` in your test to inspect rendered output
 - Use a more flexible matcher: `screen.getByText(text => text.includes('...'))`
 
 **"Cannot find module..."**
+
 - Check import paths are correct
 - Run `npm install` to ensure dependencies installed
 - Verify Jest config moduleNameMapper for CSS/asset imports
 
 **Test passes locally but fails in CI/CD:**
+
 - Node version mismatch — CI uses Node 20.x, ensure local is same
 - Package cache — CI uses `npm ci` (clean install), try `rm -rf node_modules && npm install` locally
 - Timing issues — Unlikely in Phase 2 (no async)

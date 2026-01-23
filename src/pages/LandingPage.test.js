@@ -2,19 +2,19 @@
 beforeAll(() => {
   global.IntersectionObserver = class {
     constructor(callback) {
-      this.callback = callback
-      this.elements = new Set()
+      this.callback = callback;
+      this.elements = new Set();
     }
     observe(element) {
-      this.elements.add(element)
+      this.elements.add(element);
       // Simulate intersection by calling the callback with intersecting element
-      this.callback([{ isIntersecting: true, target: element }])
+      this.callback([{ isIntersecting: true, target: element }]);
     }
     disconnect() {
-      this.elements.clear()
+      this.elements.clear();
     }
     unobserve(element) {
-      this.elements.delete(element)
+      this.elements.delete(element);
     }
   };
 });

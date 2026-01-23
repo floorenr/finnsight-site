@@ -1,5 +1,5 @@
-import { useState, useId } from 'react'
-import { Link } from 'react-router-dom'
+import { useState, useId } from 'react';
+import { Link } from 'react-router-dom';
 
 const ROLE_OPTIONS = [
   { value: '', label: 'Selecteer je rol...' },
@@ -7,9 +7,9 @@ const ROLE_OPTIONS = [
   { value: 'medewerker', label: 'Medewerker' },
   { value: 'adviseur', label: 'Adviseur' },
   { value: 'anders', label: 'Anders' },
-]
+];
 
-const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export default function LeadForm({ onSuccess, onClose }) {
   const [formData, setFormData] = useState({
@@ -18,65 +18,65 @@ export default function LeadForm({ onSuccess, onClose }) {
     company: '',
     email: '',
     consent: false,
-  })
-  const [errors, setErrors] = useState({})
-  const [status, setStatus] = useState('idle') // idle | submitting | success | error
-  const [serverError, setServerError] = useState('')
+  });
+  const [errors, setErrors] = useState({});
+  const [status, setStatus] = useState('idle'); // idle | submitting | success | error
+  const [serverError, setServerError] = useState('');
 
-  const formId = useId()
+  const formId = useId();
 
-  const requiresCompany = formData.role === 'werkgever'
+  const requiresCompany = formData.role === 'werkgever';
 
   const validate = () => {
-    const newErrors = {}
+    const newErrors = {};
 
     if (!formData.name.trim() || formData.name.trim().length < 2) {
-      newErrors.name = 'Vul je naam in (minimaal 2 tekens)'
+      newErrors.name = 'Vul je naam in (minimaal 2 tekens)';
     }
 
     if (!formData.role) {
-      newErrors.role = 'Selecteer je rol'
+      newErrors.role = 'Selecteer je rol';
     }
 
     if (requiresCompany && !formData.company.trim()) {
-      newErrors.company = 'Vul je organisatie in'
+      newErrors.company = 'Vul je organisatie in';
     }
 
     if (!formData.email.trim()) {
-      newErrors.email = 'Vul je e-mailadres in'
+      newErrors.email = 'Vul je e-mailadres in';
     } else if (!EMAIL_REGEX.test(formData.email.trim())) {
-      newErrors.email = 'Vul een geldig e-mailadres in'
+      newErrors.email = 'Vul een geldig e-mailadres in';
     }
 
     if (!formData.consent) {
-      newErrors.consent = 'Je moet akkoord gaan om door te gaan'
+      newErrors.consent = 'Je moet akkoord gaan om door te gaan';
     }
 
-    setErrors(newErrors)
-    return Object.keys(newErrors).length === 0
-  }
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
   const handleChange = (e) => {
-    const { name, value, type, checked } = e.target
+    const { name, value, type, checked } = e.target;
     setFormData((prev) => ({
       ...prev,
       [name]: type === 'checkbox' ? checked : value,
-    }))
+    }));
     // Clear error when user starts typing
     if (errors[name]) {
-      setErrors((prev) => ({ ...prev, [name]: '' }))
+      setErrors((prev) => ({ ...prev, [name]: '' }));
     }
-  }
+  };
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
     if (!validate()) {
-      return
+      return;
     }
 
-    setStatus('submitting')
-    setServerError('')
+    setStatus('submitting');
+    setServerError('');
 
     try {
       const response = await fetch('/api/site/leads', {
@@ -92,27 +92,27 @@ export default function LeadForm({ onSuccess, onClose }) {
           consent: formData.consent,
           source: window.location.href,
         }),
-      })
+      });
 
-      const data = await response.json()
+      const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.error || 'Submission failed')
+        throw new Error(data.error || 'Submission failed');
       }
 
-      setStatus('success')
+      setStatus('success');
       if (onSuccess) {
-        onSuccess()
+        onSuccess();
       }
     } catch (error) {
-      console.error('Form submission error:', error)
-      setStatus('error')
+      console.error('Form submission error:', error);
+      setStatus('error');
       setServerError(
         error.message ||
           'Er is iets misgegaan. Probeer het later opnieuw of mail naar hello@finnsight.nl'
-      )
+      );
     }
-  }
+  };
 
   if (status === 'success') {
     return (
@@ -132,14 +132,13 @@ export default function LeadForm({ onSuccess, onClose }) {
         </div>
         <h3 className="success-title">Bedankt voor je interesse!</h3>
         <p className="success-message">
-          We nemen binnen 2 werkdagen contact met je op via{' '}
-          <strong>{formData.email}</strong>.
+          We nemen binnen 2 werkdagen contact met je op via <strong>{formData.email}</strong>.
         </p>
         <button type="button" className="success-close" onClick={onClose}>
           Sluiten
         </button>
       </div>
-    )
+    );
   }
 
   return (
@@ -168,7 +167,10 @@ export default function LeadForm({ onSuccess, onClose }) {
       {/* Name */}
       <div className="form-group">
         <label htmlFor={`${formId}-name`} className="form-label">
-          Naam <span className="required" aria-hidden="true">*</span>
+          Naam{' '}
+          <span className="required" aria-hidden="true">
+            *
+          </span>
         </label>
         <input
           type="text"
@@ -193,7 +195,10 @@ export default function LeadForm({ onSuccess, onClose }) {
       {/* Role */}
       <div className="form-group">
         <label htmlFor={`${formId}-role`} className="form-label">
-          Rol <span className="required" aria-hidden="true">*</span>
+          Rol{' '}
+          <span className="required" aria-hidden="true">
+            *
+          </span>
         </label>
         <select
           id={`${formId}-role`}
@@ -223,7 +228,9 @@ export default function LeadForm({ onSuccess, onClose }) {
         <label htmlFor={`${formId}-company`} className="form-label">
           Organisatie{' '}
           {requiresCompany && (
-            <span className="required" aria-hidden="true">*</span>
+            <span className="required" aria-hidden="true">
+              *
+            </span>
           )}
         </label>
         <input
@@ -249,7 +256,10 @@ export default function LeadForm({ onSuccess, onClose }) {
       {/* Email */}
       <div className="form-group">
         <label htmlFor={`${formId}-email`} className="form-label">
-          E-mailadres <span className="required" aria-hidden="true">*</span>
+          E-mailadres{' '}
+          <span className="required" aria-hidden="true">
+            *
+          </span>
         </label>
         <input
           type="email"
@@ -286,8 +296,8 @@ export default function LeadForm({ onSuccess, onClose }) {
             aria-describedby={errors.consent ? `${formId}-consent-error` : undefined}
           />
           <label htmlFor={`${formId}-consent`} className="consent-label">
-            Ik ga akkoord met het ontvangen van pilotinformatie per e-mail. Mijn
-            gegevens worden alleen gebruikt om contact op te nemen over de pilot.
+            Ik ga akkoord met het ontvangen van pilotinformatie per e-mail. Mijn gegevens worden
+            alleen gebruikt om contact op te nemen over de pilot.
           </label>
         </div>
         {errors.consent && (
@@ -299,8 +309,8 @@ export default function LeadForm({ onSuccess, onClose }) {
 
       {/* Privacy Notice */}
       <div className="privacy-notice">
-        Dit is geen financieel intakeformulier. We verzamelen geen financiële
-        gegevens via dit formulier. Zie onze{' '}
+        Dit is geen financieel intakeformulier. We verzamelen geen financiële gegevens via dit
+        formulier. Zie onze{' '}
         <Link to="/privacy" onClick={onClose}>
           privacyvoorwaarden
         </Link>{' '}
@@ -324,5 +334,5 @@ export default function LeadForm({ onSuccess, onClose }) {
         )}
       </button>
     </form>
-  )
+  );
 }

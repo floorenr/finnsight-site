@@ -6,47 +6,47 @@
  * No database storage - email-only for simplicity.
  */
 
-const RESEND_API_KEY = process.env.RESEND_API_KEY
-const NOTIFICATION_EMAIL = process.env.NOTIFICATION_EMAIL || 'hello@finnsight.nl'
+const RESEND_API_KEY = process.env.RESEND_API_KEY;
+const NOTIFICATION_EMAIL = process.env.NOTIFICATION_EMAIL || 'hello@finnsight.nl';
 
-const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-const VALID_ROLES = ['werkgever', 'medewerker', 'adviseur', 'anders']
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const VALID_ROLES = ['werkgever', 'medewerker', 'adviseur', 'anders'];
 
 // Escape HTML to prevent XSS in emails
 function escapeHtml(str) {
-  if (!str) return ''
+  if (!str) return '';
   return str
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#39;')
+    .replace(/'/g, '&#39;');
 }
 
 function validateInput(body) {
-  const errors = []
+  const errors = [];
 
   if (!body.name || typeof body.name !== 'string' || body.name.trim().length < 2) {
-    errors.push('Vul je naam in (minimaal 2 tekens)')
+    errors.push('Vul je naam in (minimaal 2 tekens)');
   }
 
   if (!body.role || !VALID_ROLES.includes(body.role)) {
-    errors.push('Selecteer een geldige rol')
+    errors.push('Selecteer een geldige rol');
   }
 
   if (body.role === 'werkgever' && (!body.company || body.company.trim().length === 0)) {
-    errors.push('Vul je organisatie in')
+    errors.push('Vul je organisatie in');
   }
 
   if (!body.email || !EMAIL_REGEX.test(body.email)) {
-    errors.push('Vul een geldig e-mailadres in')
+    errors.push('Vul een geldig e-mailadres in');
   }
 
   if (body.consent !== true) {
-    errors.push('Je moet akkoord gaan om door te gaan')
+    errors.push('Je moet akkoord gaan om door te gaan');
   }
 
-  return errors
+  return errors;
 }
 
 async function sendNotificationEmail(data) {
@@ -55,13 +55,13 @@ async function sendNotificationEmail(data) {
     medewerker: 'Medewerker',
     adviseur: 'Adviseur',
     anders: 'Anders',
-  }
+  };
 
   const timestamp = new Date().toLocaleString('nl-NL', {
     timeZone: 'Europe/Amsterdam',
     dateStyle: 'full',
     timeStyle: 'short',
-  })
+  });
 
   const response = await fetch('https://api.resend.com/emails', {
     method: 'POST',
@@ -107,14 +107,14 @@ async function sendNotificationEmail(data) {
         </p>
       `,
     }),
-  })
+  });
 
   if (!response.ok) {
-    const errorText = await response.text()
-    throw new Error(`Notification email failed: ${response.status} - ${errorText}`)
+    const errorText = await response.text();
+    throw new Error(`Notification email failed: ${response.status} - ${errorText}`);
   }
 
-  return response.json()
+  return response.json();
 }
 
 async function sendConfirmationEmail(data) {
@@ -159,43 +159,43 @@ async function sendConfirmationEmail(data) {
         </div>
       `,
     }),
-  })
+  });
 
   if (!response.ok) {
-    const errorText = await response.text()
-    throw new Error(`Confirmation email failed: ${response.status} - ${errorText}`)
+    const errorText = await response.text();
+    throw new Error(`Confirmation email failed: ${response.status} - ${errorText}`);
   }
 
-  return response.json()
+  return response.json();
 }
 
 export default async function handler(req, res) {
   // Only allow POST
   if (req.method !== 'POST') {
-    res.setHeader('Allow', ['POST'])
-    return res.status(405).json({ success: false, error: 'Method not allowed' })
+    res.setHeader('Allow', ['POST']);
+    return res.status(405).json({ success: false, error: 'Method not allowed' });
   }
 
   // Check required environment variables
   if (!RESEND_API_KEY) {
-    console.error('Missing RESEND_API_KEY environment variable')
+    console.error('Missing RESEND_API_KEY environment variable');
     return res.status(500).json({
       success: false,
       error: 'Er is iets misgegaan. Probeer het later opnieuw of mail naar hello@finnsight.nl',
-    })
+    });
   }
 
   try {
-    const { name, role, company, email, consent, source } = req.body
+    const { name, role, company, email, consent, source } = req.body;
 
     // Validate input
-    const validationErrors = validateInput({ name, role, company, email, consent })
+    const validationErrors = validateInput({ name, role, company, email, consent });
     if (validationErrors.length > 0) {
       return res.status(400).json({
         success: false,
         error: validationErrors[0],
         errors: validationErrors,
-      })
+      });
     }
 
     // Sanitize data
@@ -205,20 +205,20 @@ export default async function handler(req, res) {
       company: company ? company.trim() : '',
       email: email.trim().toLowerCase(),
       source: source || req.headers.referer || 'direct',
-    }
+    };
 
     // Send notification to Finnsight team
-    await sendNotificationEmail(leadData)
+    await sendNotificationEmail(leadData);
 
     // Send confirmation to the requester
-    await sendConfirmationEmail(leadData)
+    await sendConfirmationEmail(leadData);
 
-    return res.status(201).json({ success: true })
+    return res.status(201).json({ success: true });
   } catch (error) {
-    console.error('Lead submission error:', error)
+    console.error('Lead submission error:', error);
     return res.status(500).json({
       success: false,
       error: 'Er is iets misgegaan. Probeer het later opnieuw of mail naar hello@finnsight.nl',
-    })
+    });
   }
 }

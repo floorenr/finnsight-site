@@ -1,6 +1,7 @@
 # Workstream A: Conversion & Lead Capture Implementation Plan
 
 ## Objective
+
 Replace all `mailto:` CTAs with a unified lead capture form, sending submissions directly to hello@finnsight.nl—privacy-first, cookie-less, no database.
 
 ---
@@ -12,6 +13,7 @@ CTA → Modal → Form → /api/site/leads → Email to hello@finnsight.nl
 ```
 
 **Components:**
+
 - `LeadModal.jsx` - Modal overlay with focus trap
 - `LeadForm.jsx` - Form with validation and states
 - `CTAButton.jsx` - Unified button triggering modal
@@ -22,25 +24,25 @@ CTA → Modal → Form → /api/site/leads → Email to hello@finnsight.nl
 
 ## Files Modified
 
-| File | Changes |
-|------|---------|
-| `src/pages/LandingPage.jsx` | Replaced 3 mailto buttons + footer link with CTAButton |
-| `src/components/Header.jsx` | Replaced Contact mailto with CTAButton |
-| `src/pages/TrustPage.jsx` | Replaced inline/footer mailto links with CTAButton |
+| File                             | Changes                                                         |
+| -------------------------------- | --------------------------------------------------------------- |
+| `src/pages/LandingPage.jsx`      | Replaced 3 mailto buttons + footer link with CTAButton          |
+| `src/components/Header.jsx`      | Replaced Contact mailto with CTAButton                          |
+| `src/pages/TrustPage.jsx`        | Replaced inline/footer mailto links with CTAButton              |
 | `src/pages/PrivacyTermsPage.jsx` | Replaced contact links + added "Pilotformulier" privacy section |
-| `src/App.jsx` | Wrapped with ModalContext.Provider, added LeadModal |
-| `src/styles/main.css` | Added text button styling |
+| `src/App.jsx`                    | Wrapped with ModalContext.Provider, added LeadModal             |
+| `src/styles/main.css`            | Added text button styling                                       |
 
 ## Files Created
 
-| File | Purpose |
-|------|---------|
-| `src/components/LeadModal/LeadModal.jsx` | Modal component with accessibility |
-| `src/components/LeadModal/LeadModal.css` | Modal and form styles |
-| `src/components/LeadForm/LeadForm.jsx` | Form component with validation |
-| `src/components/CTAButton/CTAButton.jsx` | Unified CTA button |
-| `src/context/site/ModalContext.jsx` | Website-only modal state |
-| `api/site/leads.js` | Serverless endpoint - sends email via Resend |
+| File                                     | Purpose                                      |
+| ---------------------------------------- | -------------------------------------------- |
+| `src/components/LeadModal/LeadModal.jsx` | Modal component with accessibility           |
+| `src/components/LeadModal/LeadModal.css` | Modal and form styles                        |
+| `src/components/LeadForm/LeadForm.jsx`   | Form component with validation               |
+| `src/components/CTAButton/CTAButton.jsx` | Unified CTA button                           |
+| `src/context/site/ModalContext.jsx`      | Website-only modal state                     |
+| `api/site/leads.js`                      | Serverless endpoint - sends email via Resend |
 
 ---
 
@@ -58,9 +60,11 @@ CTA → Modal → Form → /api/site/leads → Email to hello@finnsight.nl
 | Toestemming | checkbox | Yes | Must be checked |
 
 **Privacy notice (below form):**
+
 > Dit is geen financieel intakeformulier. We verzamelen geen financiële gegevens via dit formulier.
 
 **Success message:**
+
 > Bedankt voor je interesse in de Finnsight pilot! We nemen binnen 2 werkdagen contact met je op via het opgegeven e-mailadres.
 
 ---
@@ -70,6 +74,7 @@ CTA → Modal → Form → /api/site/leads → Email to hello@finnsight.nl
 **Endpoint:** `POST /api/site/leads`
 
 **Request:**
+
 ```json
 {
   "name": "string",
@@ -85,6 +90,7 @@ CTA → Modal → Form → /api/site/leads → Email to hello@finnsight.nl
 **Response (400):** `{ "success": false, "error": "message" }`
 
 **Behavior:**
+
 - Validates input
 - Sends formatted notification email to hello@finnsight.nl with lead details
 - Sends confirmation email to the requester
@@ -119,11 +125,11 @@ NOTIFICATION_EMAIL=hello@finnsight.nl  # optional, defaults to hello@finnsight.n
 
 ## Founder Decisions (Resolved)
 
-| Decision | Choice | Implication |
-|----------|--------|-------------|
+| Decision         | Choice             | Implication                                                            |
+| ---------------- | ------------------ | ---------------------------------------------------------------------- |
 | Primary audience | **Employer-first** | CTA copy targets werkgevers; employees/adviseurs allowed but secondary |
-| Response SLA | **Hard promise** | "binnen 2 werkdagen" — requires operational guarantee |
-| Storage | **Email-only** | No database; leads arrive directly in hello@finnsight.nl |
+| Response SLA     | **Hard promise**   | "binnen 2 werkdagen" — requires operational guarantee                  |
+| Storage          | **Email-only**     | No database; leads arrive directly in hello@finnsight.nl               |
 
 ---
 

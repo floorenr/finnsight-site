@@ -1,24 +1,24 @@
-import { Link, useNavigate } from 'react-router-dom'
-import SEOHead from '../components/SEOHead'
-import { PAGE_SEO } from '../utils/seo'
-import Header from '../components/Header'
-import CTAButton from '../components/CTAButton/CTAButton'
+import { Link, useNavigate } from 'react-router-dom';
+import SEOHead from '../components/SEOHead';
+import { PAGE_SEO } from '../utils/seo';
+import Header from '../components/Header';
+import CTAButton from '../components/CTAButton/CTAButton';
 
-export default function TrustPage({ onNavigate }) {
-  const seo = PAGE_SEO.trust
-  const navigate = useNavigate()
+export default function TrustPage({ onNavigate: _onNavigate }) {
+  const seo = PAGE_SEO.trust;
+  const navigate = useNavigate();
 
   const handleVideoLinkClick = (e) => {
-    e.preventDefault()
-    navigate('/')
+    e.preventDefault();
+    navigate('/');
     // Scroll to element after navigation completes
     setTimeout(() => {
-      const element = document.getElementById('glass-box-video')
+      const element = document.getElementById('glass-box-video');
       if (element) {
-        element.scrollIntoView({ behavior: 'smooth' })
+        element.scrollIntoView({ behavior: 'smooth' });
       }
-    }, 100)
-  }
+    }, 100);
+  };
 
   return (
     <>
@@ -33,69 +33,100 @@ export default function TrustPage({ onNavigate }) {
 
       <main className="content" id="main-content">
         <h1>Vertrouwen & Compliance</h1>
-        <p className="lead">Transparant uitgelegd: hoe Finnsight rekent, wat we wel/niet doen, en hoe privacy is geborgd.</p>
+        <p className="lead">
+          Transparant uitgelegd: hoe Finnsight rekent, wat we wel/niet doen, en hoe privacy is
+          geborgd.
+        </p>
 
         <section>
           <h2>1. Deterministische kern vs. AI-uitleg</h2>
           <p>
-            Finnsight rekent met <strong>deterministische logica</strong>: dezelfde input geeft altijd dezelfde uitkomst. Daardoor kun je de uitkomst stap voor stap volgen en narekenen.
-            Dit betekent:
+            Finnsight rekent met <strong>deterministische logica</strong>: dezelfde input geeft
+            altijd dezelfde uitkomst. Daardoor kun je de uitkomst stap voor stap volgen en
+            narekenen. Dit betekent:
           </p>
           <ul>
             <li>Geen willekeur, geen kansberekening, geen "best guess"</li>
             <li>Elk getal kan je terugvoeren naar jouw feiten en de regels</li>
-            <li>AI wordt <strong>nooit</strong> gebruikt in berekeningen zelf</li>
+            <li>
+              AI wordt <strong>nooit</strong> gebruikt in berekeningen zelf
+            </li>
           </ul>
-          <p>Kort gezegd: dezelfde gegevens geven altijd dezelfde uitkomst—je kunt het narekenen.</p>
+          <p>
+            Kort gezegd: dezelfde gegevens geven altijd dezelfde uitkomst—je kunt het narekenen.
+          </p>
           <p className="mt-sm">
-            <Link to="/" onClick={handleVideoLinkClick} className="btn">Bekijk de 1-minuut explainer</Link>
+            <Link to="/" onClick={handleVideoLinkClick} className="btn">
+              Bekijk de 1-minuut explainer
+            </Link>
           </p>
         </section>
 
         <section>
           <h2>2. Geen AI in jouw financiële berekeningen</h2>
           <p>
-            De bedragen en grafieken (bijv. besteedbaar inkomen, hypotheeklasten en aflossing (scenario’s), pensioen, belasting) komen uit <strong>deterministische code</strong> — niet uit AI.
+            De bedragen en grafieken (bijv. besteedbaar inkomen, hypotheeklasten en aflossing
+            (scenario’s), pensioen, belasting) komen uit <strong>deterministische code</strong> —
+            niet uit AI.
           </p>
           <p>
-            <strong>Wat we wel kunnen doen (later):</strong> AI gebruiken om je output uit te leggen in jouw taal — maar altijd <em>over</em> feiten, nooit <em>in plaats van</em> feiten. Als AI-uitleg wordt toegevoegd, vat die uitsluitend bestaande rekenuitkomsten samen; er worden geen nieuwe bedragen gegenereerd.
+            <strong>Wat we wel kunnen doen (later):</strong> AI gebruiken om je output uit te leggen
+            in jouw taal — maar altijd <em>over</em> feiten, nooit <em>in plaats van</em> feiten.
+            Als AI-uitleg wordt toegevoegd, vat die uitsluitend bestaande rekenuitkomsten samen; er
+            worden geen nieuwe bedragen gegenereerd.
           </p>
         </section>
 
         <section>
           <h2>3. Geen persoonlijk advies</h2>
           <p>
-            Finnsight helpt je begrijpen wat cijfers betekenen in verschillende scenario’s, zonder te zeggen wat je ‘moet’ doen.
+            Finnsight helpt je begrijpen wat cijfers betekenen in verschillende scenario’s, zonder
+            te zeggen wat je ‘moet’ doen.
           </p>
           <ul>
             <li>Wat je ongeveer beschikbaar hebt in verschillende scenario’s</li>
             <li>Welke aannames het verschil maken (bijv. rente, woonlasten, pensioenleeftijd)</li>
             <li>Hoe regels rond belasting, pensioen en hypotheek doorwerken in je uitkomst</li>
           </ul>
-          <p><strong>Jij neemt de beslissingen.</strong> Finnsight geeft inzicht.</p>
+          <p>
+            <strong>Jij neemt de beslissingen.</strong> Finnsight geeft inzicht.
+          </p>
         </section>
 
         <section>
           <h2>4. Privacy by Design</h2>
           <p>
-            <strong>Werkgevers ontvangen nooit financiële data—niet individueel en niet als financiële aggregaten. Hooguit zien zij operationele voortgang (bijv. aantallen deelnemers/voltooiingen), zonder financiële inhoud.</strong> Finnsight werkt volledig employee-first. Kort: HR ziet voortgang, geen financiële inhoud.
+            <strong>
+              Werkgevers ontvangen nooit financiële data—niet individueel en niet als financiële
+              aggregaten. Hooguit zien zij operationele voortgang (bijv. aantallen
+              deelnemers/voltooiingen), zonder financiële inhoud.
+            </strong>{' '}
+            Finnsight werkt volledig employee-first. Kort: HR ziet voortgang, geen financiële
+            inhoud.
           </p>
           <ul>
             <li>Jij bent eigenaar van je gegevens</li>
-            <li>Hooguit zien zij operationele voortgang (bijv. aantallen deelnemers/voltooiingen), zonder financiële inhoud</li>
+            <li>
+              Hooguit zien zij operationele voortgang (bijv. aantallen deelnemers/voltooiingen),
+              zonder financiële inhoud
+            </li>
             <li>Geen individuele data, geen gedrag, geen financieel beeld, geen aggregaten</li>
           </ul>
         </section>
 
         <section>
           <h2>5. AFM-grenzen (financiële regelgeving)</h2>
-          <p>
-            Finnsight werkt binnen de grenzen van de AFM (Autoriteit Financiële Markten):
-          </p>
+          <p>Finnsight werkt binnen de grenzen van de AFM (Autoriteit Financiële Markten):</p>
           <ul>
-            <li>We vertellen wat feiten betekenen, <strong>niet wat je moet doen</strong></li>
-            <li><strong>Geen rendementsverwachtingen:</strong> We gissen niet over je beleggingen</li>
-            <li><strong>Transparante aannames:</strong> Je ziet altijd welke regels we gebruiken</li>
+            <li>
+              We vertellen wat feiten betekenen, <strong>niet wat je moet doen</strong>
+            </li>
+            <li>
+              <strong>Geen rendementsverwachtingen:</strong> We gissen niet over je beleggingen
+            </li>
+            <li>
+              <strong>Transparante aannames:</strong> Je ziet altijd welke regels we gebruiken
+            </li>
           </ul>
           <p>
             Vragen over compliance? <CTAButton variant="text">Neem contact op</CTAButton>.
@@ -104,12 +135,8 @@ export default function TrustPage({ onNavigate }) {
 
         <section className="highlight">
           <h2>6. Samen vertrouwen opbouwen</h2>
-          <p>
-            Finnsight bestaat omdat medewerkers meer rust nodig hebben. Dat verdienen ze.
-          </p>
-          <p>
-            We bouwen dit samen met werkgevers die hetzelfde geloven.
-          </p>
+          <p>Finnsight bestaat omdat medewerkers meer rust nodig hebben. Dat verdienen ze.</p>
+          <p>We bouwen dit samen met werkgevers die hetzelfde geloven.</p>
         </section>
       </main>
 
@@ -120,10 +147,12 @@ export default function TrustPage({ onNavigate }) {
           <span className="divider-muted">|</span>
           <Link to="/privacy">Privacy en voorwaarden</Link>
           <span className="divider-muted">|</span>
-          <CTAButton variant="text" className="footer-cta-link">Contact</CTAButton>
+          <CTAButton variant="text" className="footer-cta-link">
+            Contact
+          </CTAButton>
         </nav>
         <p className="footer-note">&copy; 2025 Finnsight</p>
       </footer>
     </>
-  )
+  );
 }

@@ -8,9 +8,5 @@ export default {
     '^.+\\.(js|jsx)$': 'babel-jest',
   },
   testMatch: ['**/__tests__/**/*.test.js', '**/?(*.)+(spec|test).js'],
-  collectCoverageFrom: [
-    'src/**/*.{js,jsx}',
-    '!src/main.jsx',
-    '!src/**/*.test.{js,jsx}',
-  ],
+  collectCoverageFrom: ['src/**/*.{js,jsx}', '!src/main.jsx', '!src/**/*.test.{js,jsx}'],
 };

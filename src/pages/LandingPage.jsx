@@ -1,20 +1,20 @@
-import { useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import SEOHead from '../components/SEOHead'
-import { PAGE_SEO } from '../utils/seo'
-import Header from '../components/Header'
-import ScrollProgress from '../components/ScrollProgress'
-import ExplainerVideo from '../components/ExplainerVideo'
-import CTAButton from '../components/CTAButton/CTAButton'
-import { initializeGlobalObserver } from '../hooks/useIntersectionObserver'
+import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import SEOHead from '../components/SEOHead';
+import { PAGE_SEO } from '../utils/seo';
+import Header from '../components/Header';
+import ScrollProgress from '../components/ScrollProgress';
+import ExplainerVideo from '../components/ExplainerVideo';
+import CTAButton from '../components/CTAButton/CTAButton';
+import { initializeGlobalObserver } from '../hooks/useIntersectionObserver';
 
-export default function LandingPage({ onNavigate }) {
+export default function LandingPage({ onNavigate: _onNavigate }) {
   useEffect(() => {
-    const observer = initializeGlobalObserver()
-    return () => observer?.disconnect()
-  }, [])
+    const observer = initializeGlobalObserver();
+    return () => observer?.disconnect();
+  }, []);
 
-  const seo = PAGE_SEO.landing
+  const seo = PAGE_SEO.landing;
 
   return (
     <>
@@ -32,7 +32,10 @@ export default function LandingPage({ onNavigate }) {
         {/* Section 1: What is Finnsight */}
         <section id="what" className="section hero scroll-target is-visible">
           <h1>Inzicht in jouw financiële toekomst</h1>
-          <p className="lead">Finnsight geeft Nederlandse medewerkers een helder overzicht van hun besteedbaar inkomen, woonlasten en pensioen.</p>
+          <p className="lead">
+            Finnsight geeft Nederlandse medewerkers een helder overzicht van hun besteedbaar
+            inkomen, woonlasten en pensioen.
+          </p>
           <p className="subtext">Transparante berekeningen en scenario's, jij beslist.</p>
           <div className="mt-xl">
             <CTAButton variant="primaryLarge">Vraag pilotinformatie aan</CTAButton>
@@ -45,11 +48,18 @@ export default function LandingPage({ onNavigate }) {
           <div className="grid-2">
             <article>
               <h3>Voor medewerkers</h3>
-              <p>Wil je weten wat je later overhoudt? Finnsight laat zien hoe inkomen, woonlasten, belasting en pensioen samenhangen — en wat er verandert als aannames veranderen.</p>
+              <p>
+                Wil je weten wat je later overhoudt? Finnsight laat zien hoe inkomen, woonlasten,
+                belasting en pensioen samenhangen — en wat er verandert als aannames veranderen.
+              </p>
             </article>
             <article>
               <h3>Voor werkgevers</h3>
-              <p>Financiële onzekerheid speelt vaak een grote rol. Finnsight kan medewerkers praktisch helpen met overzicht en scenario's — en kan zo bijdragen aan rust en focus.</p>
+              <p>
+                Financiële onzekerheid speelt vaak een grote rol. Finnsight kan medewerkers
+                praktisch helpen met overzicht en scenario's — en kan zo bijdragen aan rust en
+                focus.
+              </p>
             </article>
           </div>
         </section>
@@ -58,23 +68,35 @@ export default function LandingPage({ onNavigate }) {
         <section className="section highlight">
           <h2>HR-waarde, zonder privacy-compromissen</h2>
           <p className="subtext mb-xl">
-            Geef medewerkers één helder overzicht van inkomen, woonlasten en pensioen in scenario's. Werkgevers ontvangen nooit financiële data—niet individueel en niet als financiële aggregaten. Hooguit zien zij operationele voortgang (bijv. aantallen deelnemers/voltooiingen), zonder financiële inhoud.
+            Geef medewerkers één helder overzicht van inkomen, woonlasten en pensioen in scenario's.
+            Werkgevers ontvangen nooit financiële data—niet individueel en niet als financiële
+            aggregaten. Hooguit zien zij operationele voortgang (bijv. aantallen
+            deelnemers/voltooiingen), zonder financiële inhoud.
           </p>
 
           <div className="grid-2 mb-xl">
             <article>
               <h3>Employee-first ervaring</h3>
-              <p>Medewerkers krijgen één overzicht (pensioen, hypotheek, vermogen) met scenario's. HR hoeft geen individuele dossiers of financiële vragen te beheren.</p>
+              <p>
+                Medewerkers krijgen één overzicht (pensioen, hypotheek, vermogen) met scenario's. HR
+                hoeft geen individuele dossiers of financiële vragen te beheren.
+              </p>
             </article>
             <article>
               <h3>Privacy by design</h3>
-              <p>Werkgevers ontvangen nooit financiële data. Punt. Hooguit zien zij operationele voortgang (bijv. aantallen deelnemers/voltooiingen), zonder financiële inhoud.</p>
+              <p>
+                Werkgevers ontvangen nooit financiële data. Punt. Hooguit zien zij operationele
+                voortgang (bijv. aantallen deelnemers/voltooiingen), zonder financiële inhoud.
+              </p>
             </article>
           </div>
 
           <article className="mb-lg">
             <h3>Audit-ready uitgangspunt</h3>
-            <p>Transparante aannames en een deterministische rekenkern: dezelfde input geeft dezelfde uitkomst. Uitleg verwijst uitsluitend naar deze meetbare uitkomst.</p>
+            <p>
+              Transparante aannames en een deterministische rekenkern: dezelfde input geeft dezelfde
+              uitkomst. Uitleg verwijst uitsluitend naar deze meetbare uitkomst.
+            </p>
           </article>
 
           <div className="panel mb-lg">
@@ -88,9 +110,7 @@ export default function LandingPage({ onNavigate }) {
 
           <div className="text-center">
             <CTAButton variant="primary">Vraag pilotinformatie aan</CTAButton>
-            <p className="mt-sm mb-xs">
-              Beschikbaar voor 2–3 nieuwe pilots per maand.
-            </p>
+            <p className="mt-sm mb-xs">Beschikbaar voor 2–3 nieuwe pilots per maand.</p>
             <p className="mb-sm">
               Pilotfase nu open; bredere uitrol gepland voor 2026 (planning onder voorbehoud).
             </p>
@@ -104,7 +124,8 @@ export default function LandingPage({ onNavigate }) {
         <section className="section">
           <h2>Hoe het er voor medewerkers uitziet</h2>
           <p className="subtext mb-xl">
-            Voorbeeldweergave uit de pilotversie: deterministische berekeningen, scenario's per maand en toelichting die alleen naar meetbare uitkomsten verwijst.
+            Voorbeeldweergave uit de pilotversie: deterministische berekeningen, scenario's per
+            maand en toelichting die alleen naar meetbare uitkomsten verwijst.
           </p>
 
           <div className="mock-grid">
@@ -114,7 +135,8 @@ export default function LandingPage({ onNavigate }) {
                 <span className="mock-card-subtitle">Scenario A · Basis</span>
               </div>
               <p className="mock-card-text">
-                Inclusief woonlasten, belasting, pensioenpremies en vaste lasten. Geen advies, alleen inzicht.
+                Inclusief woonlasten, belasting, pensioenpremies en vaste lasten. Geen advies,
+                alleen inzicht.
               </p>
 
               <div className="mock-panel mock-panel-dark">
@@ -197,11 +219,12 @@ export default function LandingPage({ onNavigate }) {
                   <span className="legend-dot legend-cyan" />
                   <small>Basis</small>
                   <span className="legend-dot legend-indigo" />
-                    <small>Aflossing aanpassen (scenario)</small>
+                  <small>Aflossing aanpassen (scenario)</small>
                 </span>
               </div>
               <p className="mock-card-text">
-                  Je ziet direct wat er verandert als je aannames wijzigt (bijv. aflossing of sparen). Inzicht per maand.
+                Je ziet direct wat er verandert als je aannames wijzigt (bijv. aflossing of sparen).
+                Inzicht per maand.
               </p>
 
               <div className="mock-metrics">
@@ -240,7 +263,8 @@ export default function LandingPage({ onNavigate }) {
           </div>
 
           <p className="mock-caption">
-            Data zijn illustratief, berekeningen deterministisch en consistent met de rekenkern. Uitkomsten zijn projecties op basis van aannames en jouw input.
+            Data zijn illustratief, berekeningen deterministisch en consistent met de rekenkern.
+            Uitkomsten zijn projecties op basis van aannames en jouw input.
           </p>
         </section>
 
@@ -248,7 +272,8 @@ export default function LandingPage({ onNavigate }) {
         <section className="section" id="glass-box-video">
           <h2>In 1 minuut: De Glazen Doos</h2>
           <p className="subtext mb-xl">
-            Zie hoe Finnsight transparantie en controleerbaarheid combineert in een praktisch overzicht.
+            Zie hoe Finnsight transparantie en controleerbaarheid combineert in een praktisch
+            overzicht.
           </p>
           <ExplainerVideo />
         </section>
@@ -258,19 +283,43 @@ export default function LandingPage({ onNavigate }) {
           <h2>De problemen die we oplossen</h2>
           <div className="problems-grid">
             <article className="problem-card">
-              <img src="/illustrations/icon-mortgage.svg" alt="" className="problem-icon" aria-hidden="true" />
+              <img
+                src="/illustrations/icon-mortgage.svg"
+                alt=""
+                className="problem-icon"
+                aria-hidden="true"
+              />
               <h3>Financiële onzekerheid</h3>
-              <p>Veel medewerkers weten niet hoe hun inkomen, hypotheek, en pensioen samen optellen tot een werkelijk beeld naar de toekomst.</p>
+              <p>
+                Veel medewerkers weten niet hoe hun inkomen, hypotheek, en pensioen samen optellen
+                tot een werkelijk beeld naar de toekomst.
+              </p>
             </article>
             <article className="problem-card">
-              <img src="/illustrations/icon-transparent.svg" alt="" className="problem-icon" aria-hidden="true" />
+              <img
+                src="/illustrations/icon-transparent.svg"
+                alt=""
+                className="problem-icon"
+                aria-hidden="true"
+              />
               <h3>Onduidelijke adviezen</h3>
-              <p>Online calculators zijn vaak vaag of geven tegenstrijdig advies. Wij geven alleen feiten.</p>
+              <p>
+                Online calculators zijn vaak vaag of geven tegenstrijdig advies. Wij geven alleen
+                feiten.
+              </p>
             </article>
             <article className="problem-card">
-              <img src="/illustrations/icon-privacy.svg" alt="" className="problem-icon" aria-hidden="true" />
+              <img
+                src="/illustrations/icon-privacy.svg"
+                alt=""
+                className="problem-icon"
+                aria-hidden="true"
+              />
               <h3>Privacy</h3>
-              <p>Medewerkers zitten niet te wachten op een werkgever die in hun portemonnee kijkt. Dat zal ook nooit gebeuren.</p>
+              <p>
+                Medewerkers zitten niet te wachten op een werkgever die in hun portemonnee kijkt.
+                Dat zal ook nooit gebeuren.
+              </p>
             </article>
           </div>
         </section>
@@ -287,21 +336,37 @@ export default function LandingPage({ onNavigate }) {
               decoding="async"
             />
             <figcaption className="visually-hidden">
-              Visuele weergave van het Finnsight proces: jouw financiële gegevens worden verwerkt door een deterministische rekenkern tot een helder overzicht.
+              Visuele weergave van het Finnsight proces: jouw financiële gegevens worden verwerkt
+              door een deterministische rekenkern tot een helder overzicht.
             </figcaption>
           </figure>
           <ol className="process">
-            <li><strong>Jij deelt je situatie:</strong> Inkomsten, woning, schulden, pensioen, uitgaven.</li>
-            <li><strong>Finnsight rekent:</strong> Deterministische berekeningen (geen AI-adviezen) tonen je financiële beeld.</li>
-            <li><strong>Jij ziet helderheid:</strong> Inzichtelijk overzicht met scenario's. Geen interpretatie. Jij besluit.</li>
+            <li>
+              <strong>Jij deelt je situatie:</strong> Inkomsten, woning, schulden, pensioen,
+              uitgaven.
+            </li>
+            <li>
+              <strong>Finnsight rekent:</strong> Deterministische berekeningen (geen AI-adviezen)
+              tonen je financiële beeld.
+            </li>
+            <li>
+              <strong>Jij ziet helderheid:</strong> Inzichtelijk overzicht met scenario's. Geen
+              interpretatie. Jij besluit.
+            </li>
           </ol>
-          <p>Bijvoorbeeld: wat er gebeurt met je besteedbaar inkomen als rente, woonlasten of pensioenleeftijd verandert.</p>
+          <p>
+            Bijvoorbeeld: wat er gebeurt met je besteedbaar inkomen als rente, woonlasten of
+            pensioenleeftijd verandert.
+          </p>
         </section>
 
         {/* Section 5: CTA */}
         <section className="section cta-section">
           <h2>Interesse?</h2>
-          <p>We draaien pilots met een select aantal werkgevers om Finnsight verder aan te scherpen in de praktijk.</p>
+          <p>
+            We draaien pilots met een select aantal werkgevers om Finnsight verder aan te scherpen
+            in de praktijk.
+          </p>
           <p>Ben je werkgever, onderzoeker, journalist, of adviseur?</p>
           <CTAButton variant="primary">Vraag pilotinformatie aan</CTAButton>
         </section>
@@ -312,12 +377,14 @@ export default function LandingPage({ onNavigate }) {
         <nav className="footer-nav" aria-label="Footer navigation">
           <Link to="/trust">Vertrouwen & Compliance</Link>
           <span className="divider-muted">|</span>
-          <CTAButton variant="text" className="footer-cta-link">Contact</CTAButton>
+          <CTAButton variant="text" className="footer-cta-link">
+            Contact
+          </CTAButton>
           <span className="divider-muted">|</span>
           <Link to="/privacy">Privacy en voorwaarden</Link>
         </nav>
         <p className="footer-note">&copy; 2025 Finnsight</p>
       </footer>
     </>
-  )
+  );
 }

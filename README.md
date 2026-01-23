@@ -5,6 +5,7 @@ Deterministic financial planning for Dutch employees.
 ## About
 
 Finnsight helps Dutch employees understand their financial future through transparent, private analysis. No advice. No guesses. Only facts.
+
 - **What you get:** Clear view of your income, housing, pensions, taxes, and available funds
 - **How it works:** Share your situation → deterministic calculation → understand your options
 - **Your privacy:** Your data stays with you. Employers never see individual information.
@@ -16,6 +17,7 @@ Public site: https://finnsight.app
 ## Technology
 
 Built with:
+
 - **Frontend:** Vite 4.5.14 + React 18.2
 - **Deployment:** Vercel
 - **Domains:** finnsight.app (primary), finnsight.nl (redirect)
@@ -71,12 +73,15 @@ npm run preview
 - This site contains no interactive demos. It presents the proposition, trust/compliance, and a contact CTA.
 
 ## Privacy
+
 - We do not store intake submissions via the website. If you email us, we retain that email to respond.
 - No tracking cookies and no third-party analytics.
 - Employers receive no financial data—neither individual nor aggregates. At most they may see operational progress (e.g., counts of participants/completions), without financial content.
 
 ## Accessibility
+
 The site supports:
+
 - Keyboard navigation
 - Screen readers (WCAG 2.1 AA)
 - Mobile & tablet devices
@@ -85,6 +90,7 @@ The site supports:
 ## Compliance
 
 Finnsight operates within Dutch financial regulations (AFM):
+
 - No personalized financial advice
 - No investment return predictions
 - Transparent assumptions

@@ -52,22 +52,26 @@ export const SITE_CONFIG = {
   twitterCard: 'summary',
   locale: 'nl_NL',
   hreflang: 'nl-NL', // More precise than 'nl'
-}
+};
 
 export const PAGE_SEO = {
   landing: {
     path: '/',
     title: 'Finnsight — Rust en inzicht voor medewerkers',
-    description: 'Finnsight geeft Nederlandse medewerkers helder inzicht in hun financiële toekomst — deterministisch, privacy-first.',
+    description:
+      'Finnsight geeft Nederlandse medewerkers helder inzicht in hun financiële toekomst — deterministisch, privacy-first.',
     ogTitle: 'Finnsight — Inzicht in jouw financiële toekomst',
-    ogDescription: 'Deterministische financiële planning voor Nederlandse medewerkers. Geen adviezen, alleen feiten.',
+    ogDescription:
+      'Deterministische financiële planning voor Nederlandse medewerkers. Geen adviezen, alleen feiten.',
   },
   trust: {
     path: '/trust',
     title: 'Vertrouwen & Compliance — Finnsight',
-    description: 'Hoe Finnsight deterministisch rekent, privacy bewaakt en binnen AFM-kaders blijft.',
+    description:
+      'Hoe Finnsight deterministisch rekent, privacy bewaakt en binnen AFM-kaders blijft.',
     ogTitle: 'Vertrouwen & Compliance — Finnsight',
-    ogDescription: 'Transparant uitgelegd: hoe Finnsight rekent, wat we wel/niet doen, en hoe privacy is geborgd.',
+    ogDescription:
+      'Transparant uitgelegd: hoe Finnsight rekent, wat we wel/niet doen, en hoe privacy is geborgd.',
   },
   privacy: {
     path: '/privacy',
@@ -82,12 +86,13 @@ export const PAGE_SEO = {
     description: 'De pagina die je zocht bestaat niet of is verplaatst.',
     noIndex: true,
   },
-}
+};
 ```
 
 **1.2 Create `src/components/SEOHead.jsx`** — Reusable component
 
 Generates all SEO tags via Helmet:
+
 - `<title>` and `<meta name="description">`
 - `<link rel="canonical">` (per-page URL, absolute, no trailing slash inconsistency)
 - `<link rel="alternate" hreflang="nl-NL">` and `hreflang="x-default"`
@@ -111,11 +116,13 @@ Generates all SEO tags via Helmet:
 ### Phase 3: Update Existing Pages
 
 Replace Helmet with SEOHead in:
+
 - `src/pages/LandingPage.jsx`
 - `src/pages/TrustPage.jsx`
 - `src/pages/PrivacyTermsPage.jsx`
 
 **Change pattern:**
+
 ```jsx
 // Before
 import { Helmet } from 'react-helmet-async'
@@ -159,12 +166,14 @@ import NotFoundPage from './pages/NotFoundPage'
 **5.1 Update `index.html`** — Conservative changes only
 
 **Keep all existing OG/Twitter tags** (social scrapers need them):
+
 - `og:type`, `og:url`, `og:title`, `og:description`, `og:site_name`, `og:image`
 - `twitter:card`, `twitter:title`, `twitter:description`, `twitter:image`
 - Default `<title>` and `<meta name="description">`
 - Structured Data (Organization schema)
 
 **Only remove:**
+
 - `<link rel="canonical" href="https://finnsight.app/">` — canonical will be per-route via Helmet (falls back gracefully for scrapers)
 
 **Rationale:** Social scrapers fetch initial HTML only. Keeping strong defaults ensures good social previews regardless of JS execution.
@@ -173,16 +182,16 @@ import NotFoundPage from './pages/NotFoundPage'
 
 ## Files Summary
 
-| Action | File |
-|--------|------|
-| CREATE | `src/utils/seo.js` |
-| CREATE | `src/components/SEOHead.jsx` |
-| CREATE | `src/pages/NotFoundPage.jsx` |
-| MODIFY | `src/pages/LandingPage.jsx` |
-| MODIFY | `src/pages/TrustPage.jsx` |
+| Action | File                             |
+| ------ | -------------------------------- |
+| CREATE | `src/utils/seo.js`               |
+| CREATE | `src/components/SEOHead.jsx`     |
+| CREATE | `src/pages/NotFoundPage.jsx`     |
+| MODIFY | `src/pages/LandingPage.jsx`      |
+| MODIFY | `src/pages/TrustPage.jsx`        |
 | MODIFY | `src/pages/PrivacyTermsPage.jsx` |
-| MODIFY | `src/App.jsx` |
-| MODIFY | `index.html` |
+| MODIFY | `src/App.jsx`                    |
+| MODIFY | `index.html`                     |
 
 ---
 
@@ -208,6 +217,7 @@ import NotFoundPage from './pages/NotFoundPage'
 ## Future Considerations
 
 When SEO/social preview quality becomes critical, the next step is **prerendering** at build time:
+
 - Prerender `/`, `/trust`, `/privacy` into static HTML
 - This ensures social scrapers see per-route metadata
 - Tools: vite-plugin-prerender, react-snap, or similar
