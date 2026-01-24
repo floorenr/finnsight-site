@@ -138,6 +138,8 @@ a:hover {
   display: flex;
   list-style: none;
   gap: var(--spacing-xl);
+  margin: 0;
+  padding: 0;
 }
 
 .nav a {
@@ -282,8 +284,8 @@ article {
 }
 
 /* Lists */
-ul,
-ol {
+main ul,
+main ol {
   margin: var(--spacing-md) 0 var(--spacing-md) var(--spacing-xl);
 }
 
