@@ -78,7 +78,7 @@ export default function TrustPage({ onNavigate: _onNavigate }) {
         </section>
 
         <section>
-          <h2>3. Geen persoonlijk advies</h2>
+          <h2>3. Persoonlijk financieel inzicht</h2>
           <p>
             Finnsight helpt je begrijpen wat cijfers betekenen in verschillende scenario’s, zonder
             te zeggen wat je ‘moet’ doen.

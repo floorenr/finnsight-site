@@ -346,8 +346,7 @@ export default function LandingPage({ onNavigate: _onNavigate }) {
               uitgaven.
             </li>
             <li>
-              <strong>Finnsight rekent:</strong> Deterministische berekeningen (geen AI-adviezen)
-              tonen je financiële beeld.
+              <strong>Finnsight rekent:</strong> De berekeningen tonen je financiële beeld.
             </li>
             <li>
               <strong>Jij ziet helderheid:</strong> Inzichtelijk overzicht met scenario's. Geen
