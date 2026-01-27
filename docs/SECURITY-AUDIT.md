@@ -40,15 +40,18 @@ This document tracks the status of npm security vulnerabilities identified in th
 ## Rationale
 
 This is a **static marketing site** built with Vite. The identified vulnerabilities only affect:
+
 - The development server (`npm run dev`)
 - Local development environments
 
 They do **NOT** affect:
+
 - Production builds (`npm run build`)
 - The deployed static assets
 - End users visiting the site
 
 Upgrading vite from v4 to v7 would be a breaking change that requires:
+
 - Testing all build configurations
 - Potentially updating multiple dependencies
 - Risk of introducing regressions
