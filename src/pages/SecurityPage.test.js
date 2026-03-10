@@ -43,6 +43,13 @@ describe('SecurityPage', () => {
     expect(httpsElements.length).toBeGreaterThanOrEqual(1);
   });
 
+  it('lists actual security headers from vercel.json without claiming HSTS', () => {
+    renderWithRouter(<SecurityPage onNavigate={() => {}} />);
+    expect(screen.getByText(/X-Frame-Options/i)).toBeInTheDocument();
+    expect(screen.getByText(/X-Content-Type-Options/i)).toBeInTheDocument();
+    expect(screen.queryByText(/HSTS ingesteld/i)).not.toBeInTheDocument();
+  });
+
   it('includes data protection and retention section', () => {
     renderWithRouter(<SecurityPage onNavigate={() => {}} />);
     expect(screen.getByText(/Gegevensbescherming en -retentie/i)).toBeInTheDocument();
@@ -78,6 +85,20 @@ describe('SecurityPage', () => {
   it('includes responsible disclosure contact email', () => {
     renderWithRouter(<SecurityPage onNavigate={() => {}} />);
     expect(screen.getByRole('link', { name: /security@finnsight\.nl/i })).toBeInTheDocument();
+  });
+
+  it('notes responsible disclosure mailbox as pending verification', () => {
+    renderWithRouter(<SecurityPage onNavigate={() => {}} />);
+    expect(screen.getByText(/nog niet geverifieerd als operationeel/i)).toBeInTheDocument();
+  });
+
+  it('section 6 contact link is a real mailto anchor, not a modal button', () => {
+    renderWithRouter(<SecurityPage onNavigate={() => {}} />);
+    const contactLinks = screen.getAllByRole('link', { name: /hello@finnsight\.nl/i });
+    expect(contactLinks.length).toBeGreaterThanOrEqual(1);
+    contactLinks.forEach((link) => {
+      expect(link).toHaveAttribute('href', expect.stringContaining('mailto:hello@finnsight.nl'));
+    });
   });
 
   it('links to the .well-known/security.txt file', () => {
