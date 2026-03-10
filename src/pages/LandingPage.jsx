@@ -385,6 +385,8 @@ export default function LandingPage({ onNavigate: _onNavigate }) {
             Contact
           </CTAButton>
           <span className="divider-muted">|</span>
+          <Link to="/security">Beveiliging</Link>
+          <span className="divider-muted">|</span>
           <Link to="/privacy">Privacy en voorwaarden</Link>
         </nav>
         <p className="footer-note">&copy; 2025 Finnsight</p>

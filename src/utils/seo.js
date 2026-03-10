@@ -53,6 +53,15 @@ export const PAGE_SEO = {
     ogDescription:
       'Deterministische engine, AVG-rol, AFM ontwerpintentie en werkgever-aggregatiedrempel uitgelegd.',
   },
+  security: {
+    path: '/security',
+    title: 'Beveiliging — Finnsight',
+    description:
+      'Hoe Finnsight omgaat met transportbeveiliging, gegevensbescherming, toegangsbeheer en responsible disclosure.',
+    ogTitle: 'Beveiliging — Finnsight',
+    ogDescription:
+      'Evidence-honest overzicht van de beveiligingsaanpak en responsible disclosure bij Finnsight.',
+  },
   notFound: {
     path: null,
     title: 'Pagina niet gevonden — Finnsight',

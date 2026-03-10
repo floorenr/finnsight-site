@@ -141,8 +141,10 @@ export default function TrustPage({ onNavigate: _onNavigate }) {
           <p>Finnsight bestaat omdat medewerkers meer rust nodig hebben. Dat verdienen ze.</p>
           <p>We bouwen dit samen met werkgevers die hetzelfde geloven.</p>
           <p>
-            Meer details: <Link to="/methodology">Methodologie</Link> (hoe we rekenen) en{' '}
-            <Link to="/compliance">Compliance</Link> (AVG, AFM-grenzen, werkgeversprivacy).
+            Meer details: <Link to="/methodology">Methodologie</Link> (hoe we rekenen),{' '}
+            <Link to="/compliance">Compliance</Link> (AVG, AFM-grenzen, werkgeversprivacy) en{' '}
+            <Link to="/security">Beveiliging</Link> (transportbeveiliging en responsible
+            disclosure).
           </p>
         </section>
       </main>
@@ -155,6 +157,8 @@ export default function TrustPage({ onNavigate: _onNavigate }) {
           <Link to="/methodology">Methodologie</Link>
           <span className="divider-muted">|</span>
           <Link to="/compliance">Compliance</Link>
+          <span className="divider-muted">|</span>
+          <Link to="/security">Beveiliging</Link>
           <span className="divider-muted">|</span>
           <Link to="/privacy">Privacy en voorwaarden</Link>
           <span className="divider-muted">|</span>
