@@ -33,8 +33,10 @@ export default function PrivacyTermsPage({ onNavigate: _onNavigate }) {
             <li>
               Werkgevers ontvangen nooit individuele financiële data van medewerkers.
               Werkgeversrapportage is privacy-safe en uitsluitend op cohortniveau boven een
-              minimumdrempel van 15 deelnemers; in de pilotfase beperkt tot operationele
-              voortgangsmetrics.
+              minimumdrempel van 15 deelnemers — in de huidige pilotfase beperkt tot operationele
+              voortgangsmetrics en, afhankelijk van pilotinrichting en juridische en
+              privacy-borging, zorgvuldig afgebakende geaggregeerde indicatoren. Geen individuele
+              profilering of beslissingsondersteuning.
             </li>
             <li>
               Mail je ons via hello@finnsight.nl, dan bewaren we je e-mail alleen om te kunnen

@@ -1,46 +1,46 @@
 import { render, screen } from '@testing-library/react';
 import { HelmetProvider } from 'react-helmet-async';
-import { MemoryRouter, Routes, Route } from 'react-router-dom';
-import { ModalProvider } from '../context/site/ModalContext';
-import MethodologyPage from '../pages/MethodologyPage';
-import CompliancePage from '../pages/CompliancePage';
+import App from '../App';
 
-// Follows the same routing/test approach used in all other page tests in this repo:
-// render the page component inside MemoryRouter with initialEntries matching the route.
-const renderAtRoute = (path, component) => {
+// Renders the real App (with BrowserRouter + Suspense + lazy routes as in production).
+// Sets window.location via pushState before rendering so BrowserRouter picks up the correct route.
+const renderAppAtPath = (path) => {
+  window.history.pushState({}, '', path);
   return render(
     <HelmetProvider>
-      <MemoryRouter initialEntries={[path]}>
-        <ModalProvider>
-          <Routes>
-            <Route path={path} element={component} />
-          </Routes>
-        </ModalProvider>
-      </MemoryRouter>
+      <App />
     </HelmetProvider>
   );
 };
 
-describe('Route registration', () => {
-  it('renders MethodologyPage at /methodology route', () => {
-    renderAtRoute('/methodology', <MethodologyPage onNavigate={() => {}} />);
-    expect(screen.getByRole('heading', { level: 1, name: /Methodologie/i })).toBeInTheDocument();
+afterEach(() => {
+  window.history.pushState({}, '', '/');
+});
+
+describe('App route wiring', () => {
+  it('renders MethodologyPage at /methodology', async () => {
+    renderAppAtPath('/methodology');
+    expect(
+      await screen.findByRole('heading', { level: 1, name: /Methodologie/i })
+    ).toBeInTheDocument();
   });
 
-  it('renders CompliancePage at /compliance route', () => {
-    renderAtRoute('/compliance', <CompliancePage onNavigate={() => {}} />);
-    expect(screen.getByRole('heading', { level: 1, name: /Compliance/i })).toBeInTheDocument();
+  it('renders CompliancePage at /compliance', async () => {
+    renderAppAtPath('/compliance');
+    expect(
+      await screen.findByRole('heading', { level: 1, name: /Compliance/i })
+    ).toBeInTheDocument();
   });
 
-  it('/methodology route renders full methodology page content', () => {
-    renderAtRoute('/methodology', <MethodologyPage onNavigate={() => {}} />);
-    expect(screen.getByText(/deterministisch rekenmodel/i)).toBeInTheDocument();
+  it('/methodology renders deterministic methodology content', async () => {
+    renderAppAtPath('/methodology');
+    expect(await screen.findByText(/deterministisch rekenmodel/i)).toBeInTheDocument();
     expect(screen.getByText(/Wat Finnsight niet doet/i)).toBeInTheDocument();
   });
 
-  it('/compliance route renders full compliance page content', () => {
-    renderAtRoute('/compliance', <CompliancePage onNavigate={() => {}} />);
-    expect(screen.getByText(/AFM-grens als ontwerpintentie/i)).toBeInTheDocument();
+  it('/compliance renders AFM and DPA compliance content', async () => {
+    renderAppAtPath('/compliance');
+    expect(await screen.findByText(/AFM-grens als ontwerpintentie/i)).toBeInTheDocument();
     expect(screen.getByText(/Verwerkersovereenkomst \(DPA\)/i)).toBeInTheDocument();
   });
 });
