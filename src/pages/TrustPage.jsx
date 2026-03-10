@@ -97,20 +97,23 @@ export default function TrustPage({ onNavigate: _onNavigate }) {
           <h2>4. Privacy by Design</h2>
           <p>
             <strong>
-              Werkgevers ontvangen nooit financiële data—niet individueel en niet als financiële
-              aggregaten. Hooguit zien zij operationele voortgang (bijv. aantallen
-              deelnemers/voltooiingen), zonder financiële inhoud.
+              Werkgevers ontvangen nooit individuele financiële data van medewerkers.
+              Werkgeversrapportage is privacy-safe, uitsluitend op cohortniveau en boven een
+              minimumdrempel van 15 deelnemers.
             </strong>{' '}
-            Finnsight werkt volledig employee-first. Kort: HR ziet voortgang, geen financiële
-            inhoud.
+            Finnsight werkt volledig employee-first.
           </p>
           <ul>
             <li>Jij bent eigenaar van je gegevens</li>
             <li>
-              Hooguit zien zij operationele voortgang (bijv. aantallen deelnemers/voltooiingen),
-              zonder financiële inhoud
+              Geen individueel financieel profiel, scoring of beslissingsondersteuning op
+              medewerkersniveau
             </li>
-            <li>Geen individuele data, geen gedrag, geen financieel beeld, geen aggregaten</li>
+            <li>
+              In de huidige pilotfase: werkgeversrapportage beperkt tot operationele voortgang en,
+              waar juridisch en privacy-technisch verantwoord, zorgvuldig afgebakende
+              cohortinzichten
+            </li>
           </ul>
         </section>
 
@@ -137,6 +140,10 @@ export default function TrustPage({ onNavigate: _onNavigate }) {
           <h2>6. Samen vertrouwen opbouwen</h2>
           <p>Finnsight bestaat omdat medewerkers meer rust nodig hebben. Dat verdienen ze.</p>
           <p>We bouwen dit samen met werkgevers die hetzelfde geloven.</p>
+          <p>
+            Meer details: <Link to="/methodology">Methodologie</Link> (hoe we rekenen) en{' '}
+            <Link to="/compliance">Compliance</Link> (AVG, AFM-grenzen, werkgeversprivacy).
+          </p>
         </section>
       </main>
 
@@ -144,6 +151,10 @@ export default function TrustPage({ onNavigate: _onNavigate }) {
         <img src="/brand/mark-on-dark.svg" alt="" className="footer-mark" aria-hidden="true" />
         <nav className="footer-nav" aria-label="Footer navigation">
           <Link to="/">Terug naar start</Link>
+          <span className="divider-muted">|</span>
+          <Link to="/methodology">Methodologie</Link>
+          <span className="divider-muted">|</span>
+          <Link to="/compliance">Compliance</Link>
           <span className="divider-muted">|</span>
           <Link to="/privacy">Privacy en voorwaarden</Link>
           <span className="divider-muted">|</span>
