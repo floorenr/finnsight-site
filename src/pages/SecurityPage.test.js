@@ -32,9 +32,7 @@ describe('SecurityPage', () => {
 
   it('includes transport security section', () => {
     renderWithRouter(<SecurityPage onNavigate={() => {}} />);
-    expect(
-      screen.getByRole('heading', { name: /Transportbeveiliging/i })
-    ).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /Transportbeveiliging/i })).toBeInTheDocument();
   });
 
   it('mentions HTTPS enforcement', () => {
@@ -77,9 +75,7 @@ describe('SecurityPage', () => {
 
   it('includes responsible disclosure section', () => {
     renderWithRouter(<SecurityPage onNavigate={() => {}} />);
-    expect(
-      screen.getByRole('heading', { name: /Responsible disclosure/i })
-    ).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /Responsible disclosure/i })).toBeInTheDocument();
   });
 
   it('includes responsible disclosure contact email', () => {
@@ -103,9 +99,10 @@ describe('SecurityPage', () => {
 
   it('links to the .well-known/security.txt file', () => {
     renderWithRouter(<SecurityPage onNavigate={() => {}} />);
-    expect(
-      screen.getByRole('link', { name: /\.well-known\/security\.txt/i })
-    ).toHaveAttribute('href', '/.well-known/security.txt');
+    expect(screen.getByRole('link', { name: /\.well-known\/security\.txt/i })).toHaveAttribute(
+      'href',
+      '/.well-known/security.txt'
+    );
   });
 
   it('includes link to compliance page', () => {

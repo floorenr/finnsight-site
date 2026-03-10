@@ -22,8 +22,8 @@ export default function SecurityPage({ onNavigate: _onNavigate }) {
         <h1>Beveiliging</h1>
         <p className="lead">
           Een evidence-honest overzicht van hoe Finnsight omgaat met transportbeveiliging,
-          gegevensbescherming, toegangsbeheer en responsible disclosure. Waar formele verificatie
-          of certificering nog niet is afgerond, is dit expliciet vermeld.
+          gegevensbescherming, toegangsbeheer en responsible disclosure. Waar formele verificatie of
+          certificering nog niet is afgerond, is dit expliciet vermeld.
         </p>
 
         <section>
@@ -36,9 +36,9 @@ export default function SecurityPage({ onNavigate: _onNavigate }) {
           <ul>
             <li>HTTPS afgedwongen voor alle pagina-aanvragen via Vercel-hosting</li>
             <li>
-              Beveiligingsheaders actief via <code>vercel.json</code>:{' '}
-              <code>X-Frame-Options</code>, <code>X-Content-Type-Options</code>,{' '}
-              <code>Referrer-Policy</code>, <code>Permissions-Policy</code>
+              Beveiligingsheaders actief via <code>vercel.json</code>: <code>X-Frame-Options</code>,{' '}
+              <code>X-Content-Type-Options</code>, <code>Referrer-Policy</code>,{' '}
+              <code>Permissions-Policy</code>
             </li>
           </ul>
           <p>
@@ -82,21 +82,19 @@ export default function SecurityPage({ onNavigate: _onNavigate }) {
         <section>
           <h2>3. Toegangsbeheer en authenticatie</h2>
           <p>
-            <strong>Huidige aanpak (pilotfase, deels pending verification):</strong> Toegang tot
-            de pilotomgeving is beperkt en gecontroleerd. Authenticatie en autorisatie worden
-            ingericht op basis van de pilotafspraken met de werkgever/pilotpartner.
+            <strong>Huidige aanpak (pilotfase, deels pending verification):</strong> Toegang tot de
+            pilotomgeving is beperkt en gecontroleerd. Authenticatie en autorisatie worden ingericht
+            op basis van de pilotafspraken met de werkgever/pilotpartner.
           </p>
           <ul>
-            <li>
-              Publieke website: geen gebruikersaccounts of persoonlijke logins vereist
-            </li>
+            <li>Publieke website: geen gebruikersaccounts of persoonlijke logins vereist</li>
             <li>
               Pilotomgeving: toegang beperkt tot deelnemende medewerkers en bevoegde
               werkgeverscontacten (inrichting pilotafhankelijk)
             </li>
             <li>
-              Interne systemen: toegang beperkt op basis van need-to-know; beheerd via
-              rolgebaseerde rechten
+              Interne systemen: toegang beperkt op basis van need-to-know; beheerd via rolgebaseerde
+              rechten
             </li>
           </ul>
           <p>
@@ -110,9 +108,9 @@ export default function SecurityPage({ onNavigate: _onNavigate }) {
         <section>
           <h2>4. Infrastructuur en deployment</h2>
           <p>
-            <strong>Huidige aanpak (evidence-backed):</strong> De Finnsight-website wordt gehost
-            op Vercel. Deployments worden gecontroleerd via GitHub Actions (CI/CD pipeline met
-            lint-, test- en buildchecks).
+            <strong>Huidige aanpak (evidence-backed):</strong> De Finnsight-website wordt gehost op
+            Vercel. Deployments worden gecontroleerd via GitHub Actions (CI/CD pipeline met lint-,
+            test- en buildchecks).
           </p>
           <ul>
             <li>Productiedeployments uitsluitend via gecontroleerde CI/CD-pipeline</li>
@@ -124,14 +122,14 @@ export default function SecurityPage({ onNavigate: _onNavigate }) {
               Beveiligingsheaders actief in productieomgeving via <code>vercel.json</code>
             </li>
             <li>
-              Afhankelijkheden worden periodiek bijgewerkt via de reguliere ontwikkelworkflow;
-              op deze pagina wordt geen formele vulnerability attestation geclaimd
+              Afhankelijkheden worden periodiek bijgewerkt via de reguliere ontwikkelworkflow; op
+              deze pagina wordt geen formele vulnerability attestation geclaimd
             </li>
           </ul>
           <p>
             <em>
-              Penetratietest is gepland vóór productielancering (target; nog niet uitgevoerd).
-              SOC 2 Type II-certificering is een roadmapdoel (target Q3 2026; niet geverifieerd).
+              Penetratietest is gepland vóór productielancering (target; nog niet uitgevoerd). SOC 2
+              Type II-certificering is een roadmapdoel (target Q3 2026; niet geverifieerd).
             </em>
           </p>
         </section>
@@ -140,8 +138,8 @@ export default function SecurityPage({ onNavigate: _onNavigate }) {
           <h2>5. Responsible disclosure</h2>
           <p>
             Finnsight neemt beveiligingsproblemen serieus. Als je een kwetsbaarheid of
-            beveiligingsrisico ontdekt in onze dienst of website, verzoeken wij je dit
-            verantwoord te melden.
+            beveiligingsrisico ontdekt in onze dienst of website, verzoeken wij je dit verantwoord
+            te melden.
           </p>
           <ul>
             <li>
@@ -157,15 +155,15 @@ export default function SecurityPage({ onNavigate: _onNavigate }) {
               beoordelen
             </li>
             <li>
-              Wij verzoeken je geen misbruik te maken van de kwetsbaarheid en deze niet
-              openbaar te maken totdat wij een oplossing hebben kunnen implementeren
+              Wij verzoeken je geen misbruik te maken van de kwetsbaarheid en deze niet openbaar te
+              maken totdat wij een oplossing hebben kunnen implementeren
             </li>
           </ul>
           <p>
             <em>
-              Het e-mailadres <strong>security@finnsight.nl</strong> is het beoogde
-              responsible disclosure-kanaal (inrichting extern afhankelijk; nog niet geverifieerd
-              als operationeel). Mocht dit adres tijdelijk niet bereikbaar zijn, gebruik dan{' '}
+              Het e-mailadres <strong>security@finnsight.nl</strong> is het beoogde responsible
+              disclosure-kanaal (inrichting extern afhankelijk; nog niet geverifieerd als
+              operationeel). Mocht dit adres tijdelijk niet bereikbaar zijn, gebruik dan{' '}
               <a href="mailto:hello@finnsight.nl?subject=Security%20disclosure">
                 hello@finnsight.nl
               </a>{' '}
@@ -208,4 +206,3 @@ export default function SecurityPage({ onNavigate: _onNavigate }) {
     </>
   );
 }
-

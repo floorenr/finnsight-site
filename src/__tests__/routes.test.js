@@ -53,7 +53,9 @@ describe('App route wiring', () => {
 
   it('/security renders responsible disclosure content', async () => {
     renderAppAtPath('/security');
-    expect(await screen.findByRole('heading', { name: /Responsible disclosure/i })).toBeInTheDocument();
+    expect(
+      await screen.findByRole('heading', { name: /Responsible disclosure/i })
+    ).toBeInTheDocument();
     expect(screen.getByRole('link', { name: /security@finnsight\.nl/i })).toBeInTheDocument();
   });
 });
