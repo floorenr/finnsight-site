@@ -35,6 +35,24 @@ export const PAGE_SEO = {
     ogTitle: 'Privacy en voorwaarden — Finnsight',
     ogDescription: 'Kernsamenvatting van hoe wij met je gegevens en gebruik omgaan.',
   },
+  methodology: {
+    path: '/methodology',
+    title: 'Methodologie — Finnsight',
+    description:
+      'Hoe Finnsight rekent: belasting, pensioen, hypotheek en besteedbaar inkomen. Aannames, bronnen en wat Finnsight niet doet.',
+    ogTitle: 'Methodologie — Finnsight',
+    ogDescription:
+      'Transparante uitleg van de deterministische rekenmethodes achter Finnsight. Geen advies, wel inzicht.',
+  },
+  compliance: {
+    path: '/compliance',
+    title: 'Compliance — Finnsight',
+    description:
+      'Hoe Finnsight omgaat met AFM-grenzen, AVG, gegevensbescherming en werkgeversprivacy.',
+    ogTitle: 'Compliance — Finnsight',
+    ogDescription:
+      'Deterministische engine, AVG-rol, AFM ontwerpintentie en werkgever-aggregatiedrempel uitgelegd.',
+  },
   notFound: {
     path: null,
     title: 'Pagina niet gevonden — Finnsight',

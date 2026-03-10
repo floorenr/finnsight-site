@@ -376,6 +376,10 @@ export default function LandingPage({ onNavigate: _onNavigate }) {
         <nav className="footer-nav" aria-label="Footer navigation">
           <Link to="/trust">Vertrouwen & Compliance</Link>
           <span className="divider-muted">|</span>
+          <Link to="/methodology">Methodologie</Link>
+          <span className="divider-muted">|</span>
+          <Link to="/compliance">Compliance</Link>
+          <span className="divider-muted">|</span>
           <CTAButton variant="text" className="footer-cta-link">
             Contact
           </CTAButton>

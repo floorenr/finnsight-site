@@ -8,6 +8,8 @@ import LandingPage from './pages/LandingPage'; // Eager load - critical path
 // Lazy load non-critical routes
 const TrustPage = lazy(() => import('./pages/TrustPage'));
 const PrivacyTermsPage = lazy(() => import('./pages/PrivacyTermsPage'));
+const MethodologyPage = lazy(() => import('./pages/MethodologyPage'));
+const CompliancePage = lazy(() => import('./pages/CompliancePage'));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
 
 function AppContent() {
@@ -27,6 +29,8 @@ function AppContent() {
               <Route path="/" element={<LandingPage onNavigate={handleNavigate} />} />
               <Route path="/trust" element={<TrustPage onNavigate={handleNavigate} />} />
               <Route path="/privacy" element={<PrivacyTermsPage onNavigate={handleNavigate} />} />
+              <Route path="/methodology" element={<MethodologyPage onNavigate={handleNavigate} />} />
+              <Route path="/compliance" element={<CompliancePage onNavigate={handleNavigate} />} />
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </Suspense>
