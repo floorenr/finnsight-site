@@ -138,10 +138,10 @@ export default function CompliancePage({ onNavigate: _onNavigate }) {
         <section>
           <h2>5. Werkgever-aggregatiedrempel en medewerkersbescherming</h2>
           <p>
-            Werkgevers ontvangen <strong>nooit financiële data</strong> op individueel niveau.
-            Operationele voortgangsrapportage (bijv. aantallen deelnemers, voltooiingspercentages)
-            wordt alleen gedeeld wanneer de groepsomvang boven een{' '}
-            <strong>minimumdrempel van 15 deelnemers</strong> uitkomt.
+            Werkgevers ontvangen <strong>nooit individuele financiële data</strong> van medewerkers.
+            Eventuele werkgeversgerichte inzichten zijn uitsluitend geaggregeerd en{' '}
+            <strong>niet herleidbaar tot individuen</strong>, en alleen beschikbaar boven een{' '}
+            <strong>minimumdrempel van 15 deelnemers</strong>.
           </p>
           <ul>
             <li>
@@ -149,12 +149,13 @@ export default function CompliancePage({ onNavigate: _onNavigate }) {
               kleiner dan 15 deelnemers, om herleidbaarheid naar individuen te voorkomen.
             </li>
             <li>
-              Financiële gegevens (bedragen, scenario-uitkomsten, inkomensgegevens) worden nooit in
-              werkgeversrapportages opgenomen — ook niet geaggregeerd.
+              Geen individueel financieel profiel, scoring of beslissingsondersteuning op
+              medewerkersniveau.
             </li>
             <li>
-              Werkgevers zien uitsluitend operationele metrics (deelname, voltooiing) zonder
-              financiële inhoud.
+              In de huidige pilotfase is werkgeversrapportage beperkt tot operationele
+              voortgangsmetrics (deelname, voltooiing) en, afhankelijk van pilotinrichting en
+              juridische en privacy-borging, zorgvuldig afgebakende geaggregeerde indicatoren.
             </li>
           </ul>
           <p>

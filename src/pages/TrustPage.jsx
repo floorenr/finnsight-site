@@ -97,20 +97,23 @@ export default function TrustPage({ onNavigate: _onNavigate }) {
           <h2>4. Privacy by Design</h2>
           <p>
             <strong>
-              Werkgevers ontvangen nooit financiële data—niet individueel en niet als financiële
-              aggregaten. Hooguit zien zij operationele voortgang (bijv. aantallen
-              deelnemers/voltooiingen), zonder financiële inhoud.
+              Werkgevers ontvangen nooit individuele financiële data van medewerkers.
+              Werkgeversrapportage is privacy-safe, uitsluitend op cohortniveau en boven een
+              minimumdrempel van 15 deelnemers.
             </strong>{' '}
-            Finnsight werkt volledig employee-first. Kort: HR ziet voortgang, geen financiële
-            inhoud.
+            Finnsight werkt volledig employee-first.
           </p>
           <ul>
             <li>Jij bent eigenaar van je gegevens</li>
             <li>
-              Hooguit zien zij operationele voortgang (bijv. aantallen deelnemers/voltooiingen),
-              zonder financiële inhoud
+              Geen individueel financieel profiel, scoring of beslissingsondersteuning op
+              medewerkersniveau
             </li>
-            <li>Geen individuele data, geen gedrag, geen financieel beeld, geen aggregaten</li>
+            <li>
+              In de huidige pilotfase: werkgeversrapportage beperkt tot operationele voortgang en,
+              waar juridisch en privacy-technisch verantwoord, zorgvuldig afgebakende
+              cohortinzichten
+            </li>
           </ul>
         </section>
 

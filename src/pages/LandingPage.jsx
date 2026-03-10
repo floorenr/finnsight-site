@@ -69,9 +69,9 @@ export default function LandingPage({ onNavigate: _onNavigate }) {
           <h2>HR-waarde, zonder privacy-compromissen</h2>
           <p className="subtext mb-xl">
             Geef medewerkers één helder overzicht van inkomen, woonlasten en pensioen in scenario's.
-            Werkgevers ontvangen nooit financiële data—niet individueel en niet als financiële
-            aggregaten. Hooguit zien zij operationele voortgang (bijv. aantallen
-            deelnemers/voltooiingen), zonder financiële inhoud.
+            Werkgevers ontvangen nooit individuele financiële data. Werkgeversrapportage is
+            privacy-safe en uitsluitend op cohortniveau boven een minimumdrempel van 15 deelnemers —
+            in de pilotfase beperkt tot operationele voortgangsmetrics.
           </p>
 
           <div className="grid-2 mb-xl">
@@ -85,8 +85,9 @@ export default function LandingPage({ onNavigate: _onNavigate }) {
             <article>
               <h3>Privacy by design</h3>
               <p>
-                Werkgevers ontvangen nooit financiële data. Punt. Hooguit zien zij operationele
-                voortgang (bijv. aantallen deelnemers/voltooiingen), zonder financiële inhoud.
+                Werkgevers ontvangen nooit individuele financiële data. Werkgeversrapportage is
+                beperkt tot privacy-safe, niet-herleidbare cohortinzichten boven een minimumdrempel
+                van 15 deelnemers.
               </p>
             </article>
           </div>

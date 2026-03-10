@@ -65,6 +65,16 @@ describe('MethodologyPage', () => {
     expect(screen.getByText(/uitsluitend informatief en illustratief/i)).toBeInTheDocument();
   });
 
+  it('states calculation rules are fixed and versioned', () => {
+    renderWithRouter(<MethodologyPage onNavigate={() => {}} />);
+    expect(screen.getByText(/rekenregels en aannames zijn vastgelegd/i)).toBeInTheDocument();
+  });
+
+  it('states outputs are traceable and auditable', () => {
+    renderWithRouter(<MethodologyPage onNavigate={() => {}} />);
+    expect(screen.getByText(/traceerbaar en auditeerbaar/i)).toBeInTheDocument();
+  });
+
   it('includes link to compliance page', () => {
     renderWithRouter(<MethodologyPage onNavigate={() => {}} />);
     const complianceLinks = screen.getAllByRole('link', { name: /^Compliance$/i });

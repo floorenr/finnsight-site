@@ -39,6 +39,12 @@ export default function MethodologyPage({ onNavigate: _onNavigate }) {
             zelf invoert. Finnsight trekt geen conclusies over wat een gebruiker &lsquo;zou moeten
             doen&rsquo;.
           </p>
+          <p>
+            De rekenregels en aannames zijn vastgelegd als onderdeel van de methodologie;
+            wijzigingen worden bijgehouden. Elke uitkomst is volledig{' '}
+            <strong>traceerbaar en auditeerbaar</strong>: van invoer via de toegepaste regels tot
+            eindresultaat.
+          </p>
         </section>
 
         <section>

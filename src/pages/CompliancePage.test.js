@@ -50,6 +50,26 @@ describe('CompliancePage', () => {
     expect(screen.getByText(/minimumdrempel van 15 deelnemers/i)).toBeInTheDocument();
   });
 
+  it('prohibits individual employee financial data for employers', () => {
+    renderWithRouter(<CompliancePage onNavigate={() => {}} />);
+    expect(screen.getByText(/nooit individuele financiële data/i)).toBeInTheDocument();
+  });
+
+  it('states cohort reporting is not traceable to individuals', () => {
+    renderWithRouter(<CompliancePage onNavigate={() => {}} />);
+    expect(screen.getByText(/niet herleidbaar tot individuen/i)).toBeInTheDocument();
+  });
+
+  it('prohibits individual-level profiling and scoring', () => {
+    renderWithRouter(<CompliancePage onNavigate={() => {}} />);
+    expect(screen.getByText(/Geen individueel financieel profiel, scoring/i)).toBeInTheDocument();
+  });
+
+  it('frames pilot-phase employer reporting conservatively', () => {
+    renderWithRouter(<CompliancePage onNavigate={() => {}} />);
+    expect(screen.getByText(/huidige pilotfase/i)).toBeInTheDocument();
+  });
+
   it('includes DPA status section', () => {
     renderWithRouter(<CompliancePage onNavigate={() => {}} />);
     expect(screen.getByText(/Verwerkersovereenkomst \(DPA\)/i)).toBeInTheDocument();

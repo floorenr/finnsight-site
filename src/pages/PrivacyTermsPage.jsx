@@ -31,9 +31,10 @@ export default function PrivacyTermsPage({ onNavigate: _onNavigate }) {
             <li>Geen account nodig; we slaan via deze website geen ingevulde intakegegevens op.</li>
             <li>Geen tracking cookies en geen third-party analytics.</li>
             <li>
-              Werkgevers ontvangen nooit financiële data—niet individueel en niet als financiële
-              aggregaten. Hooguit zien zij operationele voortgang (bijv. aantallen
-              deelnemers/voltooiingen), zonder financiële inhoud.
+              Werkgevers ontvangen nooit individuele financiële data van medewerkers.
+              Werkgeversrapportage is privacy-safe en uitsluitend op cohortniveau boven een
+              minimumdrempel van 15 deelnemers; in de pilotfase beperkt tot operationele
+              voortgangsmetrics.
             </li>
             <li>
               Mail je ons via hello@finnsight.nl, dan bewaren we je e-mail alleen om te kunnen
