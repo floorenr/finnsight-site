@@ -1,14 +1,24 @@
 # Finnsight
 
-Deterministic financial planning for Dutch employees.
+> Governing source of truth for narrative, governance, boundary rules, and messaging: `docs/governance/FINNSIGHT_MASTER_CONSTITUTION_v1_0.md` in `finnsight-core`
+
+Employee-first, employer-sponsored deterministic financial scenario planning for Dutch employees.
 
 ## About
 
-Finnsight helps Dutch employees understand their financial future through transparent, private analysis. No advice. No guesses. Only facts.
+Finnsight helps Dutch employees understand how income, housing, tax, and pension interact under different scenarios through deterministic, transparent calculations.
 
-- **What you get:** Clear view of your income, housing, pensions, taxes, and available funds
-- **How it works:** Share your situation → deterministic calculation → understand your options
-- **Your privacy:** Your data stays with you. Employers never see individual information.
+It is designed around clear boundaries:
+- **What employees get:** personal financial insight and scenario visibility
+- **What employers get:** a privacy-safe employee benefit and rollout visibility only
+- **What Finnsight does not do:** financial advice, AI-generated calculations, or employer-facing employee financial outcomes
+
+Core product principles:
+- deterministic calculations
+- transparent assumptions
+- privacy by design
+- no financial advice
+- same input, same output
 
 ## Live
 
@@ -70,13 +80,14 @@ npm run preview
 
 ## Important Notes
 
-- This site contains no interactive demos. It presents the proposition, trust/compliance, and a contact CTA.
+- This site contains no live financial product. It presents Finnsight’s proposition, trust/compliance posture, and pilot contact flow.
 
 ## Privacy
 
-- We do not store intake submissions via the website. If you email us, we retain that email to respond.
+- We do not store financial intake submissions via the public website.
 - No tracking cookies and no third-party analytics.
-- Employers receive no financial data—neither individual nor aggregates. At most they may see operational progress (e.g., counts of participants/completions), without financial content.
+- Employers do not receive employee financial outcomes, individually or as financial aggregates.
+- Employers may see privacy-safe operational rollout information only, such as participation or completion counts, without financial content.
 
 ## Accessibility
 
