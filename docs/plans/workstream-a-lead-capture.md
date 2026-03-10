@@ -1,8 +1,12 @@
 # Workstream A: Conversion & Lead Capture Implementation Plan
 
+> Governing source of truth for narrative, governance, boundary rules, and messaging: `docs/governance/FINNSIGHT_MASTER_CONSTITUTION_v1_0.md` in `finnsight-core`
+
 ## Objective
 
 Replace all `mailto:` CTAs with a unified lead capture form, sending submissions directly to hello@finnsight.nl—privacy-first, cookie-less, no database.
+
+**Boundary note:** This workstream implements lead capture for pilot interest. It does not redefine Finnsight’s product, privacy, or employer-data boundary.
 
 ---
 
@@ -48,7 +52,7 @@ CTA → Modal → Form → /api/site/leads → Email to hello@finnsight.nl
 
 ## Form Specification
 
-**Unified CTA text:** "Vraag pilotinformatie aan" (employer-first framing)
+**Unified CTA text:** "Vraag pilotinformatie aan" (employer-sponsored buyer model; employee-first product boundary)
 
 **Fields:**
 | Field | Type | Required | Validation |
@@ -125,11 +129,11 @@ NOTIFICATION_EMAIL=hello@finnsight.nl  # optional, defaults to hello@finnsight.n
 
 ## Founder Decisions (Resolved)
 
-| Decision         | Choice             | Implication                                                            |
-| ---------------- | ------------------ | ---------------------------------------------------------------------- |
-| Primary audience | **Employer-first** | CTA copy targets werkgevers; employees/adviseurs allowed but secondary |
-| Response SLA     | **Hard promise**   | "binnen 2 werkdagen" — requires operational guarantee                  |
-| Storage          | **Email-only**     | No database; leads arrive directly in hello@finnsight.nl               |
+| Decision         | Choice                                      | Implication                                                                                                                         |
+| ---------------- | ------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| Primary audience | **Employer-sponsored / multi-role inquiry** | CTA copy supports werkgevers as likely buyers while remaining open to employees and advisors within an employee-first product model |
+| Response SLA     | **Hard promise**                            | "binnen 2 werkdagen" — requires operational guarantee                                                                               |
+| Storage          | **Email-only**                              | No database; leads arrive directly in hello@finnsight.nl                                                                            |
 
 ---
 
