@@ -138,8 +138,7 @@ export default function TrustPage({ onNavigate: _onNavigate }) {
           <p>Finnsight bestaat omdat medewerkers meer rust nodig hebben. Dat verdienen ze.</p>
           <p>We bouwen dit samen met werkgevers die hetzelfde geloven.</p>
           <p>
-            Meer details:{' '}
-            <Link to="/methodology">Methodologie</Link> (hoe we rekenen) en{' '}
+            Meer details: <Link to="/methodology">Methodologie</Link> (hoe we rekenen) en{' '}
             <Link to="/compliance">Compliance</Link> (AVG, AFM-grenzen, werkgeversprivacy).
           </p>
         </section>

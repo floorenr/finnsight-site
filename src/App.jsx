@@ -29,7 +29,10 @@ function AppContent() {
               <Route path="/" element={<LandingPage onNavigate={handleNavigate} />} />
               <Route path="/trust" element={<TrustPage onNavigate={handleNavigate} />} />
               <Route path="/privacy" element={<PrivacyTermsPage onNavigate={handleNavigate} />} />
-              <Route path="/methodology" element={<MethodologyPage onNavigate={handleNavigate} />} />
+              <Route
+                path="/methodology"
+                element={<MethodologyPage onNavigate={handleNavigate} />}
+              />
               <Route path="/compliance" element={<CompliancePage onNavigate={handleNavigate} />} />
               <Route path="*" element={<NotFoundPage />} />
             </Routes>

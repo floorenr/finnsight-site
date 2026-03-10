@@ -42,8 +42,8 @@ export default function CompliancePage({ onNavigate: _onNavigate }) {
             rekenlogica.
           </p>
           <p>
-            Dit onderscheid is fundamenteel voor het complianceprofiel van het platform: de
-            uitkomst is auditeerbaar en reproduceerbaar.
+            Dit onderscheid is fundamenteel voor het complianceprofiel van het platform: de uitkomst
+            is auditeerbaar en reproduceerbaar.
           </p>
         </section>
 
@@ -51,13 +51,14 @@ export default function CompliancePage({ onNavigate: _onNavigate }) {
           <h2>2. AFM-grens als ontwerpintentie</h2>
           <p>
             <strong>Ontwerpintentie (nog niet formeel getoetst door de AFM):</strong> Finnsight is
-            ontworpen om buiten de vergunningsplicht voor financieel advies te blijven zoals
-            bedoeld in de Wet op het financieel toezicht (Wft).
+            ontworpen om buiten de vergunningsplicht voor financieel advies te blijven zoals bedoeld
+            in de Wet op het financieel toezicht (Wft).
           </p>
           <ul>
             <li>
-              Finnsight geeft <strong>geen beleggingsadvies, pensioenadvies of hypotheekadvies</strong>{' '}
-              in de zin van de Wft.
+              Finnsight geeft{' '}
+              <strong>geen beleggingsadvies, pensioenadvies of hypotheekadvies</strong> in de zin
+              van de Wft.
             </li>
             <li>
               Het platform rekent scenario&rsquo;s door op basis van door de gebruiker opgegeven
@@ -74,9 +75,9 @@ export default function CompliancePage({ onNavigate: _onNavigate }) {
           </ul>
           <p>
             <em>
-              Formele juridische classificatie door of afstemming met de AFM heeft op dit moment
-              nog niet plaatsgevonden. De bovenstaande positionering is de huidige ontwerpintentie
-              en is onderwerp van lopende juridische beoordeling.
+              Formele juridische classificatie door of afstemming met de AFM heeft op dit moment nog
+              niet plaatsgevonden. De bovenstaande positionering is de huidige ontwerpintentie en is
+              onderwerp van lopende juridische beoordeling.
             </em>
           </p>
         </section>
@@ -99,8 +100,8 @@ export default function CompliancePage({ onNavigate: _onNavigate }) {
               platform (dataminimalisatie).
             </li>
             <li>
-              Gegevens worden niet gedeeld met derden buiten de verwerkingsketen die noodzakelijk
-              is voor de dienstverlening.
+              Gegevens worden niet gedeeld met derden buiten de verwerkingsketen die noodzakelijk is
+              voor de dienstverlening.
             </li>
             <li>
               Gebruikers kunnen verzoeken tot inzage, correctie en verwijdering van hun gegevens
@@ -115,7 +116,9 @@ export default function CompliancePage({ onNavigate: _onNavigate }) {
             Finnsight hanteert een <strong>privacy-by-design</strong> aanpak:
           </p>
           <ul>
-            <li>Alleen gegevens die strikt noodzakelijk zijn voor de berekening worden verwerkt.</li>
+            <li>
+              Alleen gegevens die strikt noodzakelijk zijn voor de berekening worden verwerkt.
+            </li>
             <li>
               Geen opslag van financiële invoergegevens op de publieke website; rekenuitkomsten
               worden client-side gegenereerd waar mogelijk.
@@ -146,8 +149,8 @@ export default function CompliancePage({ onNavigate: _onNavigate }) {
               kleiner dan 15 deelnemers, om herleidbaarheid naar individuen te voorkomen.
             </li>
             <li>
-              Financiële gegevens (bedragen, scenario-uitkomsten, inkomensgegevens) worden nooit
-              in werkgeversrapportages opgenomen — ook niet geaggregeerd.
+              Financiële gegevens (bedragen, scenario-uitkomsten, inkomensgegevens) worden nooit in
+              werkgeversrapportages opgenomen — ook niet geaggregeerd.
             </li>
             <li>
               Werkgevers zien uitsluitend operationele metrics (deelname, voltooiing) zonder
@@ -156,8 +159,8 @@ export default function CompliancePage({ onNavigate: _onNavigate }) {
           </ul>
           <p>
             <em>
-              De technische implementatie van deze drempelregel is onderdeel van het
-              privacyontwerp en wordt gedocumenteerd in de verwerkersovereenkomst.
+              De technische implementatie van deze drempelregel is onderdeel van het privacyontwerp
+              en wordt gedocumenteerd in de verwerkersovereenkomst.
             </em>
           </p>
         </section>
@@ -170,8 +173,8 @@ export default function CompliancePage({ onNavigate: _onNavigate }) {
           </p>
           <p>
             <strong>Huidige status:</strong> De DPA is beschikbaar als concept/template en is
-            onderwerp van lopende juridische beoordeling. De definitieve versie wordt voor de
-            start van een productie-pilot ter ondertekening aangeboden.
+            onderwerp van lopende juridische beoordeling. De definitieve versie wordt voor de start
+            van een productie-pilot ter ondertekening aangeboden.
           </p>
           <ul>
             <li>Scope: verwerking van persoonsgegevens in het kader van de Finnsight-dienst</li>
@@ -179,9 +182,7 @@ export default function CompliancePage({ onNavigate: _onNavigate }) {
               Inhoud: verplichtingen van Finnsight als verwerker, rechten van de
               verwerkingsverantwoordelijke, beveiligingsmaatregelen en bewaartermijnen
             </li>
-            <li>
-              Verzoek DPA-concept: neem contact op via hello@finnsight.nl
-            </li>
+            <li>Verzoek DPA-concept: neem contact op via hello@finnsight.nl</li>
           </ul>
           <p>
             <em>
@@ -196,8 +197,7 @@ export default function CompliancePage({ onNavigate: _onNavigate }) {
           <h2>7. Vragen over compliance</h2>
           <p>
             Heb je vragen over onze complianceaanpak, de DPA of de AFM-positionering? Neem contact
-            op via{' '}
-            <CTAButton variant="text">hello@finnsight.nl</CTAButton> of zie{' '}
+            op via <CTAButton variant="text">hello@finnsight.nl</CTAButton> of zie{' '}
             <Link to="/methodology">Methodologie</Link> voor een toelichting op de rekenlogica.
           </p>
         </section>

@@ -30,28 +30,30 @@ export default function MethodologyPage({ onNavigate: _onNavigate }) {
           <p>
             Finnsight gebruikt een <strong>deterministisch rekenmodel</strong>: dezelfde invoer
             geeft altijd dezelfde uitkomst. Er is geen willekeur, geen kansberekening en geen
-            machine-learning in de kernberekeningen. Alle uitkomsten zijn stap voor stap
-            herleidbaar tot de invoergegevens en de toegepaste rekenregels.
+            machine-learning in de kernberekeningen. Alle uitkomsten zijn stap voor stap herleidbaar
+            tot de invoergegevens en de toegepaste rekenregels.
           </p>
           <p>
             De berekeningen zijn gebaseerd op <strong>vastgelegde rekenregels</strong> (bijv.
             belastingtarieven, pensioenformules, hypotheeknormen) en de gegevens die de gebruiker
-            zelf invoert. Finnsight trekt geen conclusies over wat een gebruiker &lsquo;zou
-            moeten doen&rsquo;.
+            zelf invoert. Finnsight trekt geen conclusies over wat een gebruiker &lsquo;zou moeten
+            doen&rsquo;.
           </p>
         </section>
 
         <section>
           <h2>2. Belastinglogica</h2>
           <p>
-            <strong>Huidige aanpak:</strong> Finnsight past de Nederlandse inkomstenbelasting toe
-            op basis van de geldende schijftarieven en heffingskortingen zoals deze door de
+            <strong>Huidige aanpak:</strong> Finnsight past de Nederlandse inkomstenbelasting toe op
+            basis van de geldende schijftarieven en heffingskortingen zoals deze door de
             Belastingdienst zijn gepubliceerd. De gehanteerde tarieven zijn een momentopname en
             worden niet automatisch bijgewerkt bij wetswijzigingen.
           </p>
           <ul>
             <li>Box 1-inkomen: progressieve tarieven (twee schijven)</li>
-            <li>Algemene heffingskorting en arbeidskorting: forfaitaire bedragen op basis van inkomen</li>
+            <li>
+              Algemene heffingskorting en arbeidskorting: forfaitaire bedragen op basis van inkomen
+            </li>
             <li>Loonheffing: netto inkomen wordt geschat op basis van bruto invoer</li>
           </ul>
           <p>
@@ -65,10 +67,10 @@ export default function MethodologyPage({ onNavigate: _onNavigate }) {
         <section>
           <h2>3. Pensioen: aannames en begrenzing</h2>
           <p>
-            <strong>Huidige aanpak:</strong> Pensioenberekeningen zijn gebaseerd op
-            gebruikersinvoer (bijv. huidige pensioenopbouw, verwachte pensioenleeftijd) en
-            standaard aannames voor opbouwpercentages en indexatie. Deze aannames zijn{' '}
-            <strong>illustratief</strong> en geen garantie voor toekomstige uitkeringen.
+            <strong>Huidige aanpak:</strong> Pensioenberekeningen zijn gebaseerd op gebruikersinvoer
+            (bijv. huidige pensioenopbouw, verwachte pensioenleeftijd) en standaard aannames voor
+            opbouwpercentages en indexatie. Deze aannames zijn <strong>illustratief</strong> en geen
+            garantie voor toekomstige uitkeringen.
           </p>
           <ul>
             <li>
@@ -78,7 +80,9 @@ export default function MethodologyPage({ onNavigate: _onNavigate }) {
             <li>
               Opbouw: gebaseerd op opgegeven werkgeversregeling of standaard middelloonformule
             </li>
-            <li>Indexatie: geen rendementsverwachting; Finnsight raadt geen beleggingsstrategie aan</li>
+            <li>
+              Indexatie: geen rendementsverwachting; Finnsight raadt geen beleggingsstrategie aan
+            </li>
           </ul>
           <p>
             <em>
@@ -91,9 +95,9 @@ export default function MethodologyPage({ onNavigate: _onNavigate }) {
         <section>
           <h2>4. Hypotheekberekeningen</h2>
           <p>
-            <strong>Huidige aanpak:</strong> Hypotheeklasten worden berekend op basis van
-            annuïtaire of lineaire aflossingssystematiek, met de door de gebruiker opgegeven rente
-            en looptijd. De berekening toont maandlasten en restschuld in scenario's.
+            <strong>Huidige aanpak:</strong> Hypotheeklasten worden berekend op basis van annuïtaire
+            of lineaire aflossingssystematiek, met de door de gebruiker opgegeven rente en looptijd.
+            De berekening toont maandlasten en restschuld in scenario's.
           </p>
           <ul>
             <li>Aflossingsvormen: annuïtair of lineair (door gebruiker te kiezen)</li>
@@ -131,13 +135,12 @@ export default function MethodologyPage({ onNavigate: _onNavigate }) {
           </p>
           <ul>
             <li>Belastingtarieven: gepubliceerde tarieven van de Nederlandse Belastingdienst</li>
+            <li>AOW-leeftijd: Rijksoverheid / SVB (Sociale Verzekeringsbank)</li>
+            <li>Hypotheeknormering: indicatieve NHG-normen en NIBUD-richtlijnen als referentie</li>
             <li>
-              AOW-leeftijd: Rijksoverheid / SVB (Sociale Verzekeringsbank)
+              Pensioenregels: Pensioenwet als kader; specifieke regelingen op basis van
+              gebruikersinvoer
             </li>
-            <li>
-              Hypotheeknormering: indicatieve NHG-normen en NIBUD-richtlijnen als referentie
-            </li>
-            <li>Pensioenregels: Pensioenwet als kader; specifieke regelingen op basis van gebruikersinvoer</li>
           </ul>
           <p>
             <em>
@@ -167,8 +170,8 @@ export default function MethodologyPage({ onNavigate: _onNavigate }) {
               niet ingezet in de kernberekeningen.
             </li>
             <li>
-              <strong>Geen externe data-opvraging:</strong> Finnsight haalt geen financiële
-              gegevens op bij banken, pensioenfondsen of overheidsregisters.
+              <strong>Geen externe data-opvraging:</strong> Finnsight haalt geen financiële gegevens
+              op bij banken, pensioenfondsen of overheidsregisters.
             </li>
           </ul>
         </section>
@@ -176,20 +179,19 @@ export default function MethodologyPage({ onNavigate: _onNavigate }) {
         <section>
           <h2>8. Geen financieel advies</h2>
           <p>
-            De uitkomsten van Finnsight zijn <strong>uitsluitend informatief en illustratief</strong>.
-            Niets op dit platform is bedoeld als financieel advies, beleggingsadvies of
-            pensioenadvies in de zin van de Wet op het financieel toezicht (Wft) of enige andere
-            wet- of regelgeving.
+            De uitkomsten van Finnsight zijn{' '}
+            <strong>uitsluitend informatief en illustratief</strong>. Niets op dit platform is
+            bedoeld als financieel advies, beleggingsadvies of pensioenadvies in de zin van de Wet
+            op het financieel toezicht (Wft) of enige andere wet- of regelgeving.
           </p>
           <p>
             Finnsight helpt je begrijpen wat cijfers betekenen — jij neemt de beslissingen. Voor
-            persoonlijk financieel advies raden wij je aan een gecertificeerd financieel adviseur
-            te raadplegen.
+            persoonlijk financieel advies raden wij je aan een gecertificeerd financieel adviseur te
+            raadplegen.
           </p>
           <p>
-            Meer over de governance van ons platform: zie{' '}
-            <Link to="/compliance">Compliance</Link> en{' '}
-            <Link to="/trust">Vertrouwen & Compliance</Link>.
+            Meer over de governance van ons platform: zie <Link to="/compliance">Compliance</Link>{' '}
+            en <Link to="/trust">Vertrouwen & Compliance</Link>.
           </p>
         </section>
       </main>
