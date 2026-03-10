@@ -18,6 +18,10 @@ describe('public/sitemap.xml', () => {
     expect(content).toContain('https://finnsight.app/compliance');
   });
 
+  it('contains /security URL', () => {
+    expect(content).toContain('https://finnsight.app/security');
+  });
+
   it('contains the root URL', () => {
     expect(content).toContain('https://finnsight.app/');
   });

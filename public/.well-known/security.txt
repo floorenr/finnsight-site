@@ -1,0 +1,9 @@
+# Finnsight Security Contact
+# See https://www.finnsight.app/.well-known/security.txt
+# RFC 9116
+
+Contact: mailto:security@finnsight.nl
+Canonical: https://www.finnsight.app/.well-known/security.txt
+Preferred-Languages: nl, en
+Policy: https://www.finnsight.app/security
+Expires: 2027-03-10T00:00:00.000Z

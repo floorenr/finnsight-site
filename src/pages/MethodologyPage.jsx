@@ -211,6 +211,8 @@ export default function MethodologyPage({ onNavigate: _onNavigate }) {
           <span className="divider-muted">|</span>
           <Link to="/compliance">Compliance</Link>
           <span className="divider-muted">|</span>
+          <Link to="/security">Beveiliging</Link>
+          <span className="divider-muted">|</span>
           <Link to="/privacy">Privacy en voorwaarden</Link>
           <span className="divider-muted">|</span>
           <CTAButton variant="text" className="footer-cta-link">

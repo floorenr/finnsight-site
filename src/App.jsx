@@ -10,6 +10,7 @@ const TrustPage = lazy(() => import('./pages/TrustPage'));
 const PrivacyTermsPage = lazy(() => import('./pages/PrivacyTermsPage'));
 const MethodologyPage = lazy(() => import('./pages/MethodologyPage'));
 const CompliancePage = lazy(() => import('./pages/CompliancePage'));
+const SecurityPage = lazy(() => import('./pages/SecurityPage'));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
 
 function AppContent() {
@@ -34,6 +35,7 @@ function AppContent() {
                 element={<MethodologyPage onNavigate={handleNavigate} />}
               />
               <Route path="/compliance" element={<CompliancePage onNavigate={handleNavigate} />} />
+              <Route path="/security" element={<SecurityPage onNavigate={handleNavigate} />} />
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </Suspense>

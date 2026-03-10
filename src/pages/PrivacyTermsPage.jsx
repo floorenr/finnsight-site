@@ -104,6 +104,8 @@ export default function PrivacyTermsPage({ onNavigate: _onNavigate }) {
           <span className="divider-muted">|</span>
           <Link to="/compliance">Compliance</Link>
           <span className="divider-muted">|</span>
+          <Link to="/security">Beveiliging</Link>
+          <span className="divider-muted">|</span>
           <CTAButton variant="text" className="footer-cta-link">
             Contact
           </CTAButton>

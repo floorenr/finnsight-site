@@ -43,4 +43,19 @@ describe('App route wiring', () => {
     expect(await screen.findByText(/AFM-grens als ontwerpintentie/i)).toBeInTheDocument();
     expect(screen.getByText(/Verwerkersovereenkomst \(DPA\)/i)).toBeInTheDocument();
   });
+
+  it('renders SecurityPage at /security', async () => {
+    renderAppAtPath('/security');
+    expect(
+      await screen.findByRole('heading', { level: 1, name: /Beveiliging/i })
+    ).toBeInTheDocument();
+  });
+
+  it('/security renders responsible disclosure content', async () => {
+    renderAppAtPath('/security');
+    expect(
+      await screen.findByRole('heading', { name: /Responsible disclosure/i })
+    ).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /security@finnsight\.nl/i })).toBeInTheDocument();
+  });
 });
