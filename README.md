@@ -9,11 +9,13 @@ Employee-first, employer-sponsored deterministic financial scenario planning for
 Finnsight helps Dutch employees understand how income, housing, tax, and pension interact under different scenarios through deterministic, transparent calculations.
 
 It is designed around clear boundaries:
+
 - **What employees get:** personal financial insight and scenario visibility
 - **What employers get:** a privacy-safe employee benefit and rollout visibility only
 - **What Finnsight does not do:** financial advice, AI-generated calculations, or employer-facing employee financial outcomes
 
 Core product principles:
+
 - deterministic calculations
 - transparent assumptions
 - privacy by design

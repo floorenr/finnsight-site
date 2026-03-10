@@ -129,11 +129,11 @@ NOTIFICATION_EMAIL=hello@finnsight.nl  # optional, defaults to hello@finnsight.n
 
 ## Founder Decisions (Resolved)
 
-| Decision         | Choice             | Implication                                                            |
-| ---------------- | ------------------ | ---------------------------------------------------------------------- |
+| Decision         | Choice                                      | Implication                                                                                                                         |
+| ---------------- | ------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
 | Primary audience | **Employer-sponsored / multi-role inquiry** | CTA copy supports werkgevers as likely buyers while remaining open to employees and advisors within an employee-first product model |
-| Response SLA     | **Hard promise**   | "binnen 2 werkdagen" — requires operational guarantee                  |
-| Storage          | **Email-only**     | No database; leads arrive directly in hello@finnsight.nl               |
+| Response SLA     | **Hard promise**                            | "binnen 2 werkdagen" — requires operational guarantee                                                                               |
+| Storage          | **Email-only**                              | No database; leads arrive directly in hello@finnsight.nl                                                                            |
 
 ---
 
